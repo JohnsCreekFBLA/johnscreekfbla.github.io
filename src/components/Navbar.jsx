@@ -67,7 +67,7 @@ export default function TransparentNavbar({type}) {
               <div className={linkType}>RESOURCES<span className={arrowType}><svg width="9" height="9" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></div>
               <div className="dropdown-content-left resources-content">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8SWxbsyupSNok39rN83_1bkM4hsD1aaPl_wpzYrsGCeWaRQ/viewform">Competitive Events Workshop</a>
-                <a href="https://www.canva.com/design/DAFsY555qhU/76yqBg0QfPmV92CxIkkW2g/edit?utm_content=DAFsY555qhU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Competitive Events Guidelines</a>
+                <a href="https://georgiafbla.org/high-school-competitive-events/">Competitive Events Guidelines</a>
               </div>
             </div>
 
