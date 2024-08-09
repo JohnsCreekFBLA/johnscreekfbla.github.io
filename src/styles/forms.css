@@ -26,6 +26,6 @@ iframe {
 
 @media only screen and (max-height: 600px) {
     iframe {
-        height: 400px;
+        height: 420px;
     }
 }
