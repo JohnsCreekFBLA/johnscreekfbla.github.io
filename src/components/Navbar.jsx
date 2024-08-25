@@ -58,7 +58,7 @@ export default function TransparentNavbar({type}) {
             <div className="dropdown about-dropdown">
               <div className={linkType}>ABOUT US<span className={arrowType}><svg width="9" height="9" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></div>
               <div className="dropdown-content about-content">
-                <a href="/24-25-team/">Officer Team & Advisors 2024-25</a>
+                <a href="/24-25-team/">Officer Team & Advisers 2024-25</a>
                 <a href="/socials-contacts/">Socials & Contacts</a>
               </div>
             </div>
@@ -111,7 +111,7 @@ export default function TransparentNavbar({type}) {
           </div>
           <div className="menu-link" onClick={() => {toggleSelection(3)}}>ABOUT US<span className="menu-down-arrow"><svg width="14" height="14" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></div>
           <div className="menu-link-dropdown" style={{display: (selectedType == 3) ? "flex" : "none"}}>
-            <a href="/24-25-team/">Officer Team & Advisors 2024-25</a>
+            <a href="/24-25-team/">Officer Team & Advisers 2024-25</a>
             <a href="/socials-contacts/">Socials & Contacts</a>
           </div>
           <div className="menu-link" onClick={() => {toggleSelection(4)}}>RESOURCES<span className="menu-down-arrow"><svg width="14" height="14" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></div>
