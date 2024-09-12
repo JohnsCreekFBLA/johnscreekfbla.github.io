@@ -46,6 +46,29 @@ let questionOpen = false;
        
     </div>
 
+    <div class="question-popup">
+        <div id="popup-close" style="font-size: 26px">
+            <IoClose />
+        </div>
+        <div class="q-title" style="font-size: 28px;">
+            Today is Spirit Day!
+        </div>
+        <div class="q-question">
+            Find FBLA Logos scattered around the website (there are 9). When you find them, a question will appear. Put your answers at
+            <a href="https://forms.office.com/r/EbHb7mvLhW" target="_blank">this Microsoft Form</a>
+            for donuts and more!
+        </div>
+    </div>
+    
+    <script>
+        const pClose = document.getElementById("popup-close");
+
+        pClose?.addEventListener("click", () => {
+            const questionContainer = document.getElementsByClassName("question-popup")[0];
+            questionContainer.classList.toggle("hidden");
+        })
+    </script>
+
     <div class="what-we-do-container">
         <div>
             <div class="section-title">
@@ -120,11 +143,10 @@ let questionOpen = false;
                 You've found a logo, answer this question!
             </div>
             <div class="q-question">
-                What is the second level of the FBLA BAAs?
+                1. What is the second level of the FBLA BAAs?
             </div>
         </div>
 
-        
         <div class="counter-content">
             <div>
                 <div class="section-title white-text">

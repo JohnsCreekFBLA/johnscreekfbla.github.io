@@ -15,6 +15,33 @@
     font-family: "Roboto";
 }
 
+.question-popup {
+    position: fixed;
+    background: white;
+    padding: 35px 50px 30px 50px;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: solid 1px gray;
+    max-width: min(100%, 1000px);
+    text-align: center;
+
+    font-family: "Roboto";
+}
+
+#popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333333;
+}
+
+
 .hidden {
     visibility: hidden;
 }
@@ -48,5 +75,4 @@
     background: transparent;
     cursor: pointer;
     z-index: 999;
-
 }
