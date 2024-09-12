@@ -2,10 +2,14 @@
 import Navbar from '../../components/Navbar.jsx'
 import '../../styles/global.css'
 import '../../styles/events.css'
+import '../../styles/question.css'
 import { Image } from 'astro:assets';
 import RemindLogo from '../../images/remind-logo-social.png'
 import InstagramLogo from '../../images/instagram-logo-social.png'
 import GmailLogo from '../../images/gmail-logo-social.png'
+
+import FblaLogo from '../../images/fbla-logo.png'
+import { IoClose } from "react-icons/io5";
 ---
 
 
@@ -57,12 +61,41 @@ import GmailLogo from '../../images/gmail-logo-social.png'
         </div>
     </div>
 
-    <div class="social-container" style="margin-top: -10px">
+    <div class="social-container" style="margin-top: -10px; position: relative;">
         <Image src={GmailLogo} alt="Remind Logo" class="social-logo"/>
         <h1 class="team-title">Gmail</h1>
         <div class="info-list">
             <div class="team-list-item">
                 jchsfbla@gmail.com
+            </div>
+        </div>
+
+        <button id="question-button" style="position:absolute; top: 0; right: 0;">
+            <Image src={FblaLogo} width="100" height="100" alt="FBLA Logo" />
+        </button>
+    
+        <script>
+            const qButton = document.getElementById('question-button');
+            const qClose = document.getElementById("question-close");
+            qButton?.addEventListener("click", () => {
+                const questionContainer = document.getElementsByClassName("fixed-question")[0];
+                questionContainer.classList.toggle("hidden");
+            })
+            qClose?.addEventListener("click", () => {
+                const questionContainer = document.getElementsByClassName("fixed-question")[0];
+                questionContainer.classList.toggle("hidden");
+            })
+        </script>
+    
+        <div class="fixed-question hidden">
+            <div id="question-close">
+                <IoClose />
+            </div>
+            <div class="q-title">
+                You've found a logo, answer this question!
+            </div>
+            <div class="q-question">
+                What is our instagram handle?
             </div>
         </div>
     </div>

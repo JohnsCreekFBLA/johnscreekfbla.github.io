@@ -70,6 +70,7 @@ export default function TransparentNavbar({type}) {
               <div className={linkType}>RESOURCES<span className={arrowType}><svg width="9" height="9" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></div>
               <div className="dropdown-content-left resources-content">                
                 <a href="https://georgiafbla.org/high-school-competitive-events/">Competitive Events Resources</a>
+                <a href="/secret/">Secret Page</a>
               </div>
             </div>
 
@@ -122,6 +123,8 @@ export default function TransparentNavbar({type}) {
           <div className="menu-link" onClick={() => {toggleSelection(4)}}>RESOURCES<span className="menu-down-arrow"><svg width="14" height="14" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></div>
           <div className="menu-link-dropdown" style={{display: (selectedType == 4) ? "flex" : "none"}}>            
             <a href="https://georgiafbla.org/high-school-competitive-events/">Competitive Events Resources</a>
+            <a href="/secret/">Secret Page</a>
+
           </div>
         </div>
       </div>
