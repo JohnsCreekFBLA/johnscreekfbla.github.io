@@ -22,34 +22,5 @@ import { IoClose } from "react-icons/io5";
         <Navbar type="flat" client:load />
     </div>
     <iframe width="640px" height="500px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAWIq2VxUOFM3NjVSQTlDOTlYMEkzWDdGRjZKTUkyTS4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
-        
-    <button id="question-button">
-        <Image src={FblaLogo} width="100" height="100" alt="FBLA Logo" />
-    </button>
-
-    <script>
-        const qButton = document.getElementById('question-button');
-        const qClose = document.getElementById("question-close");
-        qButton?.addEventListener("click", () => {
-            const questionContainer = document.getElementsByClassName("fixed-question")[0];
-            questionContainer.classList.toggle("hidden");
-        })
-        qClose?.addEventListener("click", () => {
-            const questionContainer = document.getElementsByClassName("fixed-question")[0];
-            questionContainer.classList.toggle("hidden");
-        })
-    </script>
-    
-    <div class="fixed-question hidden">
-        <div id="question-close">
-            <IoClose />
-        </div>
-        <div class="q-title">
-            You've found a logo, answer this question!
-        </div>
-        <div class="q-question">
-            2. What are FBLA's official colors?
-        </div>
-    </div>
 </body>
 </html>
