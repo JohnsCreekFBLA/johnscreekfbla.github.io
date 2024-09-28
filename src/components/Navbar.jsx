@@ -47,9 +47,9 @@ export default function TransparentNavbar({type}) {
               <div className={linkType}>EVENTS<span className={arrowType}><svg width="9" height="9" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></div>
               <div className="dropdown-content events-content">
                 <a href="/calendar/">Calendar</a>
+                <a href="/meetings/">Chapter Meeting Slides</a>
                 <a href="/community-service/">Community Service Opportunities</a>
                 <a href="/flc/">Fall Leadership Conference</a>
-
                 <a href="/rlc/">Region Leadership Conference</a>
                 <a href="/slc/">State Leadership Conference</a>
                 <a href="/nlc/">National Leadership Conference</a>
@@ -75,9 +75,6 @@ export default function TransparentNavbar({type}) {
               <a className={instagramType} href="https://www.instagram.com/jchsfbla/?hl=en" target="_blank"><BiLogoInstagramAlt /></a>
             </div>
           </div>
-
-
-
 
           <div className="link-hamburger-button-container">
             <button className={hamburgerType} onClick={() => {setLinkMenuOpen(true)}}><IoIosMenu /></button>

@@ -104,7 +104,12 @@
     font-size: 14px;
     text-decoration: none;
     color: #333333;
+    padding: 2px;
+}
 
+.dropdown-content a:hover {
+    color: #333333;
+    background-color: #f1f1f1;
 }
 
 .dropdown-content-left {
@@ -132,7 +137,11 @@
     font-size: 14px;
     text-decoration: none;
     color: #333333;
+}
 
+.dropdown-content-left a:hover {
+    color: #333333;
+    background-color: #f1f1f1;
 }
 
 
