@@ -40,10 +40,11 @@ export default function TransparentNavbar({type}) {
               <div className={linkType}>FORMS AND PAYMENTS<span className={arrowType}><svg width="9" height="9" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></div>
               <div className="dropdown-content forms-content">
                 <a href="/forms/membership">Membership Form</a>     
-                {/* <a href="/forms/flc-signup">FLC Registration Form</a> */}
-                <a href="/forms/rlc-signup">RLC Registration Form</a>
-                {/* <a href="/forms/slc-signup">SLC Registration Form</a>
-                <a href="/forms/nlc-signup">NLC Registration Form</a> */}
+                {/* <a href="/forms/flc-signup">FLC Registration Form</a>
+                <a href="/forms/rlc-signup">RLC Registration Form</a> */}
+                <a href="/forms/slc-signup-p">SLC - Straight to State Presentation</a>
+                <a href="/forms/slc-signup-t">SLC - Straight to State Testing</a>
+                {/* <a href="/forms/nlc-signup">NLC Registration Form</a> */}
               </div>
             </div>
 
@@ -70,7 +71,8 @@ export default function TransparentNavbar({type}) {
 
             <div className="dropdown resources-dropdown">
               <div className={linkType}>RESOURCES<span className={arrowType}><svg width="9" height="9" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></div>
-              <div className="dropdown-content-left resources-content">                
+              <div className="dropdown-content-left resources-content">         
+                <a href="/guidelines">Competitive Events Guidelines</a>       
                 <a href="https://georgiafbla.org/high-school-competitive-events/">Competitive Events Resources</a>
               </div>
             </div>

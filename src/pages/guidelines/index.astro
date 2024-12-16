@@ -1,0 +1,47 @@
+---
+import Navbar from '../../components/Navbar'
+import '../../styles/global.css'
+import '../../styles/events.css'
+import '../../styles/forms.css'
+import '../../styles/question.css'
+import { Image } from 'astro:assets';
+
+import FblaLogo from '../../../images/fbla-logo.png'
+import { IoClose } from "react-icons/io5";
+---
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JCHS FBLA</title>
+</head>
+
+<body>
+    <div class="header-container">
+        <Navbar type="flat" client:load />
+    </div>
+
+    <div>
+        <div class="event-title">
+            Competitive Events Guideline
+        </div>
+        <div class="divider-row">
+            <hr class="title-divider"/>
+        </div>
+    </div>
+
+    <div class="info-box-container" style="margin:40px;font-size:30px">
+        <a href="https://drive.google.com/file/d/150lxUThjacGkIsGAgN5FEeaRaOG6DlTH/view?usp=sharing">
+            Direct Link: Competitive Events Guideline
+        </a>
+    </div>
+
+    <iframe width="640px" height="500px" src="https://drive.google.com/file/d/150lxUThjacGkIsGAgN5FEeaRaOG6DlTH/view?usp=sharing" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+
+    <div class="info-box-container">
+        
+    </div>
+</body>
+</html>
