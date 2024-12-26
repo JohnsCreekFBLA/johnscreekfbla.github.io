@@ -53,7 +53,7 @@ export default function TransparentNavbar({type}) {
               <div className="dropdown-content events-content">
                 <a href="/calendar/">Calendar</a>
                 <a href="/meetings/">Chapter Meeting Slides</a>
-                <a href="/community-service/">Community Service Opportunities</a>
+                <a href="/community-service/">Community Service Events</a>
                 <a href="/flc/">Fall Leadership Conference</a>
                 <a href="/rlc/">Region Leadership Conference</a>
                 <a href="/slc/">State Leadership Conference</a>
