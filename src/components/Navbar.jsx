@@ -5,6 +5,7 @@ import { IoIosMenu } from "react-icons/io";
 import { useState } from "react";
 import { useRef } from "react"
 import image from "./../../public/logo.svg"
+// import image from "../logo.svg"
 import useOutsideClick from "./useOutsideClick";
 import { IoClose } from "react-icons/io5";
 
@@ -27,8 +28,10 @@ export default function TransparentNavbar({type}) {
   const instagramType = (type=="transparent") ? "instagram-icon" : "instagram-icon-black"
   const hamburgerType = (type=="transparent") ? "link-hamburger-button" : "link-hamburger-button-black"
 
+  // Make sure that new menu sections are duplicated in both sections below (Desktop & Mobile)
   return (
     <>
+      {/* Desktop */}
       <div className={`${type=="transparent" ? "transparent-navbar-container" : "flat-navbar-container"}`}>
         <div className="navbar-content">
           <a href="/">
@@ -90,6 +93,7 @@ export default function TransparentNavbar({type}) {
 
       </div>
 
+      {/* Mobile */}
       {
       linkMenuOpen &&
       <div className="link-menu-background">
@@ -102,16 +106,22 @@ export default function TransparentNavbar({type}) {
           </div>
           <div className="menu-link" onClick={() => {toggleSelection(1)}}>FORMS AND PAYMENTS<span className="menu-down-arrow"><svg width="14" height="14" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></div>
           <div className="menu-link-dropdown" style={{display: (selectedType == 1) ? "flex" : "none"}}>
-            <a href="/forms/membership">Membership Form</a>                          
+              <a href="/forms/membership">Membership Form</a>     
+              {/* <a href="/forms/flc-signup">FLC Registration Form</a>
+              <a href="/forms/rlc-signup">RLC Registration Form</a> */}
+              <a href="/forms/slc-signup-p">SLC - Straight to State Presentation</a>
+              <a href="/forms/slc-signup-t">SLC - Straight to State Testing</a>
+              {/* <a href="/forms/nlc-signup">NLC Registration Form</a> */}                      
           </div>
           <div className="menu-link" onClick={() => {toggleSelection(2)}}>EVENTS<span className="menu-down-arrow"><svg width="14" height="14" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></div>
           <div className="menu-link-dropdown" style={{display: (selectedType == 2) ? "flex" : "none"}}>
-            <a href="/calendar/">Calendar</a>
-            <a href="/community-service/">Community Service Opportunities</a>
-            <a href="/flc/">Fall Leadership Conference</a>
-            <a href="/rlc/">Region Leadership Conference</a>
-            <a href="/slc/">State Leadership Conference</a>
-            <a href="/nlc/">National Leadership Conference</a>
+                <a href="/calendar/">Calendar</a>
+                <a href="/meetings/">Chapter Meeting Slides</a>
+                <a href="/community-service/">Community Service Events</a>
+                <a href="/flc/">Fall Leadership Conference</a>
+                <a href="/rlc/">Region Leadership Conference</a>
+                <a href="/slc/">State Leadership Conference</a>
+                <a href="/nlc/">National Leadership Conference</a>
           </div>
           <div className="menu-link" onClick={() => {toggleSelection(3)}}>ABOUT US<span className="menu-down-arrow"><svg width="14" height="14" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></div>
           <div className="menu-link-dropdown" style={{display: (selectedType == 3) ? "flex" : "none"}}>
@@ -119,8 +129,9 @@ export default function TransparentNavbar({type}) {
             <a href="/socials-contacts/">Socials & Contacts</a>
           </div>
           <div className="menu-link" onClick={() => {toggleSelection(4)}}>RESOURCES<span className="menu-down-arrow"><svg width="14" height="14" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></div>
-          <div className="menu-link-dropdown" style={{display: (selectedType == 4) ? "flex" : "none"}}>            
-            <a href="https://georgiafbla.org/high-school-competitive-events/">Competitive Events Resources</a>
+          <div className="menu-link-dropdown" style={{display: (selectedType == 4) ? "flex" : "none"}}>      
+            <a href="/guidelines">Competitive Events Guidelines</a>       
+            <a href="https://georgiafbla.org/high-school-competitive-events/">Competitive Events Resources</a>      
           </div>
         </div>
       </div>

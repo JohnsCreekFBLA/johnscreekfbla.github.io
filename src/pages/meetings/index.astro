@@ -4,7 +4,7 @@ import '../../styles/global.css'
 import '../../styles/events.css'
 import '../../styles/question.css'
 import { Image } from 'astro:assets';
-
+// import image from "../logo.svg"
 import FblaLogo from '../../images/fbla-logo.png'
 import { IoClose } from "react-icons/io5";
 ---
@@ -23,7 +23,7 @@ import { IoClose } from "react-icons/io5";
 
     <div>
         <div class="event-title">
-            PAST CHAPTER MEETINGS
+            CHAPTER MEETING SLIDES
         </div>
         <div class="divider-row">
             <hr class="title-divider"/>
@@ -36,37 +36,54 @@ import { IoClose } from "react-icons/io5";
 
     <div class="info-box-container">
         <a class="info-box" style="position: relative;">
-            Next Chapter Meeting: TBD January
+            Next Chapter Meeting: TBD
         </a>
     </div>
 
-    <!-- Meeting Slides: Source in /public folder -->
+    <!-- Meeting Slides: Source in /public folder
+        Prepend /public when testing locally, remove if deploying
+    -->
+    <div class="info-container">
+        <h1 class="info-title">February 4th, 2025</h1>
+        <object class = "pdf" data = "/Feb2025_Meeting.pdf" width = "100%" height = "600px">
+            <p>Unable to display PDF file. <a href="/Feb2025_Meeting.pdf">Download</a> instead.</p>
+        </object>
+    </div>
+
     <div class="info-container">
         <h1 class="info-title">December 11th, 2024</h1>
-        <embed src="/December_2024_Meeting.pdf" type="application/pdf" width="100%" height="600px" />
+        <object class = "pdf" data = "/Dec2024_Meeting.pdf" width = "100%" height = "600px">
+            <p>Unable to display PDF file. <a href="/Dec2024_Meeting.pdf">Download</a> instead.</p>
+        </object>
     </div>
 
     <div class="info-container">
         <h1 class="info-title">November 12th, 2024</h1>
-        <embed src="/November_2024_Meeting.pdf" type="application/pdf" width="100%" height="600px" />
+        <object class = "pdf" data = "/Nov2024_Meeting.pdf" width = "100%" height = "600px">
+            <p>Unable to display PDF file. <a href="/Nov2024_Meeting.pdf">Download</a> instead.</p>
+        </object>
     </div>
 
     <div class="info-container">
         <h1 class="info-title">October 29th, 2024</h1>
-        <embed src="/October_2024_Meeting.pdf" type="application/pdf" width="100%" height="600px" />
+        <object class = "pdf" data = "/Oct2024_Meeting.pdf" width = "100%" height = "600px">
+            <p>Unable to display PDF file. <a href="/Oct2024_Meeting.pdf">Download</a> instead.</p>
+        </object>
     </div>
 
     <div class="info-container">
         <h1 class="info-title">September 24th, 2024</h1>
-        <embed src="/September_2024_Meeting.pdf" type="application/pdf" width="100%" height="600px" />
+        <object class = "pdf" data = "/Sep2024_Meeting.pdf" width = "100%" height = "600px">
+            <p>Unable to display PDF file. <a href="/Sep2024_Meeting.pdf">Download</a> instead.</p>
+        </object>
     </div>
 
     <div class="info-container">
         <h1 class="info-title">August 29th, 2024</h1>
-        <embed src="/August_2024_Meeting.pdf" type="application/pdf" width="100%" height="600px" />
+        <object class = "pdf" data = "/Aug2024_Meeting.pdf" width = "100%" height = "600px">
+            <p>Unable to display PDF file. <a href="/Aug2024_Meeting.pdf">Download</a> instead.</p>
+        </object>
     </div>
-    <!-- Add /public to the start of the pdf directory when testing locally -->
-
 
 </body>
 </html>
