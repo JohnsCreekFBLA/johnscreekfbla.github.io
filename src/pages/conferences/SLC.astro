@@ -1,0 +1,11 @@
+---
+import Conference from '/Users/alaynalee/FBLA website/src/components/events/conferences.jsx';
+import Navbar from '/Users/alaynalee/FBLA website/src/components/home/navbar.jsx';
+---
+
+<head>
+    <title>FBLA Website</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+</head>
+<Navbar client:load/>
+<Conference conferences="state" client:load/>

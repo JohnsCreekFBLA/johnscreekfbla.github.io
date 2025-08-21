@@ -1,0 +1,54 @@
+
+
+iframe {
+    position: relative;
+    width: 80%;
+    margin-top: clamp(10px, 5%, 30px);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    left:10%;
+    margin-bottom: 20px;
+}
+
+.form-title{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-title-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.divider{
+    border: none;
+    display: block;
+    margin: auto;
+    border-top: 5px solid #bf0d3e;
+    width: 80%;
+}
+
+@media only screen and (max-width: 550px) {
+    iframe {
+        width: 100%;
+    }
+}
+
+
+@media only screen and (min-height: 800px) {
+    iframe {
+        height: 700px;
+    }
+}
+
+@media only screen and (max-height: 670px) {
+    iframe {
+        height: 450px;
+    }
+}
+
+@media only screen and (max-height: 600px) {
+    iframe {
+        height: 420px;
+    }
+}

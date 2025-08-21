@@ -1,0 +1,23 @@
+.conference-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.divider{
+    border: none;
+    display: block;
+    margin: auto;
+    border-top: 5px solid #bf0d3e;
+    width: 80%;
+}
+
+.conference-details {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
