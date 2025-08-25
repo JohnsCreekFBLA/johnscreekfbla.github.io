@@ -4,4 +4,5 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   integrations: [react()],
+  site: "https://johnscreekfbla.github.io/"
 });
