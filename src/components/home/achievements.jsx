@@ -13,7 +13,7 @@ const Achievements = () => {
         <div class="achievement-container">
             <div class="achievements-item">
                 <div class="achievements-number">
-                    350+
+                    425+
                 </div>
                 <div class="achievements-text">
                     Members
