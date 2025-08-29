@@ -1,0 +1,1 @@
+import{default as e}from"./footer.DoNXJGUG.js";import"./jsx-runtime.D_zvdyIk.js";import"./iconBase.BO9dh9lf.js";import"./index.BJfUAbRs.js";/* empty css                          */export{e as default};

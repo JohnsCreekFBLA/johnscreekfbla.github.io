@@ -27,7 +27,7 @@ const Footer = () => {
                             <SiLinktree className="footer-social-icon" size={24}/>
                             Linktree
                         </a>
-                        <a href="https://www.instagram.com/johnscreekfbla" class="footer-social-link" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.instagram.com/jchsfbla/?hl=en" class="footer-social-link" target="_blank" rel="noopener noreferrer">
                             <FaInstagram className="footer-social-icon" size={24} />
                             Instagram
                         </a>

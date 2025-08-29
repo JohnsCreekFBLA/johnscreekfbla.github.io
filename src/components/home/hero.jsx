@@ -9,7 +9,7 @@ const Hero = () => {
                 <span className="hero-title">JOHNS CREEK</span>
                 <span className="hero-title-fbla">FBLA</span>
                 <div className="button-container">
-                    <a href="/about" className="hero-button">Join Now</a>
+                    <a href="/forms/membership" className="hero-button">Join Now</a>
                 </div>
             </div>
         </section>

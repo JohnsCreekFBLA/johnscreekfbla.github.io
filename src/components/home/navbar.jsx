@@ -17,7 +17,7 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-    <img src="../images/topNavLogo.svg" className="navbar-logo" alt="logo" />
+    <img src="/images/topNavLogo.svg" className="navbar-logo" alt="logo" />
       <button
         className="navbar-hamburger"
         onClick={() => setOpen(!open)}
@@ -51,6 +51,12 @@ const NavBar = () => {
                     <a href="/conferences/RLC" onClick={handleLinkClick}>Regional Leadership Conference</a>
                     <a href="/conferences/SLC" onClick={handleLinkClick}>State Leadership Conference</a>
                     <a href="/conferences/NLC" onClick={handleLinkClick}>National Leadership Conference</a>
+                </div>
+            </li>
+            <li className="dropdown">
+                <a>Meetings</a>
+                <div className="dropdown-content">
+                    <a href="/meetings/august">August Meeting</a>
                 </div>
             </li>
             <li className="dropdown">

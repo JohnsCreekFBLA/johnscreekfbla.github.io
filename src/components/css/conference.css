@@ -21,3 +21,22 @@
     width: 80%;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
+
+.meetingTitle{
+    text-align: center;
+}
+
+#title{
+    font-size: 75px;
+}
+
+iframe {
+    position: relative;
+    width: 80%;
+    height: 700px;
+    margin-top: clamp(10px, 5%, 30px);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    left:10%;
+    margin-bottom: 20px;
+}
