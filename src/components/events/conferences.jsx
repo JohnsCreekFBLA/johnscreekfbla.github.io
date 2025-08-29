@@ -3,6 +3,18 @@ import '../css/conference.css';
 
 const Conferences = ({ conferences }) => {
     const info = {
+
+        rally: {
+            title: "Fall Motivational Rally",
+            about: "Students get to spend the day at Six Flags Over Georgia",
+            Competitions: "None",
+            Events: "None",
+            date: "September 29, 2025",
+            location: "Six Flags Over Georgia, Austell, GA",
+            price: "$95 per person (includes meals, and ticket)",
+            registration: "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAWIq2VxUMUpHMlI2UzY1NTdEUUxTUExaRERSVVI3Sy4u",
+            link: "https://osp.osmsinc.com/FultonGA/BVModules/ProductTemplates/Bvc2013/Product.aspx?productid=EN713-1505"
+        },
         fall: {
             title: "Fall Leadership Conference",
             about: "The 2024 overnight Two-Day Fall Leadership Conference for high school chapters will be held November 19-20 in Athens at the beautiful Classic Center. You can expect a dynamic general session, informative leadership training workshops, the always thrilling Battle of the Chapters, the opportunity to participate in one of the world’s largest MONOPOLY® Tournaments, and many other activities.",
