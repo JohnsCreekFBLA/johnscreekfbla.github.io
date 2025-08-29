@@ -23,7 +23,7 @@ const Conferences = ({ conferences }) => {
             date: "November 19-20, 2024",
             location: "The Classic Center, Athens, GA",
             price: "$150 per person (includes meals, lodging, and materials)",
-            registration: "Registration will open in September 2024.",
+            registration: "Registration will open in September 2025.",
             link: "placeholder"
         },
         region: {
@@ -34,7 +34,7 @@ const Conferences = ({ conferences }) => {
             date: "February 2025 (exact dates TBA)",
             location: "TBA",
             price: "$50 per person (includes meals and materials)",
-            registration: "Registration will open in December 2024.",
+            registration: "Registration will open in December 2025.",
             link: "placeholder"
         },
         state: {
@@ -45,7 +45,7 @@ const Conferences = ({ conferences }) => {
             date: "April 2025 (exact dates TBA)",
             location: "TBA",
             price: "$100 per person (includes meals, lodging, and materials)",
-            registration: "Registration will open in February 2025.",
+            registration: "Registration will open in February 2026.",
             link: "placeholder"
 
         },
@@ -57,7 +57,7 @@ const Conferences = ({ conferences }) => {
             date: "June 2025 (exact dates TBA)",
             location: "Nashville, TN",
             price: "$1,200 per person (includes meals, lodging, transportation, and materials)",
-            registration: "Registration will open in March 2025.",
+            registration: "Registration will open in March 2026.",
             link: "placeholder"
         }
     };
