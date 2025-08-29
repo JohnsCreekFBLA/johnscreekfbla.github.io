@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import '../css/conference.css';
 
 
@@ -18,8 +20,10 @@ const Conferences = ({ conferences }) => {
         fall: {
             title: "Fall Leadership Conference",
             about: "The 2025 overnight Two-Day Fall Leadership Conference for high school chapters will be held November 18-19 in Athens at the beautiful Classic Center. You can expect a dynamic general session, informative leadership training workshops, the always thrilling Battle of the Chapters, the opportunity to participate in one of the world’s largest MONOPOLY® Tournaments, and many other activities.",
+            about: "The 2025 overnight Two-Day Fall Leadership Conference for high school chapters will be held November 18-19 in Athens at the beautiful Classic Center. You can expect a dynamic general session, informative leadership training workshops, the always thrilling Battle of the Chapters, the opportunity to participate in one of the world’s largest MONOPOLY® Tournaments, and many other activities.",
             Competitions: "Competitions at the Fall Leadership Conference include the Annual Business Plan Competition, the Elevator Pitch Competition, and the MONOPOLY® Tournament.",
             Events: "Broadcast Journalism, Business Ethics, Client Service, Impromptu Speaking, Introduction to Social Media Strategy, Job Interview and Social Media Strategies",
+            date: "November 18-19, 2025",
             date: "November 18-19, 2025",
             location: "The Classic Center, Athens, GA",
             price: "TBA",
@@ -58,9 +62,20 @@ const Conferences = ({ conferences }) => {
             location: "San Antonio, TX",
             price: "TBA",
             registration: "Registration will open in March 2026.",
+            date: "June 20-July 2, 2026",
+            location: "San Antonio, TX",
+            price: "TBA",
+            registration: "Registration will open in March 2026.",
             link: "placeholder"
         }
     };
+
+    const imgs = [
+        <img src="../images/eventImgs/rallyOne.png" alt="Slide 1" className="slides"/>,
+        <img src="../images/eventImgs/rallyTwo.png" alt="Slide 2"className="slides" />,
+        <img src="../images/eventImgs/rallyThree.png" alt="Slide 3" className="slides"/>,
+        <img src="../images/eventImgs/rallyFour.png" alt="Slide 4"className="slides" />
+    ];
 
     const selected = info[conferences];
 
@@ -68,21 +83,38 @@ const Conferences = ({ conferences }) => {
         return <div className="conference-container">Conference not found.</div>;
     }
 
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const handleClick = (offset) => {
+        let newIndex = activeIndex + offset;
+        if (newIndex < 0) newIndex = slides.length - 1;
+        if (newIndex >= slides.length) newIndex = 0;
+        setActiveIndex(newIndex);
+        <style>
+            
+        </style>
+    };
+
     return (
         <div className="conference-container">
             <div className="conference-title">
                 <h1 className="title-text">{selected.title}</h1>
             </div>
             <hr className="divider"></hr>
+            
             <div className="conference-details">
+                <div className="imageCarousel">
+                    <button class="prev" onClick={() => handleClick(-1)} ><RxCaretLeft size="28"/></button>
+                        {imgs[activeIndex]}
+                    <button class="next" onClick={() => handleClick(1)}><RxCaretRight size="28"/></button>
+                </div>
+
                 <p><strong>About:</strong> {selected.about}</p>
-                <p><strong>Competitions:</strong> {selected.Competitions}</p>
-                <p><strong>Events:</strong> {selected.Events}</p>
                 <p><strong>Date:</strong> {selected.date}</p>
                 <p><strong>Location:</strong> {selected.location}</p>
                 <p><strong>Price:</strong> {selected.price}</p>
-                <p><strong>Registration:</strong>{" "}{selected.registration.startsWith("http") ? <a href={selected.registration} target="_blank" rel="noopener noreferrer">Link</a> : selected.registration}</p>
-                <a href={selected.link} target="_blank" rel="noopener noreferrer">Payment/More Information</a>
+                <a href={selected.registration} target="_blank">Registration Form<br></br></a>
+                <a href={selected.link} target="_blank" rel="noopener noreferrer">OSP Link</a>
             </div>
         </div>
     );
