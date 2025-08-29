@@ -81,7 +81,7 @@ const Conferences = ({ conferences }) => {
                 <p><strong>Date:</strong> {selected.date}</p>
                 <p><strong>Location:</strong> {selected.location}</p>
                 <p><strong>Price:</strong> {selected.price}</p>
-                <p><strong>Registration:</strong> {" "} <a href={selected.registration} target="_blank" rel="noopener noreferrer"> Link </a></p>
+                <p><strong>Registration:</strong> {" "} {selected.registration.startsWith("http")} ? (<a href={selected.registration} target="_blank" rel="noopener noreferrer"> Link </a>) : (selected.registration)}</p>
                 <a href={selected.link} target="_blank" rel="noopener noreferrer">Payment/More Information</a>
             </div>
         </div>
