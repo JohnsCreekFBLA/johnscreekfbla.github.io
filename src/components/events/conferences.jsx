@@ -71,10 +71,10 @@ const Conferences = ({ conferences }) => {
     };
 
     const imgs = [
-        <img src="../images/eventImgs/rallyOne.png" alt="Slide 1" className="slides"/>,
-        <img src="../images/eventImgs/rallyTwo.png" alt="Slide 2"className="slides" />,
-        <img src="../images/eventImgs/rallyThree.png" alt="Slide 3" className="slides"/>,
-        <img src="../images/eventImgs/rallyFour.png" alt="Slide 4"className="slides" />
+        <img src="/images/eventImgs/rallyOne.png" alt="Slide 1" className="slides"/>,
+        <img src="/images/eventImgs/rallyTwo.png" alt="Slide 2"className="slides" />,
+        <img src="/images/eventImgs/rallyThree.png" alt="Slide 3" className="slides"/>,
+        <img src="/images/eventImgs/rallyFour.png" alt="Slide 4"className="slides" />
     ];
 
     const selected = info[conferences];
