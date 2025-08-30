@@ -6,14 +6,35 @@ import Navbar from '../components/home/navbar.jsx';
 import WWWD from '../components/home/whatWeDo.jsx';
 ---
 
+<html lang="en">
 <head>
   <title>FBLA Website</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      width: 100%;
+    }
+    
+    body {
+      font-family: 'Oswald', sans-serif;
+      line-height: 1.6;
+    }
+  </style>
 </head>
-<Navbar client:load//>
-<Hero client:load//>
-<WWWD client:load/>
-<Achievements client:load/>
-<Footer client:load/>
+<body>
+  <Navbar client:load/>
+  <Hero client:load/>
+  <WWWD client:load/>
+  <Achievements client:load/>
+  <Footer client:load/>
+</body>
+</html>
 

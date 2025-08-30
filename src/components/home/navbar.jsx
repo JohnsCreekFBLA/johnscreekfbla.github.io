@@ -4,23 +4,33 @@ import '../css/navbar.css';
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   // Close menu when a link is clicked (optional, for better UX)
-  const handleLinkClick = () => setOpen(false);
+  const handleLinkClick = () => {
+    setOpen(false);
+    setActiveDropdown(null);
+  };
 
-    // Handle click on the hamburger menu
-    const handleDropDownClick = (e) => {
-        e.preventDefault();
-        const dropdown = e.currentTarget.querySelector('.dropdown-content');
-        dropdown.classList.toggle('show');
-    };
+  // Handle dropdown toggle on mobile
+  const handleDropdownClick = (e, dropdownName) => {
+    e.preventDefault();
+    if (activeDropdown === dropdownName) {
+      setActiveDropdown(null);
+    } else {
+      setActiveDropdown(dropdownName);
+    }
+  };
 
   return (
     <nav className="navbar">
     <img src="/images/topNavLogo.svg" className="navbar-logo" alt="logo" />
       <button
         className="navbar-hamburger"
-        onClick={() => setOpen(!open)}
+        onClick={() => {
+          setOpen(!open);
+          setActiveDropdown(null);
+        }}
         aria-label="Toggle menu"
         aria-expanded={open}
       >
@@ -30,21 +40,21 @@ const NavBar = () => {
             <li>
                 <a href="/" onClick={handleLinkClick}>Home</a>
             </li>
-            <li className="dropdown">
-                <a>About</a>
+            <li className={`dropdown${activeDropdown === 'about' ? ' active' : ''}`}>
+                <a onClick={(e) => handleDropdownClick(e, 'about')}>About</a>
                 <div className="dropdown-content">
                     <a href="/officer" onClick={handleLinkClick}>Officer Team 25-26</a>
                 </div>
             </li>
-            <li className="dropdown">
-                <a>Forms & Payments</a>
+            <li className={`dropdown${activeDropdown === 'forms' ? ' active' : ''}`}>
+                <a onClick={(e) => handleDropdownClick(e, 'forms')}>Forms & Payments</a>
                 <div className="dropdown-content">
-                    <a href="https://osp.osmsinc.com/FultonGA/BVModules/ProductTemplates/Bvc2013/Product.aspx?productid=EN713-1482" target="_blank">Early Bird Membership Payment</a>
-                    <a href="/forms/membership">Membership Form</a>
+                    <a href="https://osp.osmsinc.com/FultonGA/BVModules/ProductTemplates/Bvc2013/Product.aspx?productid=EN713-1482" target="_blank" onClick={handleLinkClick}>Early Bird Membership Payment</a>
+                    <a href="/forms/membership" onClick={handleLinkClick}>Membership Form</a>
                 </div>
             </li>
-            <li className="dropdown">
-                <a href="/contact" onClick={handleDropDownClick}>Events</a>
+            <li className={`dropdown${activeDropdown === 'events' ? ' active' : ''}`}>
+                <a onClick={(e) => handleDropdownClick(e, 'events')}>Events</a>
                 <div className="dropdown-content">
                     <a href="/calendar" onClick={handleLinkClick}>Calendar</a>
                     <a href="/conferences/FMR" onClick={handleLinkClick}>Fall Motivational Rally</a>
@@ -54,17 +64,17 @@ const NavBar = () => {
                     <a href="/conferences/NLC" onClick={handleLinkClick}>National Leadership Conference</a>
                 </div>
             </li>
-            <li className="dropdown">
-                <a>Meetings</a>
+            <li className={`dropdown${activeDropdown === 'meetings' ? ' active' : ''}`}>
+                <a onClick={(e) => handleDropdownClick(e, 'meetings')}>Meetings</a>
                 <div className="dropdown-content">
-                    <a href="/meetings/august">August Meeting</a>
+                    <a href="/meetings/august" onClick={handleLinkClick}>August Meeting</a>
                 </div>
             </li>
-            <li className="dropdown">
-                <a>Resources</a>
+            <li className={`dropdown${activeDropdown === 'resources' ? ' active' : ''}`}>
+                <a onClick={(e) => handleDropdownClick(e, 'resources')}>Resources</a>
                 <div className="dropdown-content">
-                    <a href="https://docs.google.com/spreadsheets/d/13dLgdql_YYl3mGrPZG3ihjKP-0tp0xoPvKiTGEF-GZ4/edit?usp=sharing" target="_blank">Membership Point Tracker</a>
-                    <a href="https://georgiafbla.org/high-school-competitive-events/" target="_blank">Georgia FBLA Website</a>
+                    <a href="https://docs.google.com/spreadsheets/d/13dLgdql_YYl3mGrPZG3ihjKP-0tp0xoPvKiTGEF-GZ4/edit?usp=sharing" target="_blank" onClick={handleLinkClick}>Membership Point Tracker</a>
+                    <a href="https://georgiafbla.org/high-school-competitive-events/" target="_blank" onClick={handleLinkClick}>Georgia FBLA Website</a>
                 </div>
             </li>
         </ul>

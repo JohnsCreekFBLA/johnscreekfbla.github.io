@@ -13,6 +13,7 @@ body {
   color: black;
   position: relative;
   padding-right: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .navbar-links a {
@@ -31,6 +32,7 @@ body {
   list-style: none;
   padding-right: 50px;
   margin: 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 /* Show dropdown on hover */
@@ -49,14 +51,15 @@ body {
 
 /* Style dropdown links */
 .dropdown-content a {
-  color: #fff;
+  color: #333;
   padding: 12px 15px;
   display: block;
   text-decoration: none;
+  font-size: 0.9rem;
 }
 
 .dropdown-content a:hover {
-  background: #fff;
+  background: #f5f5f5;
 }
 
 .navbar-logo {
@@ -71,6 +74,13 @@ body {
   border: none;
   color: black;
   cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.navbar-hamburger:hover {
+  background-color: #f5f5f5;
 }
 
 .navbar-links {
@@ -104,22 +114,95 @@ body {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 0 1rem;
+    min-height: 80px;
+  }
+  
+  .navbar-logo {
+    width: 150px;
+    height: 60px;
+    padding-left: 0;
+  }
+  
   .navbar-hamburger {
     display: block;
   }
+  
   .navbar-links {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 64px;
-    right: 1rem;
+    top: 100%;
+    left: 0;
+    right: 0;
     background: #fff;
     padding: 1rem;
-    border-radius: 8px;
+    border-radius: 0 0 8px 8px;
     z-index: 100;
-    width: 150px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
   }
+  
   .navbar-links.open {
     display: flex;
+  }
+  
+  .navbar-links li {
+    margin: 0.5rem 0;
+  }
+  
+  .navbar-links li a {
+    font-size: 1.1rem;
+    padding: 0.75rem 0;
+    display: block;
+  }
+  
+  /* Mobile dropdown styles */
+  .dropdown {
+    width: 100%;
+    padding-right: 0;
+  }
+  
+  .dropdown > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+  }
+  
+  .dropdown > a::after {
+    content: '▼';
+    font-size: 0.8rem;
+    transition: transform 0.2s;
+  }
+  
+  .dropdown.active > a::after {
+    transform: rotate(180deg);
+  }
+  
+  .dropdown-content {
+    position: static;
+    display: none;
+    background: #f8f8f8;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+    border-radius: 4px;
+    box-shadow: none;
+    border-left: 3px solid #007bff;
+  }
+  
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content a {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    color: #333;
+  }
+  
+  .dropdown-content a:hover {
+    background: #e9ecef;
   }
 }
