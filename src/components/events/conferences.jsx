@@ -19,15 +19,14 @@ const Conferences = ({ conferences }) => {
         },
         fall: {
             title: "Fall Leadership Conference",
-            about: "The 2025 overnight Two-Day Fall Leadership Conference for high school chapters will be held November 18-19 in Athens at the beautiful Classic Center. You can expect a dynamic general session, informative leadership training workshops, the always thrilling Battle of the Chapters, the opportunity to participate in one of the world’s largest MONOPOLY® Tournaments, and many other activities.",
+            note: "View Meeting Slides in Meetings Tab",
             about: "The 2025 overnight Two-Day Fall Leadership Conference for high school chapters will be held November 18-19 in Athens at the beautiful Classic Center. You can expect a dynamic general session, informative leadership training workshops, the always thrilling Battle of the Chapters, the opportunity to participate in one of the world’s largest MONOPOLY® Tournaments, and many other activities.",
             Competitions: "Competitions at the Fall Leadership Conference include the Annual Business Plan Competition, the Elevator Pitch Competition, and the MONOPOLY® Tournament.",
             Events: "Broadcast Journalism, Business Ethics, Client Service, Impromptu Speaking, Introduction to Social Media Strategy, Job Interview and Social Media Strategies",
             date: "November 18-19, 2025",
-            date: "November 18-19, 2025",
             location: "The Classic Center, Athens, GA",
             price: "TBA",
-            registration: "Registration will open in September 2025.",
+            registration: "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAWIq2VxUOVdHVkxWNkZZTzdJT1lSQU5QQVo2MjQyNC4u",
             link: "placeholder"
         },
         region: {
@@ -103,11 +102,14 @@ const Conferences = ({ conferences }) => {
             <hr className="divider"></hr>
             
             <div className="conference-details">
-                <div className="imageCarousel">
+                {/* <div className="imageCarousel">
                     <button class="prev" onClick={() => handleClick(-1)} ><RxCaretLeft size="28"/></button>
                         {imgs[activeIndex]}
                     <button class="next" onClick={() => handleClick(1)}><RxCaretRight size="28"/></button>
-                </div>
+                </div> */}
+                {
+                    <p><strong>{selected.note}</strong></p>
+                }
 
                 <p><strong>About:</strong> {selected.about}</p>
                 <p><strong>Date:</strong> {selected.date}</p>

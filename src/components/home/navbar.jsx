@@ -68,6 +68,7 @@ const NavBar = () => {
                 <a onClick={(e) => handleDropdownClick(e, 'meetings')}>Meetings</a>
                 <div className="dropdown-content">
                     <a href="/meetings/august" onClick={handleLinkClick}>August Meeting</a>
+                    <a href="/meetings/flc" onClick={handleLinkClick}>FLC Interest Meeting</a>
                 </div>
             </li>
             <li className={`dropdown${activeDropdown === 'resources' ? ' active' : ''}`}>
