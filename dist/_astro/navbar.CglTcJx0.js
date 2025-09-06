@@ -1,1 +1,0 @@
-import{default as f}from"./navbar.VaoXfpLc.js";import"./jsx-runtime.D_zvdyIk.js";import"./index.BJfUAbRs.js";import"./index.COAyjvzO.js";import"./iconBase.BO9dh9lf.js";/* empty css                          */export{f as default};
