@@ -70,10 +70,10 @@ const Conferences = ({ conferences }) => {
     };
 
     const imgs = [
-        <img src="/eventImgs/rallyOne.png" alt="Slide 1" className="slides"/>,
-        <img src="/eventImgs/rallyTwo.png" alt="Slide 2" className="slides" />,
-        <img src="/eventImgs/rallyThree.png" alt="Slide 3" className="slides"/>,
-        <img src="/eventImgs/rallyFour.png" alt="Slide 4" className="slides" />
+        <img src="/eventImgs/rallyOne.png" alt="Slide 1" className="slides" key={0}/>,
+        <img src="/eventImgs/rallyTwo.png" alt="Slide 2" className="slides" key={1}/>,
+        <img src="/eventImgs/rallyThree.png" alt="Slide 3" className="slides" key={2}/>,
+        <img src="/eventImgs/rallyFour.png" alt="Slide 4" className="slides" key={3}/>
     ];
 
     const selected = info[conferences];
@@ -86,12 +86,9 @@ const Conferences = ({ conferences }) => {
 
     const handleClick = (offset) => {
         let newIndex = activeIndex + offset;
-        if (newIndex < 0) newIndex = slides.length - 1;
-        if (newIndex >= slides.length) newIndex = 0;
+        if (newIndex < 0) newIndex = imgs.length - 1;
+        if (newIndex >= imgs.length) newIndex = 0;
         setActiveIndex(newIndex);
-        <style>
-            
-        </style>
     };
 
     return (
@@ -100,22 +97,20 @@ const Conferences = ({ conferences }) => {
                 <h1 className="title-text">{selected.title}</h1>
             </div>
             <hr className="divider"></hr>
-            
             <div className="conference-details">
-                {/* <div className="imageCarousel">
-                    <button class="prev" onClick={() => handleClick(-1)} ><RxCaretLeft size="28"/></button>
+                <div className="imageCarousel">
+                    <button className="prev" onClick={() => handleClick(-1)} ><RxCaretLeft size="28"/></button>
                         {imgs[activeIndex]}
-                    <button class="next" onClick={() => handleClick(1)}><RxCaretRight size="28"/></button>
-                </div> */}
-                {
+                    <button className="next" onClick={() => handleClick(1)}><RxCaretRight size="28"/></button>
+                </div>
+                {conferences === "fall" && selected.note && (
                     <p><strong>{selected.note}</strong></p>
-                }
-
+                )}
                 <p><strong>About:</strong> {selected.about}</p>
                 <p><strong>Date:</strong> {selected.date}</p>
                 <p><strong>Location:</strong> {selected.location}</p>
                 <p><strong>Price:</strong> {selected.price}</p>
-                <a href={selected.registration} target="_blank">Registration Form<br></br></a>
+                <a href={selected.registration} target="_blank">Registration Form<br /></a>
                 <a href={selected.link} target="_blank" rel="noopener noreferrer">OSP Link</a>
             </div>
         </div>
