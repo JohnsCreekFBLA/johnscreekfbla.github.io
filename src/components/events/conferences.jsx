@@ -1,7 +1,33 @@
-import { useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import '../css/conference.css';
 
+const defaultCarousel = [
+    { src: "/eventImgs/rallyOne.png", alt: "Fall rally general session" },
+    { src: "/eventImgs/rallyTwo.png", alt: "Students at the fall rally" },
+    { src: "/eventImgs/rallyThree.png", alt: "FBLA members at rally events" },
+    { src: "/eventImgs/rallyFour.png", alt: "Group photo from rally" }
+];
+
+const imageSets = {
+    rally: defaultCarousel,
+    fall: defaultCarousel,
+    region: [
+        { src: "/eventImgs/RLC/RLC_2025/20250128_163422.jpg", alt: "RLC 2025 general session" },
+        { src: "/eventImgs/RLC/RLC_2025/IMG_9383.jpeg", alt: "RLC 2025 competitors prepping" },
+        { src: "/eventImgs/RLC/RLC_2025/IMG_9867.JPG", alt: "RLC 2025 awards ceremony" },
+        { src: "/eventImgs/RLC/RLC_2025/IMG_9868.JPG", alt: "RLC 2025 chapter group photo" }
+    ],
+    state: [
+        { src: "/eventImgs/SLC/SLC_2024-25/100_0313.JPG", alt: "SLC 2024-25 opening session" },
+        { src: "/eventImgs/SLC/SLC_2024-25/100_0314.JPG", alt: "SLC 2024-25 team workshop" },
+        { src: "/eventImgs/SLC/SLC_2024-25/100_0315.JPG", alt: "SLC 2024-25 keynote address" },
+        { src: "/eventImgs/SLC/SLC_2024-25/100_0316.JPG", alt: "SLC 2024-25 chapter group photo" },
+        { src: "/eventImgs/SLC/SLC_2024-25/100_0317.JPG", alt: "SLC 2024-25 award recognition" },
+        { src: "/eventImgs/SLC/SLC_2024-25/100_0318.JPG", alt: "SLC 2024-25 networking event" }
+    ],
+    national: defaultCarousel
+};
 
 const Conferences = ({ conferences }) => {
     const info = {
@@ -69,14 +95,10 @@ const Conferences = ({ conferences }) => {
         }
     };
 
-    const imgs = [
-        <img src="/eventImgs/rallyOne.png" alt="Slide 1" className="slides" key={0}/>,
-        <img src="/eventImgs/rallyTwo.png" alt="Slide 2" className="slides" key={1}/>,
-        <img src="/eventImgs/rallyThree.png" alt="Slide 3" className="slides" key={2}/>,
-        <img src="/eventImgs/rallyFour.png" alt="Slide 4" className="slides" key={3}/>
-    ];
-
     const selected = info[conferences];
+    const activeImages = imageSets[conferences] ?? defaultCarousel;
+    const hasImages = activeImages.length > 0;
+    const disableNav = activeImages.length <= 1;
 
     if (!selected) {
         return <div className="conference-container">Conference not found.</div>;
@@ -84,12 +106,26 @@ const Conferences = ({ conferences }) => {
 
     const [activeIndex, setActiveIndex] = useState(0);
 
+    useEffect(() => {
+        setActiveIndex(0);
+    }, [conferences]);
+
+    useEffect(() => {
+        if (activeIndex >= activeImages.length) {
+            setActiveIndex(0);
+        }
+    }, [activeImages.length, activeIndex]);
+
     const handleClick = (offset) => {
+        if (!hasImages) return;
         let newIndex = activeIndex + offset;
-        if (newIndex < 0) newIndex = imgs.length - 1;
-        if (newIndex >= imgs.length) newIndex = 0;
+        const total = activeImages.length;
+        if (newIndex < 0) newIndex = total - 1;
+        if (newIndex >= total) newIndex = 0;
         setActiveIndex(newIndex);
     };
+
+    const currentImage = hasImages ? activeImages[activeIndex] : null;
 
     return (
         <div className="conference-container">
@@ -98,16 +134,18 @@ const Conferences = ({ conferences }) => {
             </div>
             <hr className="divider"></hr>
             <div className="conference-details">
-                <div className="imageCarousel">
-                    <button className="prev" onClick={() => handleClick(-1)} ><RxCaretLeft size="28"/></button>
-                        {imgs[activeIndex]}
-                    <button className="next" onClick={() => handleClick(1)}><RxCaretRight size="28"/></button>
-                </div>
+                {hasImages && (
+                    <div className="imageCarousel">
+                        <button className="prev" onClick={() => handleClick(-1)} disabled={disableNav}><RxCaretLeft size="28"/></button>
+                        {currentImage && <img src={currentImage.src} alt={currentImage.alt} className="slides" />}
+                        <button className="next" onClick={() => handleClick(1)} disabled={disableNav}><RxCaretRight size="28"/></button>
+                    </div>
+                )}
                 {conferences === "fall" && selected.note && (
                     <p><strong>{selected.note}</strong></p>
                 )}
                 <p><strong>About:</strong> {selected.about}</p>
-                <p><strong>Date:</strong> {selected.date}</p>
+               <p><strong>Date:</strong> {selected.date}</p>
                 <p><strong>Location:</strong> {selected.location}</p>
                 <p><strong>Price:</strong> {selected.price}</p>
                 <a href={selected.registration} target="_blank">Registration Form<br /></a>
