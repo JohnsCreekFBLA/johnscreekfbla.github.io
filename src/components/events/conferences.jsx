@@ -62,7 +62,7 @@ const Conferences = ({ conferences }) => {
             Events: "Broadcast Journalism, Business Ethics, Client Service, Impromptu Speaking, Introduction to Social Media Strategy, Job Interview and Social Media Strategies",
             date: "February 2026 (exact dates TBA)",
             location: "TBA",
-            price: "$50 per person (includes meals and materials)",
+            price: "$35 per person (includes meals and materials)",
             registration: "Registration will open in December 2025.",
             link: "placeholder"
         },
