@@ -31,7 +31,6 @@ const imageSets = {
 
 const Conferences = ({ conferences }) => {
     const info = {
-
         rally: {
             title: "Fall Motivational Rally",
             about: "Students get to spend the day at Six Flags Over Georgia",
@@ -63,8 +62,8 @@ const Conferences = ({ conferences }) => {
             date: "February 2026 (exact dates TBA)",
             location: "TBA",
             price: "$35 per person (includes meals and materials)",
-            registration: "Registration will open in December 2025.",
-            link: "placeholder"
+            registration: "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAWIq2VxUNTFXV1lUQUpSUENBMDZaOExTTFJNRVlRTi4u",
+            link: "https://osp.osmsinc.com/FultonGA/BVModules/ProductTemplates/Bvc2013/Product.aspx?productid=EN713-1585"
         },
         state: {
             title: "State Leadership Conference",
