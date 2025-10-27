@@ -51,6 +51,7 @@ const NavBar = () => {
                 <div className="dropdown-content">
                     <a href="https://osp.osmsinc.com/FultonGA/BVModules/ProductTemplates/Bvc2013/Product.aspx?productid=EN713-1482" target="_blank" onClick={handleLinkClick}>Early Bird Membership Payment</a>
                     <a href="/forms/membership" onClick={handleLinkClick}>Membership Form</a>
+                    <a href="/forms/rlc" onClick={handleLinkClick}>RLC Sign Up Form</a>
                 </div>
             </li>
             <li className={`dropdown${activeDropdown === 'events' ? ' active' : ''}`}>
@@ -70,6 +71,7 @@ const NavBar = () => {
                 <div className="dropdown-content">
                     <a href="/meetings/august" onClick={handleLinkClick}>August Meeting</a>
                     <a href="/meetings/flc" onClick={handleLinkClick}>FLC Interest Meeting</a>
+                    <a href="/meetings/october" onClick={handleLinkClick}>October Meeting</a>
                 </div>
             </li>
             <li className={`dropdown${activeDropdown === 'resources' ? ' active' : ''}`}>

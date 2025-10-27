@@ -11,6 +11,11 @@ const Forms = ({ form }) => {
             href: "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAWIq2VxUNlpGUUhIRktBWklaNjlDOEhKREk0NUZDMy4u",
             text: "Membership Form",
             target: "_blank"
+        },
+        rlc: {
+            href: "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAWIq2VxUNTFXV1lUQUpSUENBMDZaOExTTFJNRVlRTi4u",
+            text: "RLC Sign Up Form",
+            target: "_blank"
         }
         // Add more forms as needed
     };
