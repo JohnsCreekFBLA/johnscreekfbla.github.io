@@ -1,0 +1,14 @@
+---
+import Meetings from '../../components/events/meeting.jsx';
+import Footer from '../../components/home/footer';
+import Navbar from '../../components/home/navbar';
+---
+
+<head>
+    <title>FBLA Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+</head>
+<Navbar client:load/>
+<Meetings meetings="october" client:load/>
+<Footer client:load/>
