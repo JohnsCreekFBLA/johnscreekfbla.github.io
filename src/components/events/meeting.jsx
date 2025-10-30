@@ -15,6 +15,12 @@ const Meetings = ({ meetings }) => {
             date: "September 2, 2025",
             link: "/meetings/FBLA_FLC_Interest_Meeting.pdf"
         },
+        september: {
+            title: "September Chapter Meeting Slides",
+            about: "September Chapter Meeting",
+            date: "September 23, 2025",
+            link: "/meetings/FBLA_Sep_Meeting.pdf"
+        },
         october: {
             title: "October Chapter Meeting Slides",
             about: "October Chapter Meeting",
