@@ -71,6 +71,7 @@ const NavBar = () => {
                 <div className="dropdown-content">
                     <a href="/meetings/august" onClick={handleLinkClick}>August Meeting</a>
                     <a href="/meetings/flc" onClick={handleLinkClick}>FLC Interest Meeting</a>
+                    <a href="/meetings/september" onClick={handleLinkClick}>September Meeting</a>
                     <a href="/meetings/october" onClick={handleLinkClick}>October Meeting</a>
                 </div>
             </li>
