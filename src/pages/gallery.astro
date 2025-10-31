@@ -1,0 +1,51 @@
+---
+import Navbar from '../components/home/navbar.jsx';
+import Footer from '../components/home/footer.jsx';
+import conferenceGallery from '../data/conferenceGallery.js';
+import '../components/css/gallery.css';
+---
+
+<html lang="en">
+<head>
+  <title>FBLA Conference Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      font-family: 'Oswald', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <Navbar client:load />
+  <main class="gallery-page">
+    <header class="gallery-heading">
+      <h1>Conference Photo Gallery</h1>
+      <p class="gallery-intro">
+        Browse highlights from our chapter's conferences. Each section is labeled with the event name and location
+        so you can quickly find images from the trip you're interested in.
+      </p>
+    </header>
+    {conferenceGallery.map((section) => (
+      <section class="gallery-section" id={section.id}>
+        <div class="gallery-section-header">
+          <h2>{section.title}</h2>
+          {section.label && <p>{section.label}</p>}
+        </div>
+        <div class="gallery-grid">
+          {section.images.map((image) => (
+            <figure class="gallery-card">
+              <img src={image.src} alt={image.alt} loading="lazy" />
+              {image.caption && <figcaption>{image.caption}</figcaption>}
+            </figure>
+          ))}
+        </div>
+      </section>
+    ))}
+  </main>
+  <Footer client:load />
+</body>
+</html>

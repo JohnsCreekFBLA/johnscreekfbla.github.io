@@ -64,6 +64,7 @@ const NavBar = () => {
                     <a href="/conferences/RLC" onClick={handleLinkClick}>Regional Leadership Conference</a>
                     <a href="/conferences/SLC" onClick={handleLinkClick}>State Leadership Conference</a>
                     <a href="/conferences/NLC" onClick={handleLinkClick}>National Leadership Conference</a>
+                    <a href="/gallery" onClick={handleLinkClick}>Conference Gallery</a>
                 </div>
             </li>
             <li className={`dropdown${activeDropdown === 'meetings' ? ' active' : ''}`}>
