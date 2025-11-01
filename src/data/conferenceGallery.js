@@ -37,7 +37,7 @@ const conferenceGallery = [
     {
         id: "national",
         title: "National Leadership Conference",
-        label: "San Antonio, TX - June 20-July 2, 2026",
+        label: "Anaheim, CA - June 23-27, 2025",
         images: [
             { src: "/eventImgs/SLC/SLC_2024-25/100_0313.JPG", alt: "National Leadership Conference opening session" },
             { src: "/eventImgs/SLC/SLC_2024-25/100_0314.JPG", alt: "National Leadership Conference workshop" },

@@ -54,8 +54,8 @@ const Conferences = ({ conferences }) => {
             about: "At the National Leadership Conference, members can compete in many events, attend general sessions and keynotes, watch the national officer campaigns, and see national recognitions and competitive event winners. Members who placed in the top 4 for their event at the SLC qualify for the NLC. If members qualify for nationals in multiple events, they can only choose one event to compete in at nationals.",
             Competitions: "Competitions at the National Leadership Conference include the Annual Business Plan Competition, the Elevator Pitch Competition, and the MONOPOLY tournament.",
             Events: "All events offered at SLC, plus Business Financial Plan, Client Service, Coding, Community Service Project, Cyber Security, Digital Video Production, E-Business, Emerging Business Issues, Graphic Design, Mobile Application Development, Network Design, Public Speaking, Sales Presentation, Website Design",
-            date: "June 20-July 2, 2026",
-            location: "San Antonio, TX",
+            date: "June 23-27, 2025",
+            location: "Anaheim, CA",
             price: "TBA",
             registration: "Registration will open in March 2026.",
             link: "placeholder"
