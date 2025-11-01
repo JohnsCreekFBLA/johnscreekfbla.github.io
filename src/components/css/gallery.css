@@ -51,9 +51,6 @@
 }
 
 .gallery-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 12px;
     overflow: hidden;
@@ -70,12 +67,6 @@
     width: 100%;
     height: 220px;
     object-fit: cover;
-}
-
-.gallery-card figcaption {
-    padding: 0.75rem 1rem 1.25rem;
-    font-size: 0.95rem;
-    color: #333;
 }
 
 @media (max-width: 600px) {

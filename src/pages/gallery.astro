@@ -3,6 +3,7 @@ import Navbar from '../components/home/navbar.jsx';
 import Footer from '../components/home/footer.jsx';
 import conferenceGallery from '../data/conferenceGallery.js';
 import '../components/css/gallery.css';
+const sections = conferenceGallery.filter((section) => Array.isArray(section.images) && section.images.length > 0);
 ---
 
 <html lang="en">
@@ -25,11 +26,10 @@ import '../components/css/gallery.css';
     <header class="gallery-heading">
       <h1>Conference Photo Gallery</h1>
       <p class="gallery-intro">
-        Browse highlights from our chapter's conferences. Each section is labeled with the event name and location
-        so you can quickly find images from the trip you're interested in.
+        Browse highlights from our chapter's conferences.
       </p>
     </header>
-    {conferenceGallery.map((section) => (
+    {sections.map((section) => (
       <section class="gallery-section" id={section.id}>
         <div class="gallery-section-header">
           <h2>{section.title}</h2>
@@ -39,7 +39,6 @@ import '../components/css/gallery.css';
           {section.images.map((image) => (
             <figure class="gallery-card">
               <img src={image.src} alt={image.alt} loading="lazy" />
-              {image.caption && <figcaption>{image.caption}</figcaption>}
             </figure>
           ))}
         </div>
