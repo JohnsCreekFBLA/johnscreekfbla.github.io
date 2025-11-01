@@ -34,6 +34,19 @@ const conferenceGallery = [
             { src: "/eventImgs/SLC/SLC_2024-25/IMG_3143.JPG", alt: "State Leadership Conference 2024-25 leadership session" }
         ]
     },
+    {
+        id: "national",
+        title: "National Leadership Conference",
+        label: "San Antonio, TX - June 20-July 2, 2026",
+        images: [
+            { src: "/eventImgs/SLC/SLC_2024-25/100_0313.JPG", alt: "National Leadership Conference opening session" },
+            { src: "/eventImgs/SLC/SLC_2024-25/100_0314.JPG", alt: "National Leadership Conference workshop" },
+            { src: "/eventImgs/SLC/SLC_2024-25/100_0315.JPG", alt: "National Leadership Conference keynote address" },
+            { src: "/eventImgs/SLC/SLC_2024-25/100_0316.JPG", alt: "National Leadership Conference chapter group photo" },
+            { src: "/eventImgs/SLC/SLC_2024-25/100_0317.JPG", alt: "National Leadership Conference awards recognition" },
+            { src: "/eventImgs/SLC/SLC_2024-25/100_0318.JPG", alt: "National Leadership Conference networking event" }
+        ]
+    }
 ];
 
 export default conferenceGallery;
