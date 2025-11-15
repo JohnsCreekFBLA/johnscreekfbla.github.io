@@ -8,7 +8,7 @@ const Forms = ({ form }) => {
             target: "_self"
         },
         membership: {
-            href: "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAWIq2VxUNlpGUUhIRktBWklaNjlDOEhKREk0NUZDMy4u",
+            href: "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAWIq2VxUMFdDSDBTUU83N1lDTUpHUFlZUUw4SkNKNi4u",
             text: "Membership Form",
             target: "_blank"
         },
