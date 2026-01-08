@@ -16,6 +16,21 @@ const Forms = ({ form }) => {
             href: "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAWIq2VxUNTFXV1lUQUpSUENBMDZaOExTTFJNRVlRTi4u",
             text: "RLC Sign Up Form",
             target: "_blank"
+        },
+        slcadvance: {
+            href: "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAWIq2VxUNEdJTTBLRTBLWEVPSFRYODgyNEtFTVExVC4u",
+            text: "SLC Advancing from RLC/FLC Only Form",
+            target: "_blank"
+        },
+        slcteam: {
+            href: "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAWIq2VxUOVFPVUhIVjQ2M0Y1R1VCMjc3NFpYVDMwSy4u",
+            text: "SLC Straight-to-State Presentation Only Form",
+            target: "_blank"
+        },
+        slcindividual: {
+            href: "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAWIq2VxUNEc5Q0wxQ0g3WjZHN0JXTThWVDRLMUxXMi4u",
+            text: "SLC Straight-to-State Individual Testing Form",
+            target: "_blank"
         }
         // Add more forms as needed
     };

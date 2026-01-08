@@ -52,6 +52,9 @@ const NavBar = () => {
                     <a href="https://osp.osmsinc.com/FultonGA/BVModules/ProductTemplates/Bvc2013/Product.aspx?productid=EN713-1482" target="_blank" onClick={handleLinkClick}>Early Bird Membership Payment</a>
                     <a href="/forms/membership" onClick={handleLinkClick}>Membership Form</a>
                     <a href="/forms/rlc" onClick={handleLinkClick}>RLC Sign Up Form</a>
+                    <a href="/forms/slc-advance">SLC Advance from RLC/FLC Form</a>
+                    <a href="/forms/slc-individual">SLC Straight-to-State Testing Only Form</a>
+                    <a href="/forms/slc-team">SLC Straight-to-State Team Only Form</a>
                 </div>
             </li>
             <li className={`dropdown${activeDropdown === 'events' ? ' active' : ''}`}>
