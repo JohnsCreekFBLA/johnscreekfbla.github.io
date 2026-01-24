@@ -83,7 +83,7 @@ const NavBar = () => {
             <li className={`dropdown${activeDropdown === 'resources' ? ' active' : ''}`}>
                 <a onClick={(e) => handleDropdownClick(e, 'resources')}>Resources</a>
                 <div className="dropdown-content">
-                    <a href="https://drive.google.com/file/d/1zOktgytY0CzzKkYQlMEksAGpxdS6S3cj/view?usp=sharing" onClick={handleLinkClick}>25-26 Competitive Event Guideline</a>
+                    <a href="https://drive.google.com/file/d/1rDU22sFTbNpLCLC0bZIk2IxuYsYXVwQ5/view?usp=sharing" onClick={handleLinkClick}>25-26 Competitive Event Guideline</a>
                     <a href="https://docs.google.com/spreadsheets/d/1wgYYv7rZTWT5HiEl04sM6poQYGOa3oHZ5mUNeQBWgZE/edit?gid=0#gid=0" target="_blank" onClick={handleLinkClick}>Membership Point Tracker</a>
                     <a href="https://georgiafbla.org/high-school-competitive-events/" target="_blank" onClick={handleLinkClick}>Georgia FBLA Website</a>
                 </div>
