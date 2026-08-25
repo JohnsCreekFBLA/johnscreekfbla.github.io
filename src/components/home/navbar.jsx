@@ -49,7 +49,7 @@ const NavBar = () => {
             <li className={`dropdown${activeDropdown === 'forms' ? ' active' : ''}`}>
                 <a onClick={(e) => handleDropdownClick(e, 'forms')}>Forms & Payments</a>
                 <div className="dropdown-content">
-                    <a href="https://osp.osmsinc.com/FultonGA/BVModules/ProductTemplates/Bvc2013/Product.aspx?productid=EN713-1482" target="_blank" onClick={handleLinkClick}>Early Bird Membership Payment</a>
+                    <a href="https://fultonschools.schoolcashonline.com/Fee/Details/1565/623/False/True" target="_blank" onClick={handleLinkClick}>Early Bird Membership Payment</a>
                     <a href="/forms/membership" onClick={handleLinkClick}>Membership Form</a>
                     <a href="/forms/rlc" onClick={handleLinkClick}>RLC Sign Up Form</a>
                     <a href="/forms/slc-advance">SLC Advance from RLC/FLC Form</a>
