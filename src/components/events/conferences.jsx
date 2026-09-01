@@ -8,23 +8,21 @@ const Conferences = ({ conferences }) => {
             about: "Students get to spend the day at Six Flags Over Georgia",
             Competitions: "None",
             Events: "None",
-            date: "September 29, 2025",
+            date: "October 5, 2026",
             location: "Six Flags Over Georgia, Austell, GA",
             price: "$95 per person (includes meals, and ticket)",
-            registration: "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAWIq2VxUMUpHMlI2UzY1NTdEUUxTUExaRERSVVI3Sy4u",
-            link: "https://osp.osmsinc.com/FultonGA/BVModules/ProductTemplates/Bvc2013/Product.aspx?productid=EN713-1505"
+            registration: "https://docs.google.com/forms/d/e/1FAIpQLSeEo_hRIq1eHH0ChhlIUepTRRT5mQzc1BfIofxYWbU52j79aQ/viewform"
+            
         },
         fall: {
             title: "Fall Leadership Conference",
             note: "View Meeting Slides in Meetings Tab",
-            about: "The 2025 overnight two-day Fall Leadership Conference for high school chapters will be held November 18-19 in Athens at the beautiful Classic Center. You can expect a dynamic general session, informative leadership training workshops, the always thrilling Battle of the Chapters, the opportunity to participate in one of the world's largest MONOPOLY tournaments, and many other activities.",
+            about: "The 2026 overnight two-day Fall Leadership Conference for high school chapters will be held November 16-17 in Athens at the beautiful Classic Center. You can expect a dynamic general session, informative leadership training workshops, the always thrilling Battle of the Chapters, the opportunity to participate in one of the world's largest MONOPOLY tournaments, and many other activities.",
             Competitions: "Competitions at the Fall Leadership Conference include the Annual Business Plan Competition, the Elevator Pitch Competition, and the MONOPOLY tournament.",
-            Events: "Broadcast Journalism, Business Ethics, Client Service, Impromptu Speaking, Introduction to Social Media Strategy, Job Interview and Social Media Strategies",
-            date: "November 18-19, 2025",
+            Events: "Career Portfolio, Future Business Educator, Impromptu Speaking, Job Interview, and Sales Presentation.",
+            date: "November 16-17, 2026",
             location: "The Classic Center, Athens, GA",
-            price: "TBA",
-            registration: "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAWIq2VxUOVdHVkxWNkZZTzdJT1lSQU5QQVo2MjQyNC4u",
-            link: "placeholder"
+            price: "TBA"
         },
         region: {
             title: "Region Leadership Conference",
@@ -90,8 +88,13 @@ const Conferences = ({ conferences }) => {
                 <p><strong>Date:</strong> {selected.date}</p>
                 <p><strong>Location:</strong> {selected.location}</p>
                 <p><strong>Price:</strong> {selected.price}</p>
-                <a href={selected.registration} target="_blank">Registration Form<br /></a>
-                <a href={selected.link} target="_blank" rel="noopener noreferrer">OSP Link</a>
+                {selected.registration && (
+                    <a href={selected.registration} target="_blank">Registration Form<br /></a>
+                )}
+
+                {selected.link && (
+                    <a href={selected.link} target="_blank" rel="noopener noreferrer">OSP Link</a>
+                )}
             </div>
         </div>
     );

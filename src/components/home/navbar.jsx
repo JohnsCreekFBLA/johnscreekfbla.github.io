@@ -49,9 +49,9 @@ const NavBar = () => {
             <li className={`dropdown${activeDropdown === 'forms' ? ' active' : ''}`}>
                 <a onClick={(e) => handleDropdownClick(e, 'forms')}>Forms & Payments</a>
                 <div className="dropdown-content">
-                    {/*
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSft0tl6OlDZCisSScjiNTqFeWrXdj_Pqh0aOGXsTP5Hk_5JrA/viewform?pli=1" onClick={handleLinkClick}>Membership Form</a>{/*
                     <a href="https://osp.osmsinc.com/FultonGA/BVModules/ProductTemplates/Bvc2013/Product.aspx?productid=EN713-1482" target="_blank" onClick={handleLinkClick}>Early Bird Membership Payment</a>
-                    <a href="/forms/membership" onClick={handleLinkClick}>Membership Form</a>
+                    
                     <a href="/forms/rlc" onClick={handleLinkClick}>RLC Sign Up Form</a>
                     <a href="/forms/slc-advance">SLC Advance from RLC/FLC Form</a>
                     <a href="/forms/slc-individual">SLC Straight-to-State Testing Only Form</a>
@@ -63,10 +63,10 @@ const NavBar = () => {
                 <a onClick={(e) => handleDropdownClick(e, 'events')}>Events</a>
                 <div className="dropdown-content">
                     <a href="/calendar" onClick={handleLinkClick}>Calendar</a>
-                    <a href="/events/runoffs" onClick={handleLinkClick}>Runoff Competitions</a>
+                    {/*<a href="/events/runoffs" onClick={handleLinkClick}>Runoff Competitions</a>*/}
                     <a href="/conferences/FMR" onClick={handleLinkClick}>Fall Motivational Rally</a>
                     <a href="/conferences/FLC" onClick={handleLinkClick}>Fall Leadership Conference</a>
-                    {/*}
+                    {/*
                     <a href="/conferences/RLC" onClick={handleLinkClick}>Regional Leadership Conference</a>
                     <a href="/conferences/SLC" onClick={handleLinkClick}>State Leadership Conference</a>
                     <a href="/conferences/NLC" onClick={handleLinkClick}>National Leadership Conference</a>
