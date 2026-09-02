@@ -65,7 +65,7 @@ const NavBar = () => {
                 <a onClick={(e) => handleDropdownClick(e, 'events')}>Events</a>
                 <div className="dropdown-content">
                     <a href="/calendar" onClick={handleLinkClick}>Calendar</a>
-                    {/*<a href="/events/runoffs" onClick={handleLinkClick}>Runoff Competitions</a>*/}
+                    <a href="/events/runoffs" onClick={handleLinkClick}>Runoff Competitions</a>
                     <a href="/conferences/FMR" onClick={handleLinkClick}>Fall Motivational Rally</a>
                     <a href="/conferences/FLC" onClick={handleLinkClick}>Fall Leadership Conference</a>
                     {/*
