@@ -24,7 +24,9 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-    <img src="/images/topNavLogo.svg" className="navbar-logo" alt="logo" />
+    <a href="/" onClick={handleLinkClick} aria-label="Go to home page">
+      <img src="/images/topNavLogo.svg" className="navbar-logo" alt="" />
+    </a>
       <button
         className="navbar-hamburger"
         onClick={() => {
