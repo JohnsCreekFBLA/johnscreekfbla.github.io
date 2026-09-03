@@ -37,14 +37,11 @@ const conferenceGallery = [
     {
         id: "national",
         title: "National Leadership Conference",
-        label: "Anaheim, CA - June 23-27, 2025",
+        label: "San Antonio, TX - June 29 - July 3, 2026",
         images: [
-            { src: "/eventImgs/SLC/SLC_2024-25/100_0313.JPG", alt: "National Leadership Conference opening session" },
-            { src: "/eventImgs/SLC/SLC_2024-25/100_0314.JPG", alt: "National Leadership Conference workshop" },
-            { src: "/eventImgs/SLC/SLC_2024-25/100_0315.JPG", alt: "National Leadership Conference keynote address" },
-            { src: "/eventImgs/SLC/SLC_2024-25/100_0316.JPG", alt: "National Leadership Conference chapter group photo" },
-            { src: "/eventImgs/SLC/SLC_2024-25/100_0317.JPG", alt: "National Leadership Conference awards recognition" },
-            { src: "/eventImgs/SLC/SLC_2024-25/100_0318.JPG", alt: "National Leadership Conference networking event" }
+            { src: "/eventImgs/NLC/26/IMG_3452.jpeg", alt: "National Leadership Conference 2026" },
+            { src: "/eventImgs/NLC/26/WhatsApp Image 2026-07-03 at 10.05.13 AM (1).jpeg", alt: "National Leadership Conference 2026" },
+            { src: "/eventImgs/NLC/26/WhatsApp Image 2026-07-03 at 10.05.13 AM.jpeg", alt: "National Leadership Conference 2026" }
         ]
     }
 ];
