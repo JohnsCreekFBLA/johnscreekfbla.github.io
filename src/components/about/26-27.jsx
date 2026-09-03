@@ -7,8 +7,9 @@ const Team = () => {
             <h2 className="team-title">Meet Our Officer Team 2026-2027</h2>
             <hr className="divider" />
             <p className="team-description">Our officer team is dedicated to leading our chapter with passion and commitment. Each member brings unique skills and experiences to help our chapter thrive.</p>
+            <img src="/images/officers/officer-team.jpg" className="team-photo" alt="Officer Team 2026-2027" />
             <div className="title-container">
-                <h1 class="info-title-regular">Executive Council</h1>
+                <h1 className="info-title-regular">Executive Council</h1>
             </div>
             <div className="large-team-container">
                 {/*<img src="../images/officers/Aanya.png" className="team-image" alt="Aanya" />*/}
@@ -18,11 +19,10 @@ const Team = () => {
                 </div>
             </div>
             <div className="title-container">
-                <h1 class="info-title-regular">Advisers</h1>
+                <h1 className="info-title-regular">Advisers</h1>
             </div>
             <div className="team-section">
                 <div className="small-team-container">
-                    <img/>
                     <div className="team-info">
                         <h3 className="team-member-name">Commander Schenk</h3>
                         <p className="team-member-bio">Commander Schenk is a retired U.S. Navy officer with a passion for mentoring students. He has been an invaluable resource for our chapter, providing guidance and support.</p>
@@ -42,7 +42,7 @@ const Team = () => {
                 </div>
             </div>
             <div className="title-container">
-                <h1 class="info-title-regular">Georgia FBLA Officers</h1>
+                <h1 className="info-title-regular">Georgia FBLA Officers</h1>
             </div>
             <div className="large-team-container">
                 {/*<img src="../images/officers/Ishaan.jpg" className="team-image" alt="Yvie" />*/}
@@ -53,11 +53,10 @@ const Team = () => {
             </div>
 
             <div className="title-container">
-                <h1 class="info-title-regular">Vice President Officers</h1>
+                <h1 className="info-title-regular">Vice President Officers</h1>
             </div>
             <div className="team-section">
                 <div className="small-team-container">
-                    <img/>
                     <div className="team-info">
                         <h3 className="team-member-name">Operations - Myra Sitafalwalla</h3>
                         {/*<img src="../images/officers/Aanya.png" className="team-images" alt="Myra" />*/}
@@ -82,7 +81,6 @@ const Team = () => {
 
             <div className="team-section">
                 <div className="small-team-container">
-                    <img/>
                     <div className="team-info">
                         <h3 className="team-member-name">Membership - Zelda Arthur</h3>
                         {/*<img src="../images/officers/Moksh.jpg" className="team-images" alt="Zelda" />*/}
@@ -107,7 +105,6 @@ const Team = () => {
             </div>
             <div className="team-section">
                 <div className="small-team-container">
-                    <img/>
                     <div className="team-info">
                         <h3 className="team-member-name">Community Service - Moksh Somayajula</h3>
                         {/*<img src="../images/officers/Moksh.jpg" className="team-images" alt="Moksh" />*/}
@@ -116,13 +113,11 @@ const Team = () => {
                 </div>
             </div>
             <div className="title-container">
-                <h1 class="info-title-regular">Committee Officers</h1>
+                <h1 className="info-title-regular">Committee Officers</h1>
             </div>
             <div className="team-section">
                 <div className="small-team-container">
-                    <img/>
                     <div className="team-info">
-                        <img src="../images/officers/officer-team.jpg" className="team-images" alt="Officer Team 2026-2027" />
                         <p className="team-member-bio">Committee Officers focus on learning and adopting every aspect required of an Executive Officer. They train members, recruit new members, and drive the mission.</p>
                     </div>
                 </div>
