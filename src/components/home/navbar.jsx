@@ -24,7 +24,9 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-    <img src="/images/topNavLogo.svg" className="navbar-logo" alt="logo" />
+      <a href="/" onClick={handleLinkClick} aria-label="Go to home page">
+        <img src="/images/topNavLogo.svg" className="navbar-logo" alt="" />
+      </a>
       <button
         className="navbar-hamburger"
         onClick={() => {
@@ -49,7 +51,7 @@ const NavBar = () => {
             <li className={`dropdown${activeDropdown === 'forms' ? ' active' : ''}`}>
                 <a onClick={(e) => handleDropdownClick(e, 'forms')}>Forms & Payments</a>
                 <div className="dropdown-content">
-                    <a href="https://fultonschools.schoolcashonline.com/Fee/Details/1565/623/False/True" target="_blank" onClick={handleLinkClick}>Early Bird Membership Payment</a>
+                    <a href="https://fultonschools.schoolcashonline.com/Fee/Details/1565/623/False/True" target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>Early Bird Membership Payment</a>
                     <a href="/forms/membership" onClick={handleLinkClick}>Membership Form</a>
                     {/*
                     <a href="/forms/rlc" onClick={handleLinkClick}>RLC Sign Up Form</a>

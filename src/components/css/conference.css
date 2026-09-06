@@ -100,6 +100,12 @@ iframe {
     letter-spacing: 0.05em;
 }
 
+.runoff-item > .runoff-date {
+    display: block;
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+}
+
 .runoff-name {
     font-size: 1.2rem;
     font-weight: 600;
