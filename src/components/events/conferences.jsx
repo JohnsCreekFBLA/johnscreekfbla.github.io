@@ -22,7 +22,8 @@ const Conferences = ({ conferences }) => {
             Events: "Career Portfolio, Future Business Educator, Impromptu Speaking, Job Interview, and Sales Presentation.",
             date: "November 16-17, 2026",
             location: "The Classic Center, Athens, GA",
-            price: "TBA"
+            price: "TBA",
+            closed: "Closed"
         },
         region: {
             title: "Region Leadership Conference",
@@ -90,6 +91,9 @@ const Conferences = ({ conferences }) => {
                 <p><strong>Price:</strong> {selected.price}</p>
                 {selected.registration && (
                     <a href={selected.registration} target="_blank">Registration Form<br /></a>
+                )}
+                {selected.closed && (
+                    <p><strong>Registration:</strong> {selected.closed}</p>
                 )}
 
                 {selected.link && (
