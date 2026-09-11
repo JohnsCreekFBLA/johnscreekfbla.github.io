@@ -24,9 +24,9 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-    <a href="/" onClick={handleLinkClick} aria-label="Go to home page">
-      <img src="/images/topNavLogo.svg" className="navbar-logo" alt="" />
-    </a>
+      <a href="/" onClick={handleLinkClick} aria-label="Go to home page">
+        <img src="/images/topNavLogo.svg" className="navbar-logo" alt="" />
+      </a>
       <button
         className="navbar-hamburger"
         onClick={() => {
@@ -45,15 +45,15 @@ const NavBar = () => {
             <li className={`dropdown${activeDropdown === 'about' ? ' active' : ''}`}>
                 <a onClick={(e) => handleDropdownClick(e, 'about')}>About</a>
                 <div className="dropdown-content">
-                    <a href="/officer" onClick={handleLinkClick}>Officer Team 25-26</a>
+                    <a href="/officer" onClick={handleLinkClick}>Officer Team 26-27</a>
                 </div>
             </li>
             <li className={`dropdown${activeDropdown === 'forms' ? ' active' : ''}`}>
                 <a onClick={(e) => handleDropdownClick(e, 'forms')}>Forms & Payments</a>
                 <div className="dropdown-content">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSft0tl6OlDZCisSScjiNTqFeWrXdj_Pqh0aOGXsTP5Hk_5JrA/viewform?pli=1" onClick={handleLinkClick}>Membership Form</a>{/*
-                    <a href="https://osp.osmsinc.com/FultonGA/BVModules/ProductTemplates/Bvc2013/Product.aspx?productid=EN713-1482" target="_blank" onClick={handleLinkClick}>Early Bird Membership Payment</a>
-                    
+                    <a href="https://fultonschools.schoolcashonline.com/Fee/Details/1565/623/False/True" target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>Early Bird Membership Payment</a>
+                    <a href="/forms/membership" onClick={handleLinkClick}>Membership Form</a>
+                    {/*
                     <a href="/forms/rlc" onClick={handleLinkClick}>RLC Sign Up Form</a>
                     <a href="/forms/slc-advance">SLC Advance from RLC/FLC Form</a>
                     <a href="/forms/slc-individual">SLC Straight-to-State Testing Only Form</a>
