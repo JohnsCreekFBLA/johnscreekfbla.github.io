@@ -24,9 +24,9 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-      <a href="/" onClick={handleLinkClick} aria-label="Go to home page">
-        <img src="/images/topNavLogo.svg" className="navbar-logo" alt="" />
-      </a>
+    <a href="/" className="navbar-logo-link" aria-label="Johns Creek FBLA home">
+      <img src="/images/topNavLogo.svg" className="navbar-logo" alt="Johns Creek FBLA" />
+    </a>
       <button
         className="navbar-hamburger"
         onClick={() => {
@@ -46,24 +46,16 @@ const NavBar = () => {
                 <a onClick={(e) => handleDropdownClick(e, 'about')}>About</a>
                 <div className="dropdown-content">
                     <a href="/officer" onClick={handleLinkClick}>Officer Team 26-27</a>
+                    <a href="/committees" onClick={handleLinkClick}>Committees</a>
                 </div>
             </li>
-            <li className={`dropdown${activeDropdown === 'forms' ? ' active' : ''}`}>
-                <a onClick={(e) => handleDropdownClick(e, 'forms')}>Forms & Payments</a>
-                <div className="dropdown-content">
-                    <a href="https://fultonschools.schoolcashonline.com/Fee/Details/1565/623/False/True" target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>Early Bird Membership Payment</a>
-                    <a href="/forms/membership" onClick={handleLinkClick}>Membership Form</a>
-                    {/*
-                    <a href="/forms/rlc" onClick={handleLinkClick}>RLC Sign Up Form</a>
-                    <a href="/forms/slc-advance">SLC Advance from RLC/FLC Form</a>
-                    <a href="/forms/slc-individual">SLC Straight-to-State Testing Only Form</a>
-                    <a href="/forms/slc-team">SLC Straight-to-State Team Only Form</a>
-                    */}
-                </div>
+            <li>
+                <a href="/news" onClick={handleLinkClick}>News</a>
             </li>
             <li className={`dropdown${activeDropdown === 'events' ? ' active' : ''}`}>
                 <a onClick={(e) => handleDropdownClick(e, 'events')}>Events</a>
                 <div className="dropdown-content">
+                    <a href="/schedule" onClick={handleLinkClick}>Schedule</a>
                     <a href="/calendar" onClick={handleLinkClick}>Calendar</a>
                     <a href="/events/runoffs" onClick={handleLinkClick}>Runoff Competitions</a>
                     <a href="/conferences/FMR" onClick={handleLinkClick}>Fall Motivational Rally</a>
@@ -73,26 +65,42 @@ const NavBar = () => {
                     <a href="/conferences/SLC" onClick={handleLinkClick}>State Leadership Conference</a>
                     <a href="/conferences/NLC" onClick={handleLinkClick}>National Leadership Conference</a>
                     */}
-                    <a href="/gallery" onClick={handleLinkClick}>Conference Gallery</a>
+                    <a href="/gallery" onClick={handleLinkClick}>Photo Gallery</a>
                 </div>
             </li>
             <li className={`dropdown${activeDropdown === 'meetings' ? ' active' : ''}`}>
                 <a onClick={(e) => handleDropdownClick(e, 'meetings')}>Meetings</a>
                 <div className="dropdown-content">
-                    <a href="/meetings/august" onClick={handleLinkClick}>August Meeting</a>
-                    {/*
+                    <a href="/meetings/august" onClick={handleLinkClick}>Interest Meeting</a>
+                    <span className="dropdown-label">2025-26 Archive</span>
                     <a href="/meetings/flc" onClick={handleLinkClick}>FLC Interest Meeting</a>
                     <a href="/meetings/september" onClick={handleLinkClick}>September Meeting</a>
                     <a href="/meetings/october" onClick={handleLinkClick}>October Meeting</a>
-                    <a href="/meetings/rlc-testing" onClick={handleLinkClick}>RLC Testing Meeting</a>
+                    <a href="/meetings/rlc-testing" onClick={handleLinkClick}>RLC Testing Briefing</a>
                     <a href="/meetings/february" onClick={handleLinkClick}>February Meeting</a>
+                </div>
+            </li>
+            <li>
+                <a href="/winners" onClick={handleLinkClick}>Winners</a>
+            </li>
+            <li className={`dropdown${activeDropdown === 'forms' ? ' active' : ''}`}>
+                <a onClick={(e) => handleDropdownClick(e, 'forms')}>Forms & Payments</a>
+                <div className="dropdown-content">
+                    <a href="/forms" onClick={handleLinkClick}>All Forms & Payments</a>
+                    <a href="/forms/membership" onClick={handleLinkClick}>Membership Form</a>
+                    <a href="https://fultonschools.schoolcashonline.com/Fee/Details/1565/623/False/True" target="_blank" onClick={handleLinkClick}>Early Bird Membership Payment</a>
+                    {/*
+                    <a href="/forms/rlc" onClick={handleLinkClick}>RLC Sign Up Form</a>
+                    <a href="/forms/slc-advance">SLC Advance from RLC/FLC Form</a>
+                    <a href="/forms/slc-individual">SLC Straight-to-State Testing Only Form</a>
+                    <a href="/forms/slc-team">SLC Straight-to-State Team Only Form</a>
                     */}
                 </div>
             </li>
             <li className={`dropdown${activeDropdown === 'resources' ? ' active' : ''}`}>
                 <a onClick={(e) => handleDropdownClick(e, 'resources')}>Resources</a>
                 <div className="dropdown-content">
-                    <a href="https://www.fbla.org/high-school/competitive-events/" target="_blank" onClick={handleLinkClick}>26-27 Competitive Events</a>
+                    <a href="https://drive.google.com/file/d/1rDU22sFTbNpLCLC0bZIk2IxuYsYXVwQ5/view?usp=sharing" onClick={handleLinkClick}>25-26 Competitive Event Guideline</a>
                     <a href="https://docs.google.com/spreadsheets/d/1wgYYv7rZTWT5HiEl04sM6poQYGOa3oHZ5mUNeQBWgZE/edit?gid=0#gid=0" target="_blank" onClick={handleLinkClick}>Membership Point Tracker</a>
                     <a href="https://georgiafbla.org/high-school-competitive-events/" target="_blank" onClick={handleLinkClick}>Georgia FBLA Website</a>
                 </div>

@@ -34,16 +34,11 @@ const conferenceGallery = [
             { src: "/eventImgs/SLC/SLC_2024-25/IMG_3143.JPG", alt: "State Leadership Conference 2024-25 leadership session" }
         ]
     },
-    {
-        id: "national",
-        title: "National Leadership Conference",
-        label: "San Antonio, TX - June 29-July 2, 2026",
-        images: [
-            { src: "/eventImgs/NLC/26/nlc-2026-1.jpg", alt: "Johns Creek FBLA members at the 2026 National Leadership Conference" },
-            { src: "/eventImgs/NLC/26/nlc-2026-2.jpg", alt: "Johns Creek FBLA at the 2026 National Leadership Conference in San Antonio" },
-            { src: "/eventImgs/NLC/26/nlc-2026-3.jpg", alt: "Johns Creek FBLA members celebrating at the 2026 National Leadership Conference" }
-        ]
-    }
+    // TODO(Marketing): National Leadership Conference photos.
+    // The previous entry here pointed at files inside public/eventImgs/SLC/SLC_2024-25/
+    // (100_0313 through 100_0318) captioned as NLC. Those are State Leadership
+    // Conference photos, so the section was removed rather than publish wrong
+    // captions. Add a real "national" section once NLC photos are available.
 ];
 
 export default conferenceGallery;
