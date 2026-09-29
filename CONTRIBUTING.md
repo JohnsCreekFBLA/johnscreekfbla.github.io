@@ -32,7 +32,8 @@ If that fails, the deploy will fail too. Fix it first.
 | Competition results | `src/data/winners.js` |
 | A form or payment link | `src/data/formsIndex.js` |
 | Committee names and descriptions | `src/data/committees.js` |
-| Gallery photos | `src/data/conferenceGallery.js` + files in `public/eventImgs/` |
+| Gallery photos | drop files in `public/eventImgs/<section folder>/` |
+| Gallery sections / captions | `src/data/gallerySections.js` |
 | Meeting slide decks | `src/components/events/meeting.jsx` + PDFs in `public/meetings/` |
 | Conference detail pages | `src/components/events/conferences.jsx` |
 | The navigation menu | `src/components/home/navbar.jsx` |
@@ -58,14 +59,28 @@ Dates are `YYYY-MM-DD`. Newest first. The home page shows the three most recent.
 
 ### Add photos to the gallery
 
-1. Put the image files in `public/eventImgs/<year>/<event>/`, for example
-   `public/eventImgs/2026-27/fall-rally/`.
-2. Use `.jpg` or `.png`. **Not `.heic`** — browsers cannot display HEIC. If the
-   photos came off an iPhone, export them as JPEG first.
+**Just drop the files in the folder.** The gallery reads the folder at build
+time, so there is no list to keep in sync.
+
+1. Put the image files in the section's folder under `public/eventImgs/`. Each
+   section's folder is set in `src/data/gallerySections.js`.
+2. Use `.jpg` or `.png`. **Not `.heic`** — browsers cannot display HEIC, so those
+   files are skipped automatically. Export iPhone photos to JPEG first.
 3. Resize anything over about 1600px wide before committing. Large photos make
-   the site slow and bloat the repository.
-4. Add them to the right section in `src/data/conferenceGallery.js` with a short
-   `alt` description of what is happening in the photo.
+   the site slow and bloat the repository, which is already a problem here.
+4. Optional: to give a photo a real caption instead of the generic one, add it to
+   that section's `curated` list in `src/data/gallerySections.js`. Curated photos
+   appear first.
+
+To create a new section, copy a block in `src/data/gallerySections.js`, point
+`folder` at a new directory, and put photos in it. Newest event first.
+
+Each section shows up to 40 photos. Change `DEFAULT_LIMIT` in
+`src/data/galleryScan.js` to show more.
+
+> `src/data/conferenceGallery.js` reads the filesystem, so it must never be
+> imported by a client-side React component. Those import
+> `src/data/gallerySections.js` instead, which is plain data.
 
 ### Post a new meeting's slides
 

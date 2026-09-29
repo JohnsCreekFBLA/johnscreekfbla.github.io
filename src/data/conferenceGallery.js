@@ -1,44 +1,20 @@
-const conferenceGallery = [
-    {
-        id: "rally",
-        title: "Fall Motivational Rally",
-        label: "Six Flags Over Georgia - September 29, 2025",
-        images: [
-            { src: "/eventImgs/rallyOne.png", alt: "Fall Motivational Rally general session" },
-            { src: "/eventImgs/rallyTwo.png", alt: "Students enjoying rides at the Fall Motivational Rally" },
-            { src: "/eventImgs/rallyThree.png", alt: "FBLA members at the Fall Motivational Rally" },
-            { src: "/eventImgs/rallyFour.png", alt: "Chapter group photo at the Fall Motivational Rally" }
-        ]
-    },
-    {
-        id: "region",
-        title: "Region Leadership Conference",
-        label: "Region 3 - January 28, 2025",
-        images: [
-            { src: "/eventImgs/RLC/RLC_2025/20250128_163422.jpg", alt: "Region Leadership Conference 2025 general session" },
-            { src: "/eventImgs/RLC/RLC_2025/IMG_9383.jpeg", alt: "Competitors preparing at the Region Leadership Conference 2025" },
-            { src: "/eventImgs/RLC/RLC_2025/IMG_9867.JPG", alt: "Region Leadership Conference 2025 awards ceremony" },
-            { src: "/eventImgs/RLC/RLC_2025/IMG_9868.JPG", alt: "Chapter group photo from Region Leadership Conference 2025" }
-        ]
-    },
-    {
-        id: "state",
-        title: "State Leadership Conference",
-        label: "SLC 2024-25 - March 14-17, 2025",
-        images: [
-            { src: "/eventImgs/SLC/SLC_2024-25/20250314_085921.jpg", alt: "State Leadership Conference 2024-25 opening session" },
-            { src: "/eventImgs/SLC/SLC_2024-25/20250315_090023.jpg", alt: "State Leadership Conference 2024-25 competitive events" },
-            { src: "/eventImgs/SLC/SLC_2024-25/20250315_183414.jpg", alt: "State Leadership Conference 2024-25 awards ceremony" },
-            { src: "/eventImgs/SLC/SLC_2024-25/133_0180.JPG", alt: "State Leadership Conference 2024-25 chapter team photo" },
-            { src: "/eventImgs/SLC/SLC_2024-25/IMG_0302.JPG", alt: "State Leadership Conference 2024-25 workshop breakout" },
-            { src: "/eventImgs/SLC/SLC_2024-25/IMG_3143.JPG", alt: "State Leadership Conference 2024-25 leadership session" }
-        ]
-    },
-    // TODO(Marketing): National Leadership Conference photos.
-    // The previous entry here pointed at files inside public/eventImgs/SLC/SLC_2024-25/
-    // (100_0313 through 100_0318) captioned as NLC. Those are State Leadership
-    // Conference photos, so the section was removed rather than publish wrong
-    // captions. Add a real "national" section once NLC photos are available.
-];
+import gallerySections from './gallerySections.js';
+import { withFolder } from './galleryScan.js';
+
+/**
+ * The gallery, with photo lists filled in from the folders on disk at build time.
+ *
+ * SERVER ONLY. This reads the filesystem, so it must not be imported by a
+ * client-side React component. Client components should import
+ * ./gallerySections.js instead, which is plain data.
+ *
+ * To add photos, drop them in the section's folder under public/. See
+ * gallerySections.js for the section definitions.
+ */
+
+const conferenceGallery = gallerySections.map((section) => ({
+  ...section,
+  images: withFolder(section.curated || [], section.folder, { alt: section.alt })
+}));
 
 export default conferenceGallery;
