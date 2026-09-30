@@ -385,3 +385,16 @@
         gap: 0.6rem;
     }
 }
+
+.schedule-tentative {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.06);
+    color: #777;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    vertical-align: middle;
+}

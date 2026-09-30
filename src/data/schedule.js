@@ -2,16 +2,24 @@
  * Chapter schedule: meetings and conferences, one list.
  *
  * HOW TO ADD AN ENTRY
- *   { date: '2026-10-21', title: 'October Chapter Meeting', kind: 'meeting',
+ *   { date: '2026-10-27', title: 'October Chapter Meeting', kind: 'meeting',
  *     location: "Commander Schenk's room", note: '', link: '/meetings/october' }
  *
- *   date     YYYY-MM-DD. Use null if the date genuinely is not set yet; the
- *            entry then shows under Upcoming with whatever `dateLabel` says.
- *   kind     'meeting' | 'conference' | 'service' | 'deadline'
- *   link     optional, internal page or external URL
+ *   date       YYYY-MM-DD. Use null only if the date genuinely is not set; the
+ *              entry then shows under Upcoming with whatever `dateLabel` says.
+ *   kind       'meeting' | 'conference' | 'service' | 'deadline'
+ *   tentative  true adds a "tentative" marker next to the date
+ *   link       optional, internal page or external URL
  *
  * The site splits this into Upcoming and Past automatically by comparing the
  * date at build time. Nothing to toggle by hand.
+ *
+ * Chapter meetings run about once a month, usually the last Tuesday, in
+ * Commander Schenk's room. The exact date is often not locked until about a week
+ * ahead, so the monthly entries below are marked tentative. When one firms up,
+ * correct the date and remove the `tentative` flag.
+ *
+ * Conference dates come from georgiafbla.org/calendar.
  */
 
 const schedule = [
@@ -24,53 +32,91 @@ const schedule = [
   },
   {
     date: '2026-09-29',
-    dateLabel: 'September 29, 2026',
     title: 'September Chapter Meeting',
     kind: 'meeting',
-    location: "Commander Schenk's room",
-    note: 'Slides posted after the meeting.'
+    location: "Commander Schenk's room"
   },
   {
-    date: null,
-    dateLabel: 'TBA',
+    date: '2026-10-05',
     title: 'Fall Motivational Rally',
     kind: 'conference',
-    location: 'Six Flags Over Georgia',
-    note: 'Date and price for 2026-27 to be confirmed.',
+    location: 'Six Flags Over Georgia, Austell, GA',
+    note: '9:30 am to 5:00 pm. $80 per person.',
     link: '/conferences/FMR'
   },
   {
-    date: null,
-    dateLabel: 'TBA',
+    date: '2026-10-27',
+    title: 'October Chapter Meeting',
+    kind: 'meeting',
+    location: "Commander Schenk's room",
+    tentative: true
+  },
+  {
+    date: '2026-11-16',
     title: 'Fall Leadership Conference',
     kind: 'conference',
     location: 'The Classic Center, Athens, GA',
-    note: 'Date and price for 2026-27 to be confirmed.',
+    note: 'One day on November 16, or two days November 16 to 17. $75 or $85.',
     link: '/conferences/FLC'
   },
   {
+    date: '2026-11-24',
+    title: 'November Chapter Meeting',
+    kind: 'meeting',
+    location: "Commander Schenk's room",
+    tentative: true
+  },
+  {
+    date: '2027-01-26',
+    title: 'January Chapter Meeting',
+    kind: 'meeting',
+    location: "Commander Schenk's room",
+    tentative: true
+  },
+  {
     date: null,
-    dateLabel: 'TBA',
+    dateLabel: 'January 2027',
     title: 'Region Leadership Conference',
     kind: 'conference',
     location: 'TBA',
-    note: '2026-27 date to be confirmed.'
+    note: 'Georgia FBLA has not posted the 2027 date yet.'
+  },
+  {
+    date: '2027-02-23',
+    title: 'February Chapter Meeting',
+    kind: 'meeting',
+    location: "Commander Schenk's room",
+    tentative: true
   },
   {
     date: null,
-    dateLabel: 'TBA',
+    dateLabel: 'March 2027',
     title: 'State Leadership Conference',
     kind: 'conference',
     location: 'TBA',
-    note: '2026-27 date to be confirmed.'
+    note: 'Georgia FBLA has not posted the 2027 date yet.'
+  },
+  {
+    date: '2027-03-30',
+    title: 'March Chapter Meeting',
+    kind: 'meeting',
+    location: "Commander Schenk's room",
+    tentative: true
+  },
+  {
+    date: '2027-04-27',
+    title: 'April Chapter Meeting',
+    kind: 'meeting',
+    location: "Commander Schenk's room",
+    tentative: true
   },
   {
     date: null,
-    dateLabel: 'TBA',
+    dateLabel: 'Summer 2027',
     title: 'National Leadership Conference',
     kind: 'conference',
     location: 'TBA',
-    note: 'For members who qualify at SLC.'
+    note: 'For members who qualify at the State Leadership Conference.'
   }
 ];
 

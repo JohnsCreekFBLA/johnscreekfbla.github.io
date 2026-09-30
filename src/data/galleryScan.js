@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { isPortrait } from './imageShape.js';
 
 /**
  * Reads a folder under public/ at BUILD TIME and returns every image a browser
@@ -42,6 +43,10 @@ export function scanFolder(folder, opts = {}) {
     .map((e) => e.name)
     .filter((name) => WEB_SAFE.has(path.extname(name).toLowerCase()))
     .filter((name) => !skip.has(`/${folder}/${name}`))
+    // The strip crops every photo to a wide card. A portrait photo cropped that
+    // way is usually a chin, so leave those out of the automatic sweep. A
+    // portrait shot worth showing can still be listed by hand in `curated`.
+    .filter((name) => !isPortrait(path.join(PUBLIC_DIR, folder, name)))
     .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }))
     .slice(0, limit)
     .map((name) => ({
@@ -51,11 +56,17 @@ export function scanFolder(folder, opts = {}) {
 }
 
 /**
- * Curated images first (they have real captions), then everything else found in
- * the folder, skipping anything already curated.
+ * Curated images first (they have real captions), then everything else in the
+ * folder if the section opted in.
+ *
+ * Auto-include is OFF by default and that is deliberate. A folder of raw phone
+ * dumps contains sideways selfies and blurry close-ups, and publishing those
+ * under a generic caption looks worse than publishing six good photos. Turn
+ * `autoInclude` on for folders someone has actually sorted.
  */
 export function withFolder(curated, folder, opts = {}) {
-  if (!folder) return curated;
+  const { autoInclude = false } = opts;
+  if (!folder || !autoInclude) return curated;
   const already = curated.map((img) => img.src);
   const limit = (opts.limit ?? DEFAULT_LIMIT) - curated.length;
   if (limit <= 0) return curated;

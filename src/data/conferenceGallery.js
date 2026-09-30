@@ -14,7 +14,10 @@ import { withFolder } from './galleryScan.js';
 
 const conferenceGallery = gallerySections.map((section) => ({
   ...section,
-  images: withFolder(section.curated || [], section.folder, { alt: section.alt })
+  images: withFolder(section.curated || [], section.folder, {
+    alt: section.alt,
+    autoInclude: section.autoInclude === true
+  })
 }));
 
 export default conferenceGallery;

@@ -40,8 +40,9 @@ const past = withLabel.filter((e) => !isUpcoming(e.date)).sort((a, b) => byDateA
     <header class="page-heading">
       <h1>Schedule</h1>
       <p class="page-intro">
-        Every meeting, conference, and deadline in one place. The live calendar has
-        the same information in calendar form.
+        Every meeting, conference, and deadline in one place. Chapter meetings are
+        usually the last Tuesday of the month in Commander Schenk's room; dates
+        marked tentative are confirmed about a week ahead.
       </p>
       <a class="page-cta" href="/calendar">Open the calendar</a>
     </header>
@@ -52,7 +53,10 @@ const past = withLabel.filter((e) => !isUpcoming(e.date)).sort((a, b) => byDateA
         <ul class="schedule-list">
           {upcoming.map((e) => (
             <li class={`schedule-item kind-${e.kind}`}>
-              <div class="schedule-when">{e.shownDate}</div>
+              <div class="schedule-when">
+                {e.shownDate}
+                {e.tentative && <span class="schedule-tentative">tentative</span>}
+              </div>
               <div class="schedule-what">
                 <h3>
                   {e.link ? <a href={e.link}>{e.title}</a> : e.title}

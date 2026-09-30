@@ -1,16 +1,21 @@
 import '../css/conference.css';
 import gallerySections from '../../data/gallerySections.js';
 
+// Some conferences have a real registration URL; others carry a sentence of
+// guidance instead (deadline passed, opens later). Only the former should
+// render as a link, otherwise the sentence ends up inside an href.
+const isUrl = (v) => typeof v === 'string' && v.startsWith('http');
+
 const Conferences = ({ conferences }) => {
     const info = {
         rally: {
             title: "Fall Motivational Rally",
-            about: "Students get to spend the day at Six Flags Over Georgia",
+            about: "Students spend the day at Six Flags Over Georgia. Georgia FBLA runs a second rally at the Georgia National Fairgrounds in Perry on October 15; Johns Creek attends the Six Flags rally.",
             Competitions: "None",
             Events: "None",
-            date: "TBA - 2026-27 date to be confirmed",
-            location: "Six Flags Over Georgia, Austell, GA",
-            price: "TBA",
+            date: "Monday, October 5, 2026 - 9:30 am to 5:00 pm",
+            location: "Six Flags Over Georgia, 275 Riverside Pkwy, Austell, GA",
+            price: "$80 per person",
             registration: "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAWIq2VxUMUpHMlI2UzY1NTdEUUxTUExaRERSVVI3Sy4u",
             link: "https://osp.osmsinc.com/FultonGA/BVModules/ProductTemplates/Bvc2013/Product.aspx?productid=EN713-1505"
         },
@@ -20,10 +25,10 @@ const Conferences = ({ conferences }) => {
             about: "The overnight two-day Fall Leadership Conference for high school chapters is held each fall in Athens at the Classic Center. You can expect a dynamic general session, informative leadership training workshops, the always thrilling Battle of the Chapters, the opportunity to participate in one of the world's largest MONOPOLY tournaments, and many other activities.",
             Competitions: "Competitions at the Fall Leadership Conference include the Annual Business Plan Competition, the Elevator Pitch Competition, and the MONOPOLY tournament.",
             Events: "Broadcast Journalism, Business Ethics, Client Service, Impromptu Speaking, Introduction to Social Media Strategy, Job Interview and Social Media Strategies",
-            date: "TBA - 2026-27 date to be confirmed",
+            date: "One-day: Monday, November 16, 2026, 8:30 am to 5:00 pm. Two-day: November 16 at 5:00 pm through November 17 at 3:15 pm.",
             location: "The Classic Center, Athens, GA",
-            price: "TBA",
-            registration: "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAWIq2VxUOVdHVkxWNkZZTzdJT1lSQU5QQVo2MjQyNC4u",
+            price: "$75 one-day, $85 two-day. Late registration after September 29 is $95 one-day and $105 two-day.",
+            registration: "Registration closed September 29. Late registration and any substitutions or cancellations close October 6. Talk to an adviser.",
             link: "placeholder"
         },
         region: {
@@ -90,8 +95,14 @@ const Conferences = ({ conferences }) => {
                 <p><strong>Date:</strong> {selected.date}</p>
                 <p><strong>Location:</strong> {selected.location}</p>
                 <p><strong>Price:</strong> {selected.price}</p>
-                <a href={selected.registration} target="_blank">Registration Form<br /></a>
-                <a href={selected.link} target="_blank" rel="noopener noreferrer">OSP Link</a>
+                {isUrl(selected.registration) ? (
+                    <a href={selected.registration} target="_blank" rel="noopener noreferrer">Registration Form<br /></a>
+                ) : (
+                    <p><strong>Registration:</strong> {selected.registration}</p>
+                )}
+                {isUrl(selected.link) && (
+                    <a href={selected.link} target="_blank" rel="noopener noreferrer">OSP Link</a>
+                )}
             </div>
         </div>
     );
