@@ -3,7 +3,7 @@ import '../css/forms.css';
 const Forms = ({ form }) => {
     const links = {
         calendar: {
-            href: "https://calendar.google.com/calendar/embed?src=fba7q5aluemop4g7pnvmjcs67s%40group.calendar.google.com&src=jchsfbla%40gmail.com&ctz=America%2FNew_York",
+            href: "https://calendar.google.com/calendar/embed?src=fba7q5aluemop4g7pnvmjcs67s%40group.calendar.google.com&color=%23A79B8E&src=jchsfbla%40gmail.com&color=%23D50000&ctz=America%2FNew_York",
             text: "Calendar",
             target: "_self"
         },
