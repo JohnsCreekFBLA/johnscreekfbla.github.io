@@ -4,9 +4,9 @@ const Meetings = ({ meetings }) => {
 
     const meetingInfo = {
         august: {
-            title: "August Meeting Slides",
-            about: "Kickoff Meeting",
-            date: "August 28, 2025",
+            title: "Interest Meeting Slides",
+            about: "Interest Meeting",
+            date: "August 27, 2026",
             link: "/meetings/FBLA_Aug_Meeting.pdf"
         },
         flc: {

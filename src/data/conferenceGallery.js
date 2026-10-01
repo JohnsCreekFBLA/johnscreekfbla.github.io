@@ -37,11 +37,11 @@ const conferenceGallery = [
     {
         id: "national",
         title: "National Leadership Conference",
-        label: "San Antonio, TX - June 29 - July 3, 2026",
+        label: "San Antonio, TX - June 29-July 2, 2026",
         images: [
-            { src: "/eventImgs/NLC/26/IMG_3452.jpeg", alt: "National Leadership Conference 2026" },
-            { src: "/eventImgs/NLC/26/WhatsApp Image 2026-07-03 at 10.05.13 AM (1).jpeg", alt: "National Leadership Conference 2026" },
-            { src: "/eventImgs/NLC/26/WhatsApp Image 2026-07-03 at 10.05.13 AM.jpeg", alt: "National Leadership Conference 2026" }
+            { src: "/eventImgs/NLC/26/nlc-2026-1.jpg", alt: "Johns Creek FBLA members at the 2026 National Leadership Conference" },
+            { src: "/eventImgs/NLC/26/nlc-2026-2.jpg", alt: "Johns Creek FBLA at the 2026 National Leadership Conference in San Antonio" },
+            { src: "/eventImgs/NLC/26/nlc-2026-3.jpg", alt: "Johns Creek FBLA members celebrating at the 2026 National Leadership Conference" }
         ]
     }
 ];

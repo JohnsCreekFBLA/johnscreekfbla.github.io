@@ -11,8 +11,8 @@ const Conferences = ({ conferences }) => {
             date: "October 5, 2026",
             location: "Six Flags Over Georgia, Austell, GA",
             price: "$95 per person (includes meals, and ticket)",
-            registration: "https://docs.google.com/forms/d/e/1FAIpQLSeEo_hRIq1eHH0ChhlIUepTRRT5mQzc1BfIofxYWbU52j79aQ/viewform"
-            
+            registration: "https://docs.google.com/forms/d/e/1FAIpQLSeEo_hRIq1eHH0ChhlIUepTRRT5mQzc1BfIofxYWbU52j79aQ/viewform",
+            registrationLabel: "Join Fall Rally Waitlist"
         },
         fall: {
             title: "Fall Leadership Conference",
@@ -22,7 +22,9 @@ const Conferences = ({ conferences }) => {
             Events: "Career Portfolio, Future Business Educator, Impromptu Speaking, Job Interview, and Sales Presentation.",
             date: "November 16-17, 2026",
             location: "The Classic Center, Athens, GA",
-            price: "TBA",
+            price: "$220",
+            registration: "https://docs.google.com/forms/d/e/1FAIpQLSdGzkm367Ga3z9T-Gay8XJVmw9X5xmGFWiGi1anKW4YoMWhWw/viewform",
+            payment: "https://fultonschools.schoolcashonline.com/Fee/Details/7078/623/False/True",
             closed: "Closed"
         },
         region: {
@@ -53,7 +55,7 @@ const Conferences = ({ conferences }) => {
             about: "At the National Leadership Conference, members can compete in many events, attend general sessions and keynotes, watch the national officer campaigns, and see national recognitions and competitive event winners. Members who placed in the top 4 for their event at the SLC qualify for the NLC. If members qualify for nationals in multiple events, they can only choose one event to compete in at nationals.",
             Competitions: "Competitions at the National Leadership Conference include the Annual Business Plan Competition, the Elevator Pitch Competition, and the MONOPOLY tournament.",
             Events: "All events offered at SLC, plus Business Financial Plan, Client Service, Coding, Community Service Project, Cyber Security, Digital Video Production, E-Business, Emerging Business Issues, Graphic Design, Mobile Application Development, Network Design, Public Speaking, Sales Presentation, Website Design",
-            date: "June 29 - July 3, 2026",
+            date: "June 29-July 2, 2026",
             location: "San Antonio, TX",
             price: "TBA",
             registration: "Registration will open in March 2026.",
@@ -90,7 +92,12 @@ const Conferences = ({ conferences }) => {
                 <p><strong>Location:</strong> {selected.location}</p>
                 <p><strong>Price:</strong> {selected.price}</p>
                 {selected.registration && (
-                    <a href={selected.registration} target="_blank">Registration Form<br /></a>
+                    <a href={selected.registration} target="_blank" rel="noopener noreferrer">
+                        {selected.registrationLabel ?? "Registration Form"}<br />
+                    </a>
+                )}
+                {selected.payment && (
+                    <a href={selected.payment} target="_blank" rel="noopener noreferrer">Payment</a>
                 )}
                 {selected.closed && (
                     <p><strong>Registration:</strong> {selected.closed}</p>
