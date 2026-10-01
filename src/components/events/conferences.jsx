@@ -22,7 +22,10 @@ const Conferences = ({ conferences }) => {
             Events: "Career Portfolio, Future Business Educator, Impromptu Speaking, Job Interview, and Sales Presentation.",
             date: "November 16-17, 2026",
             location: "The Classic Center, Athens, GA",
-            price: "TBA"
+            price: "$220",
+            registration: "https://docs.google.com/forms/d/e/1FAIpQLSdGzkm367Ga3z9T-Gay8XJVmw9X5xmGFWiGi1anKW4YoMWhWw/viewform",
+            payment: "https://fultonschools.schoolcashonline.com/Fee/Details/7078/623/False/True",
+            closed: "Closed"
         },
         region: {
             title: "Region Leadership Conference",
@@ -92,6 +95,12 @@ const Conferences = ({ conferences }) => {
                     <a href={selected.registration} target="_blank" rel="noopener noreferrer">
                         {selected.registrationLabel ?? "Registration Form"}<br />
                     </a>
+                )}
+                {selected.payment && (
+                    <a href={selected.payment} target="_blank" rel="noopener noreferrer">Payment</a>
+                )}
+                {selected.closed && (
+                    <p><strong>Registration:</strong> {selected.closed}</p>
                 )}
 
                 {selected.link && (
