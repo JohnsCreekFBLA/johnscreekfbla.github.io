@@ -51,6 +51,7 @@ const gallerySections = [
     // events" and so on, which were close-ups of one or two people and got
     // cropped to a chin in the wide card.
     curated: [
+      { src: '/eventImgs/SLC/SLC_2024-25/IMG_1075.jpg', alt: 'Members with their State Leadership Conference plaques, including first place in Visual Design' },
       { src: '/eventImgs/SLC/SLC_2024-25/133_0180.JPG', alt: 'Chapter members at the State Leadership Conference' },
       { src: '/eventImgs/SLC/SLC_2024-25/100_0464.JPG', alt: 'Members on stage receiving awards at the State Leadership Conference' },
       { src: '/eventImgs/SLC/SLC_2024-25/100_0313.JPG', alt: 'Members in blazers at the State Leadership Conference' },
