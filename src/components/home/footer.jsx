@@ -3,6 +3,9 @@ import { SiLinktree } from "react-icons/si";
 import '../css/footer.css';
 
 const Footer = () => {
+    // Derived, not hardcoded, so the copyright never goes stale again.
+    const year = new Date().getFullYear();
+
     return(
         <footer className="footer">
             <div className="footer-content">
@@ -23,7 +26,7 @@ const Footer = () => {
                 <div className="footer-socials">
                     <div className="footer-title">Follow Us</div>
                     <div className="footer-links">
-                        <a href="https://linktr.ee/jchsfbla?utm_source=linktree_profile_share&ltsid=00c4ebeb-9aec-4212-a29e-1b75e100ccde" class="footer-social-link" target="_blank" rel="noopener noreferrer">
+                        <a href="https://linktr.ee/jchsfbla" class="footer-social-link" target="_blank" rel="noopener noreferrer">
                             <SiLinktree className="footer-social-icon" size={24}/>
                             Linktree
                         </a>
@@ -43,7 +46,7 @@ const Footer = () => {
             </div>
             <hr></hr>
             <div className="footer-extra">
-                <p className="footer-text">© 2025 Johns Creek FBLA. All rights reserved.</p>
+                <p className="footer-text">© {year} Johns Creek FBLA. All rights reserved.</p>
             </div>
         </footer>
     );
