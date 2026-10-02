@@ -4,7 +4,7 @@ import '../css/whatWeDoStyle.css';
 
 const WhatWeDo = () => {
     const slides = [
-        <img src="../images/home-page-immersion.jpg" alt="Slide 1" className="slides"/>,
+        <img src="/images/home-slc-2025.jpg" alt="Chapter members at the 2025 State Leadership Conference" className="slides"/>,
         <img src="../images/home-page-education.jpg" alt="Slide 2"className="slides" />,
         <img src="../images/wwd/comp1.JPG" alt="Slide 3" className="slides"/>,
         <img src="../images/home-page-community-service.jpg" alt="Slide 4"className="slides" />
