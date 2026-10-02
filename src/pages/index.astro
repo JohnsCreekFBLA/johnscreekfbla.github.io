@@ -4,6 +4,7 @@ import Footer from '../components/home/footer.jsx';
 import Hero from '../components/home/hero.jsx';
 import Navbar from '../components/home/navbar.jsx';
 import WWWD from '../components/home/whatWeDo.jsx';
+import UpdatesBand from '../components/home/UpdatesBand.astro';
 ---
 
 <html lang="en">
@@ -33,6 +34,7 @@ import WWWD from '../components/home/whatWeDo.jsx';
   <Navbar client:load/>
   <Hero client:load/>
   <WWWD client:load/>
+  <UpdatesBand />
   <Achievements client:load/>
   <Footer client:load/>
 </body>
