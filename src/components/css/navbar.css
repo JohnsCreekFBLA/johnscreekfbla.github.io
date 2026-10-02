@@ -27,8 +27,6 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  left: 0;
-  right: auto;
   background: #fff;
   min-width: 200px;
   z-index: 1;
@@ -44,11 +42,6 @@ body {
     display: block;
     border-radius: 8px;
     padding-right: 20px;
-  }
-
-  .dropdown:last-child .dropdown-content {
-    left: auto;
-    right: 0;
   }
 }
 
@@ -79,12 +72,6 @@ body {
   height: 44px;
   width: auto;
   display: block;
-}
-
-.navbar-logo-link {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
 }
 
 .navbar-hamburger {
@@ -259,4 +246,24 @@ body {
   .dropdown-content a:hover {
     background: #e9ecef !important;
   }
+}
+
+/* Group heading inside a dropdown (e.g. "2025-26 Archive"). Not a link. */
+.dropdown-content .dropdown-label {
+    display: block;
+    padding: 0.6rem 1rem 0.3rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #999;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    margin-top: 0.3rem;
+    cursor: default;
+    pointer-events: none;
+}
+
+.navbar-logo-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
 }
