@@ -1,37 +1,44 @@
 import '../css/conference.css';
 import conferenceGallery from '../../data/conferenceGallery.js';
 
+// Some conferences have a real registration URL; others carry a sentence of
+// guidance instead (deadline passed, opens later). Only the former should
+// render as a link, otherwise the sentence ends up inside an href.
+const isUrl = (v) => typeof v === 'string' && v.startsWith('http');
+
 const Conferences = ({ conferences }) => {
     const info = {
         rally: {
             title: "Fall Motivational Rally",
-            about: "Students get to spend the day at Six Flags Over Georgia",
+            about: "Students spend the day at Six Flags Over Georgia. Georgia FBLA runs a second rally at the Georgia National Fairgrounds in Perry on October 15; Johns Creek attends the Six Flags rally.",
             Competitions: "None",
             Events: "None",
-            date: "October 5, 2026",
-            location: "Six Flags Over Georgia, Austell, GA",
-            price: "$95 per person (includes meals, and ticket)",
-            registration: "https://docs.google.com/forms/d/e/1FAIpQLSeEo_hRIq1eHH0ChhlIUepTRRT5mQzc1BfIofxYWbU52j79aQ/viewform",
-            registrationLabel: "Join Fall Rally Waitlist"
+            date: "Monday, October 5, 2026 - 9:30 am to 5:00 pm",
+            location: "Six Flags Over Georgia, 275 Riverside Pkwy, Austell, GA",
+            price: "$80 per person",
+            registration: "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAWIq2VxUMUpHMlI2UzY1NTdEUUxTUExaRERSVVI3Sy4u",
+            link: "https://osp.osmsinc.com/FultonGA/BVModules/ProductTemplates/Bvc2013/Product.aspx?productid=EN713-1505"
         },
         fall: {
             title: "Fall Leadership Conference",
             note: "View Meeting Slides in Meetings Tab",
-            about: "The 2026 overnight two-day Fall Leadership Conference for high school chapters will be held November 16-17 in Athens at the beautiful Classic Center. You can expect a dynamic general session, informative leadership training workshops, the always thrilling Battle of the Chapters, the opportunity to participate in one of the world's largest MONOPOLY tournaments, and many other activities.",
+            about: "The overnight two-day Fall Leadership Conference for high school chapters is held each fall in Athens at the Classic Center. You can expect a dynamic general session, informative leadership training workshops, the always thrilling Battle of the Chapters, the opportunity to participate in one of the world's largest MONOPOLY tournaments, and many other activities.",
             Competitions: "Competitions at the Fall Leadership Conference include the Annual Business Plan Competition, the Elevator Pitch Competition, and the MONOPOLY tournament.",
-            Events: "Career Portfolio, Future Business Educator, Impromptu Speaking, Job Interview, and Sales Presentation.",
-            date: "November 16-17, 2026",
+            Events: "Broadcast Journalism, Business Ethics, Client Service, Impromptu Speaking, Introduction to Social Media Strategy, Job Interview and Social Media Strategies",
+            date: "One-day: Monday, November 16, 2026, 8:30 am to 5:00 pm. Two-day: November 16 at 5:00 pm through November 17 at 3:15 pm.",
             location: "The Classic Center, Athens, GA",
-            price: "TBA"
+            price: "$75 one-day, $85 two-day. Late registration after September 29 is $95 one-day and $105 two-day.",
+            registration: "Registration closed September 29. Late registration and any substitutions or cancellations close October 6. Talk to an adviser.",
+            link: "placeholder"
         },
         region: {
             title: "Region Leadership Conference",
             about: "FBLA members can compete at a variety of competitive events at the Region Leadership Conference each year to qualify for the State Leadership Conference (SLC). For more information about the competitive events offered at RLC, see the competition events guideline.",
             Competitions: "Competitions at the Region Leadership Conference include the Annual Business Plan Competition, the Elevator Pitch Competition, and the MONOPOLY tournament.",
             Events: "Broadcast Journalism, Business Ethics, Client Service, Impromptu Speaking, Introduction to Social Media Strategy, Job Interview and Social Media Strategies",
-            date: "January 15, 2026",
+            date: "TBA - 2026-27 date to be confirmed",
             location: "Alpharetta High School",
-            price: "$35 per person (includes meals and materials)",
+            price: "TBA",
             registration: "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAWIq2VxUNTFXV1lUQUpSUENBMDZaOExTTFJNRVlRTi4u",
             link: "https://osp.osmsinc.com/FultonGA/BVModules/ProductTemplates/Bvc2013/Product.aspx?productid=EN713-1585"
         },
@@ -40,10 +47,10 @@ const Conferences = ({ conferences }) => {
             about: "At the State Leadership Conference, FBLA members can compete at a variety of competitive events, attend leadership workshops, and see the state officer elections. In addition to the events offered at the RLC, the SLC also includes straight-to-state events (see the list of competitive events below). Members who place in the top 4 for their event qualify for the National Leadership Conference. If members qualify for nationals in multiple events, they can only choose one to compete in at nationals.",
             Competitions: "Competitions at the State Leadership Conference include the Annual Business Plan Competition, the Elevator Pitch Competition, and the MONOPOLY tournament.",
             Events: "All events offered at RLC, plus App Development, Coding, Cyber Security, Digital Video Production, E-Business, Emerging Business Issues, Graphic Design, Mobile Application Development, Network Design, Public Speaking, Sales Presentation, Website Design",
-            date: "March 13-14, 2026",
+            date: "TBA - 2026-27 date to be confirmed",
             location: "TBA",
-            price: "$100 per person (includes meals, lodging, and materials)",
-            registration: "Registration will open in February 2026.",
+            price: "TBA",
+            registration: "Registration opens in February. Check back for the link.",
             link: "placeholder"
 
         },
@@ -52,10 +59,10 @@ const Conferences = ({ conferences }) => {
             about: "At the National Leadership Conference, members can compete in many events, attend general sessions and keynotes, watch the national officer campaigns, and see national recognitions and competitive event winners. Members who placed in the top 4 for their event at the SLC qualify for the NLC. If members qualify for nationals in multiple events, they can only choose one event to compete in at nationals.",
             Competitions: "Competitions at the National Leadership Conference include the Annual Business Plan Competition, the Elevator Pitch Competition, and the MONOPOLY tournament.",
             Events: "All events offered at SLC, plus Business Financial Plan, Client Service, Coding, Community Service Project, Cyber Security, Digital Video Production, E-Business, Emerging Business Issues, Graphic Design, Mobile Application Development, Network Design, Public Speaking, Sales Presentation, Website Design",
-            date: "June 29-July 2, 2026",
+            date: "TBA - 2026-27 date to be confirmed",
             location: "San Antonio, TX",
             price: "TBA",
-            registration: "Registration will open in March 2026.",
+            registration: "Registration opens in March. Check back for the link.",
             link: "placeholder"
         }
     };
@@ -88,13 +95,12 @@ const Conferences = ({ conferences }) => {
                 <p><strong>Date:</strong> {selected.date}</p>
                 <p><strong>Location:</strong> {selected.location}</p>
                 <p><strong>Price:</strong> {selected.price}</p>
-                {selected.registration && (
-                    <a href={selected.registration} target="_blank" rel="noopener noreferrer">
-                        {selected.registrationLabel ?? "Registration Form"}<br />
-                    </a>
+                {isUrl(selected.registration) ? (
+                    <a href={selected.registration} target="_blank" rel="noopener noreferrer">Registration Form<br /></a>
+                ) : (
+                    <p><strong>Registration:</strong> {selected.registration}</p>
                 )}
-
-                {selected.link && (
+                {isUrl(selected.link) && (
                     <a href={selected.link} target="_blank" rel="noopener noreferrer">OSP Link</a>
                 )}
             </div>
