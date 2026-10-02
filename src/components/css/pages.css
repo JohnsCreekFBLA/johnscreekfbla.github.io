@@ -92,6 +92,39 @@
     text-align: center;
 }
 
+/* ---- Results table ---- */
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.25rem;
+}
+
+.results-table th,
+.results-table td {
+    text-align: left;
+    padding: 0.7rem 0.6rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.results-table th {
+    font-weight: 600;
+    color: var(--jc-muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.results-table .place {
+    font-weight: 700;
+    color: var(--jc-red);
+    white-space: nowrap;
+}
+
+.results-table tr:last-child td {
+    border-bottom: none;
+}
+
 /* ---- News ---- */
 
 .news-list {
