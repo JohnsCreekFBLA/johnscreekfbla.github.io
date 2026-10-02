@@ -89,6 +89,7 @@ const NavBar = () => {
             <li className={`dropdown${activeDropdown === 'forms' ? ' active' : ''}`}>
                 <a onClick={(e) => handleDropdownClick(e, 'forms')}>Forms &amp; Payments</a>
                 <div className="dropdown-content">
+                    <a href="/forms" onClick={handleLinkClick}>All Forms &amp; Payments</a>
                     <span className="dropdown-label">Join</span>
                     <a href="/forms/membership" onClick={handleLinkClick}>Membership Form</a>
                     <a href="https://fultonschools.schoolcashonline.com/Fee/Details/1565/623/False/True" target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>Early Bird Membership Payment</a>
