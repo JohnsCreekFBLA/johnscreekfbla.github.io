@@ -74,8 +74,17 @@ body {
 
 .navbar-logo {
   padding-left: 25px;
-  width: 200px;
-  height: 80px;
+  /* Height-driven so the mark keeps its own 4.46:1 aspect. Fixing both
+     dimensions squashed it, since the new logo is far wider than the old one. */
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
+.navbar-logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .navbar-hamburger {
@@ -135,8 +144,8 @@ body {
   }
   
   .navbar-logo {
-    width: 150px;
-    height: 60px;
+    height: 34px;
+    width: auto;
     padding-left: 0;
   }
   

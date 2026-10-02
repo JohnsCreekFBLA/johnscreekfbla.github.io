@@ -25,7 +25,9 @@ const NavBar = () => {
   return (
     <nav className="navbar">
       <a href="/" onClick={handleLinkClick} aria-label="Go to home page">
-        <img src="/images/topNavLogo.svg" className="navbar-logo" alt="" />
+    <a href="/" className="navbar-logo-link" aria-label="Johns Creek FBLA home">
+      <img src="/images/fbla-logo.png" className="navbar-logo" alt="Johns Creek FBLA" />
+    </a>
       </a>
       <button
         className="navbar-hamburger"
