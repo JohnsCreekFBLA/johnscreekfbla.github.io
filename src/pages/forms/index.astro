@@ -1,0 +1,63 @@
+---
+import Navbar from '../../components/home/navbar.jsx';
+import Footer from '../../components/home/footer.jsx';
+import formGroups from '../../data/formsIndex.js';
+import '../../components/css/pages.css';
+---
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Forms & Payments | Johns Creek FBLA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Membership, permission, and information forms for Johns Creek High School FBLA." />
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background-color: #f7f7f7; font-family: 'Oswald', sans-serif; }
+  </style>
+</head>
+<body>
+  <Navbar client:load />
+  <main class="page">
+    <header class="page-heading">
+      <h1>Forms & Payments</h1>
+      <p class="page-intro">
+        Everything you need to sign, submit, or pay. If a form says coming soon, it
+        is not open yet and we will post it here as soon as it is.
+      </p>
+    </header>
+
+    {formGroups.map((group) => (
+      <section class="panel" id={group.id}>
+        <div class="panel-header">
+          <h2>{group.title}</h2>
+          <p>{group.blurb}</p>
+        </div>
+        <ul class="form-list">
+          {group.forms.map((form) => (
+            <li class={form.href ? 'form-row' : 'form-row pending'}>
+              <div class="form-row-main">
+                <span class="form-row-title">{form.title}</span>
+                {form.note && <span class="form-row-note">{form.note}</span>}
+              </div>
+              {form.href ? (
+                <a
+                  class="form-row-link"
+                  href={form.href}
+                  target={form.external ? '_blank' : '_self'}
+                  rel={form.external ? 'noopener noreferrer' : undefined}
+                >
+                  Open
+                </a>
+              ) : (
+                <span class="form-row-pending">Coming soon</span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </main>
+  <Footer client:load />
+</body>
+</html>
