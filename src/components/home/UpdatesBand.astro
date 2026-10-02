@@ -1,0 +1,73 @@
+---
+/**
+ * Home page band: what's next and what's new.
+ * Pure Astro, so it ships no JavaScript. Content comes from the data files.
+ */
+import news from '../../data/news.js';
+import schedule from '../../data/schedule.js';
+import { formatDate, isUpcoming, toDate } from '../../data/formatDate.js';
+import './updatesBand.css';
+
+const byDateAsc = (a, b) => {
+  const da = toDate(a.date);
+  const db = toDate(b.date);
+  if (!da && !db) return 0;
+  if (!da) return 1;
+  if (!db) return -1;
+  return da - db;
+};
+
+const upcoming = schedule
+  .filter((e) => isUpcoming(e.date))
+  .sort(byDateAsc)
+  .slice(0, 3)
+  .map((e) => ({ ...e, shownDate: e.dateLabel || formatDate(e.date) }));
+
+const latest = [...news].sort((a, b) => (a.date < b.date ? 1 : -1)).slice(0, 3);
+---
+
+<section class="updates-band">
+  <div class="updates-inner">
+    <div class="updates-col">
+      <div class="updates-col-head">
+        <h2>What's next</h2>
+        <a href="/schedule">Full schedule</a>
+      </div>
+      {upcoming.length > 0 ? (
+        <ul class="updates-list">
+          {upcoming.map((e) => (
+            <li>
+              <span class="updates-date">{e.shownDate}</span>
+              <span class="updates-title">
+                {e.link ? <a href={e.link}>{e.title}</a> : e.title}
+              </span>
+              {e.location && <span class="updates-sub">{e.location}</span>}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="updates-empty">Nothing on the calendar yet.</p>
+      )}
+    </div>
+
+    <div class="updates-col">
+      <div class="updates-col-head">
+        <h2>Latest news</h2>
+        <a href="/news">All news</a>
+      </div>
+      {latest.length > 0 ? (
+        <ul class="updates-list">
+          {latest.map((post) => (
+            <li>
+              <span class="updates-date">{formatDate(post.date)}</span>
+              <span class="updates-title">{post.title}</span>
+              <span class="updates-sub">{post.body}</span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="updates-empty">No announcements yet.</p>
+      )}
+    </div>
+  </div>
+</section>
