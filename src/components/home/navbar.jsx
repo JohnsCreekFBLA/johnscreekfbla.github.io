@@ -47,6 +47,9 @@ const NavBar = () => {
             <li>
                 <a href="/schedule" onClick={handleLinkClick}>Schedule</a>
             </li>
+            <li>
+                <a href="/news" onClick={handleLinkClick}>News</a>
+            </li>
             <li className={`dropdown${activeDropdown === 'about' ? ' active' : ''}`}>
                 <a onClick={(e) => handleDropdownClick(e, 'about')}>About</a>
                 <div className="dropdown-content">
