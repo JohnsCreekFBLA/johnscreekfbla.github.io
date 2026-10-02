@@ -1,5 +1,5 @@
 import '../css/conference.css';
-import conferenceGallery from '../../data/conferenceGallery.js';
+import gallerySections from '../../data/gallerySections.js';
 
 // Some conferences have a real registration URL; others carry a sentence of
 // guidance instead (deadline passed, opens later). Only the former should
@@ -68,8 +68,8 @@ const Conferences = ({ conferences }) => {
     };
 
     const selected = info[conferences];
-    const gallerySection = conferenceGallery.find(
-        (section) => section.id === conferences && section.images.length > 0
+    const gallerySection = gallerySections.find(
+        (section) => section.id === conferences
     );
 
     if (!selected) {
