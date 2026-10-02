@@ -91,3 +91,97 @@
     color: var(--jc-muted);
     text-align: center;
 }
+
+/* ---- Schedule ---- */
+
+.schedule-list {
+    list-style: none;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.schedule-item {
+    display: grid;
+    grid-template-columns: 180px 1fr auto;
+    gap: 1rem;
+    align-items: start;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
+.schedule-when {
+    font-weight: 600;
+    color: var(--jc-red);
+}
+
+.schedule-what h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.schedule-what h3 a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(191, 13, 62, 0.4);
+}
+
+.schedule-what h3 a:hover {
+    color: var(--jc-red);
+}
+
+.schedule-where,
+.schedule-note {
+    margin: 0.25rem 0 0;
+    color: var(--jc-muted);
+    font-size: 0.95rem;
+}
+
+.schedule-note {
+    font-style: italic;
+}
+
+.schedule-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--jc-muted);
+    background: rgba(0, 0, 0, 0.05);
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.schedule-list.past .schedule-when {
+    color: var(--jc-muted);
+}
+
+@media (max-width: 680px) {
+    .schedule-item {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+    }
+
+    .schedule-tag {
+        justify-self: start;
+    }
+}
+
+.schedule-tentative {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.06);
+    color: #777;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
