@@ -82,11 +82,11 @@ const NavBar = () => {
                     <a href="/meetings/august" onClick={handleLinkClick}>August Meeting</a>
                     {/*
                     <a href="/meetings/flc" onClick={handleLinkClick}>FLC Interest Meeting</a>
-                    <a href="/meetings/september" onClick={handleLinkClick}>September Meeting</a>
                     <a href="/meetings/october" onClick={handleLinkClick}>October Meeting</a>
                     <a href="/meetings/rlc-testing" onClick={handleLinkClick}>RLC Testing Meeting</a>
                     <a href="/meetings/february" onClick={handleLinkClick}>February Meeting</a>
                     */}
+                    <a href="/meetings/september" onClick={handleLinkClick}>September Meeting</a>
                 </div>
             </li>
             <li className={`dropdown${activeDropdown === 'resources' ? ' active' : ''}`}>
