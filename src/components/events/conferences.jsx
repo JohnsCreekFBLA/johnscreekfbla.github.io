@@ -4,7 +4,7 @@ import '../css/conference.css';
 // sentence, and "link" is still the literal string "placeholder" in two places.
 // Only build an anchor when the value is really a link.
 const isUrl = (v) => typeof v === 'string' && v.startsWith('http');
-import conferenceGallery from '../../data/conferenceGallery.js';
+import gallerySections from '../../data/gallerySections.js';
 
 const Conferences = ({ conferences }) => {
     const info = {
@@ -69,8 +69,8 @@ const Conferences = ({ conferences }) => {
     };
 
     const selected = info[conferences];
-    const gallerySection = conferenceGallery.find(
-        (section) => section.id === conferences && section.images.length > 0
+    const gallerySection = gallerySections.find(
+        (section) => section.id === conferences
     );
 
     if (!selected) {
