@@ -1,4 +1,9 @@
 import '../css/conference.css';
+
+// `registration` is a URL on some conferences and a plain sentence on others,
+// and `link` is still the literal string "placeholder" in a couple of places.
+// Only render an anchor when the value is actually a link.
+const isUrl = (v) => typeof v === 'string' && v.startsWith('http');
 import conferenceGallery from '../../data/conferenceGallery.js';
 
 const Conferences = ({ conferences }) => {
@@ -8,7 +13,7 @@ const Conferences = ({ conferences }) => {
             about: "Students get to spend the day at Six Flags Over Georgia",
             Competitions: "None",
             Events: "None",
-            date: "October 5, 2026",
+            date: "October 5, 2026, 9:30 am to 5:00 pm",
             location: "Six Flags Over Georgia, Austell, GA",
             price: "$95 per person (includes meals, and ticket)",
             registration: "https://docs.google.com/forms/d/e/1FAIpQLSeEo_hRIq1eHH0ChhlIUepTRRT5mQzc1BfIofxYWbU52j79aQ/viewform",
@@ -29,7 +34,7 @@ const Conferences = ({ conferences }) => {
             about: "FBLA members can compete at a variety of competitive events at the Region Leadership Conference each year to qualify for the State Leadership Conference (SLC). For more information about the competitive events offered at RLC, see the competition events guideline.",
             Competitions: "Competitions at the Region Leadership Conference include the Annual Business Plan Competition, the Elevator Pitch Competition, and the MONOPOLY tournament.",
             Events: "Broadcast Journalism, Business Ethics, Client Service, Impromptu Speaking, Introduction to Social Media Strategy, Job Interview and Social Media Strategies",
-            date: "January 15, 2026",
+            date: "TBA - 2026-27 date to be confirmed",
             location: "Alpharetta High School",
             price: "$35 per person (includes meals and materials)",
             registration: "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAWIq2VxUNTFXV1lUQUpSUENBMDZaOExTTFJNRVlRTi4u",
@@ -40,10 +45,10 @@ const Conferences = ({ conferences }) => {
             about: "At the State Leadership Conference, FBLA members can compete at a variety of competitive events, attend leadership workshops, and see the state officer elections. In addition to the events offered at the RLC, the SLC also includes straight-to-state events (see the list of competitive events below). Members who place in the top 4 for their event qualify for the National Leadership Conference. If members qualify for nationals in multiple events, they can only choose one to compete in at nationals.",
             Competitions: "Competitions at the State Leadership Conference include the Annual Business Plan Competition, the Elevator Pitch Competition, and the MONOPOLY tournament.",
             Events: "All events offered at RLC, plus App Development, Coding, Cyber Security, Digital Video Production, E-Business, Emerging Business Issues, Graphic Design, Mobile Application Development, Network Design, Public Speaking, Sales Presentation, Website Design",
-            date: "March 13-14, 2026",
+            date: "TBA - 2026-27 date to be confirmed",
             location: "TBA",
             price: "$100 per person (includes meals, lodging, and materials)",
-            registration: "Registration will open in February 2026.",
+            registration: "Registration opens in February. Check back for the link.",
             link: "placeholder"
 
         },
@@ -52,10 +57,10 @@ const Conferences = ({ conferences }) => {
             about: "At the National Leadership Conference, members can compete in many events, attend general sessions and keynotes, watch the national officer campaigns, and see national recognitions and competitive event winners. Members who placed in the top 4 for their event at the SLC qualify for the NLC. If members qualify for nationals in multiple events, they can only choose one event to compete in at nationals.",
             Competitions: "Competitions at the National Leadership Conference include the Annual Business Plan Competition, the Elevator Pitch Competition, and the MONOPOLY tournament.",
             Events: "All events offered at SLC, plus Business Financial Plan, Client Service, Coding, Community Service Project, Cyber Security, Digital Video Production, E-Business, Emerging Business Issues, Graphic Design, Mobile Application Development, Network Design, Public Speaking, Sales Presentation, Website Design",
-            date: "June 29-July 2, 2026",
+            date: "TBA - 2026-27 date to be confirmed",
             location: "San Antonio, TX",
             price: "TBA",
-            registration: "Registration will open in March 2026.",
+            registration: "Registration opens in March. Check back for the link.",
             link: "placeholder"
         }
     };
@@ -89,12 +94,16 @@ const Conferences = ({ conferences }) => {
                 <p><strong>Location:</strong> {selected.location}</p>
                 <p><strong>Price:</strong> {selected.price}</p>
                 {selected.registration && (
-                    <a href={selected.registration} target="_blank" rel="noopener noreferrer">
-                        {selected.registrationLabel ?? "Registration Form"}<br />
-                    </a>
+                    isUrl(selected.registration) ? (
+                        <a href={selected.registration} target="_blank" rel="noopener noreferrer">
+                            {selected.registrationLabel ?? "Registration Form"}<br />
+                        </a>
+                    ) : (
+                        <p><strong>Registration:</strong> {selected.registration}</p>
+                    )
                 )}
 
-                {selected.link && (
+                {isUrl(selected.link) && (
                     <a href={selected.link} target="_blank" rel="noopener noreferrer">OSP Link</a>
                 )}
             </div>
