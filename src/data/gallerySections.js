@@ -13,7 +13,9 @@
  *
  * HOW TO ADD A SECTION
  *   Copy a block, point `folder` at a new directory, drop photos in.
- *   Newest event first so the top of the page is the most recent thing we did.
+ *   **Newest event first.** The page renders these in order, so the most recent
+ *   thing the chapter did is what someone sees before scrolling. Put the year in
+ *   `label` so the ordering is obvious to whoever edits this next.
  *
  * `curated` is optional: those appear first with a real caption, then the rest
  * of the folder follows with the section's generic `alt`.
@@ -29,7 +31,7 @@ const gallerySections = [
   {
     id: 'rally',
     title: 'Fall Motivational Rally',
-    label: 'Six Flags Over Georgia',
+    label: 'Six Flags Over Georgia, September 2025',
     folder: 'eventImgs',
     alt: 'Johns Creek FBLA members at the Fall Motivational Rally',
     curated: [
