@@ -4,17 +4,17 @@ import '../css/whatWeDoStyle.css';
 
 const WhatWeDo = () => {
     const slides = [
-        <img src="/images/home-slc-2025.jpg" alt="Chapter members at the 2025 State Leadership Conference" className="slides"/>,
-        <img src="../images/home-page-education.jpg" alt="Slide 2"className="slides" />,
-        <img src="../images/wwd/comp1.JPG" alt="Slide 3" className="slides"/>,
-        <img src="../images/home-page-community-service.jpg" alt="Slide 4"className="slides" />
+        <img src="/images/home-slc-2025.jpg" alt="Chapter members together at the 2025 State Leadership Conference" className="slides" />,
+        <img src="/images/home-awards-2025.jpg" alt="Members holding first and fourth place plaques won at the State Leadership Conference" className="slides" />,
+        <img src="/images/wwd/comp1.JPG" alt="A member competing at the State Leadership Conference" className="slides" />,
+        <img src="/images/home-page-community-service.jpg" alt="Members writing thank-you cards during a chapter service project" className="slides" />
     ];
 
     const slideTexts = [
-        "Immersion: Our chapter offers immersive experiences to help members grow.",
-        "Education: We provide educational resources and workshops.",
-        "Competitions: Members compete in various business-related events.",
-        "Community Service: We give back through service projects."
+        "Conferences: Members travel to region, state, and national conferences each year.",
+        "Recognition: Our members bring home awards, including first place finishes at state.",
+        "Competitions: Members compete in a wide range of business events.",
+        "Community Service: We give back through chapter service projects."
     ];
 
     const [activeIndex, setActiveIndex] = useState(0);
@@ -24,9 +24,6 @@ const WhatWeDo = () => {
         if (newIndex < 0) newIndex = slides.length - 1;
         if (newIndex >= slides.length) newIndex = 0;
         setActiveIndex(newIndex);
-        <style>
-            
-        </style>
     };
 
     return (
@@ -38,10 +35,10 @@ const WhatWeDo = () => {
                 <hr className="divider"></hr>
                 <p className="description" >FBLA is the largest student business organization in the world. We prepare students for careers in business through leadership development, community service, and competitive events.</p>
             </div>
-            <button class="prev" onClick={() => handleClick(-1)} ><RxCaretLeft size="28"/></button>
+            <button className="prev" aria-label="Previous slide" onClick={() => handleClick(-1)} ><RxCaretLeft size="28"/></button>
                 {slides[activeIndex]}
                 <div className="text">{slideTexts[activeIndex]}</div>
-            <button class="next" onClick={() => handleClick(1)}><RxCaretRight size="28"/></button>
+            <button className="next" aria-label="Next slide" onClick={() => handleClick(1)}><RxCaretRight size="28"/></button>
         </div>
     );
 };
