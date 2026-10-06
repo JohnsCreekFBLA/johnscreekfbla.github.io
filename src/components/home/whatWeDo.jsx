@@ -6,16 +6,20 @@ const WhatWeDo = () => {
     const slides = [
         <img src="/images/home-slc-2025.jpg" alt="Chapter members together at the 2025 State Leadership Conference" className="slides" />,
         <img src="/images/home-awards-2025.jpg" alt="Members holding first and fourth place plaques won at the State Leadership Conference" className="slides" />,
-        <img src="/images/wwd/comp1.JPG" alt="A member competing at the State Leadership Conference" className="slides" />,
-        <img src="/images/home-page-community-service.jpg" alt="Members writing thank-you cards during a chapter service project" className="slides" />
+        <img src="/images/wwd/comp1.JPG" alt="A member competing at the State Leadership Conference" className="slides" />
     ];
 
     const slideTexts = [
         "Conferences: Members travel to region, state, and national conferences each year.",
         "Recognition: Our members bring home awards, including first place finishes at state.",
-        "Competitions: Members compete in a wide range of business events.",
-        "Community Service: We give back through chapter service projects."
+        "Competitions: Members compete in a wide range of business events."
     ];
+
+    // TODO(Marketing): a community service slide. The only service photo in the
+    // repo is from the masked era, so the slide was pulled rather than run a
+    // four-year-old picture. Drop a recent one in public/images/ and add it back
+    // with the caption "Community Service: We give back through chapter service
+    // projects."
 
     const [activeIndex, setActiveIndex] = useState(0);
 
