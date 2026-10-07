@@ -11,16 +11,22 @@ const withLabel = schedule.map((e) => ({
 }));
 
 const byDateAsc = (a, b) => {
-  const da = toDate(a.date);
-  const db = toDate(b.date);
+  // sortDate carries an approximate date for entries whose month is known but
+  // whose day is not, so they land in the right place on the timeline.
+  const da = toDate(a.date || a.sortDate);
+  const db = toDate(b.date || b.sortDate);
   if (!da && !db) return 0;
   if (!da) return 1;   // undated entries sink to the bottom of Upcoming
   if (!db) return -1;
   return da - db;
 };
 
+// Upcoming runs soonest first, past runs most recent first, so both read as
+// "nearest to now" at the top and the next thing on is never below the fold.
 const upcoming = withLabel.filter((e) => isUpcoming(e.date)).sort(byDateAsc);
 const past = withLabel.filter((e) => !isUpcoming(e.date)).sort((a, b) => byDateAsc(b, a));
+
+const today = formatDate(new Date().toISOString().slice(0, 10));
 ---
 
 <html lang="en">
@@ -47,49 +53,56 @@ const past = withLabel.filter((e) => !isUpcoming(e.date)).sort((a, b) => byDateA
       <a class="page-cta" href="/calendar">Open the calendar</a>
     </header>
 
-    <section class="panel">
-      <div class="panel-header"><h2>Upcoming</h2></div>
+    <section class="timeline-section">
+      <h2 class="timeline-heading">Coming up</h2>
+
       {upcoming.length > 0 ? (
-        <ul class="schedule-list">
+        <ol class="timeline">
+          <li class="tl-node tl-today">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <p class="tl-today-label">Today &middot; {today}</p>
+          </li>
+
           {upcoming.map((e) => (
-            <li class={`schedule-item kind-${e.kind}`}>
-              <div class="schedule-when">
-                {e.shownDate}
-                {e.tentative && <span class="schedule-tentative">tentative</span>}
-              </div>
-              <div class="schedule-what">
-                <h3>
+            <li class={`tl-node tl-${e.kind}${e.tentative ? ' tl-tentative' : ''}`}>
+              <span class="tl-dot" aria-hidden="true"></span>
+              <div class="tl-card">
+                <p class="tl-when">
+                  {e.shownDate}
+                  {e.tentative && <span class="tl-chip">tentative</span>}
+                </p>
+                <h3 class="tl-title">
                   {e.link ? <a href={e.link}>{e.title}</a> : e.title}
                 </h3>
-                {e.location && <p class="schedule-where">{e.location}</p>}
-                {e.note && <p class="schedule-note">{e.note}</p>}
+                {e.location && <p class="tl-where">{e.location}</p>}
+                {e.note && <p class="tl-note">{e.note}</p>}
               </div>
-              <span class="schedule-tag">{e.kind}</span>
             </li>
           ))}
-        </ul>
+        </ol>
       ) : (
         <p class="empty-note">Nothing scheduled yet. Check back soon.</p>
       )}
     </section>
 
-    <section class="panel">
-      <div class="panel-header"><h2>Past</h2></div>
+    <section class="timeline-section">
+      <h2 class="timeline-heading">Already happened</h2>
+
       {past.length > 0 ? (
-        <ul class="schedule-list past">
+        <ol class="timeline timeline-past">
           {past.map((e) => (
-            <li class={`schedule-item kind-${e.kind}`}>
-              <div class="schedule-when">{e.shownDate}</div>
-              <div class="schedule-what">
-                <h3>
+            <li class={`tl-node tl-${e.kind}`}>
+              <span class="tl-dot" aria-hidden="true"></span>
+              <div class="tl-card">
+                <p class="tl-when">{e.shownDate}</p>
+                <h3 class="tl-title">
                   {e.link ? <a href={e.link}>{e.title}</a> : e.title}
                 </h3>
-                {e.location && <p class="schedule-where">{e.location}</p>}
+                {e.location && <p class="tl-where">{e.location}</p>}
               </div>
-              <span class="schedule-tag">{e.kind}</span>
             </li>
           ))}
-        </ul>
+        </ol>
       ) : (
         <p class="empty-note">Nothing here yet.</p>
       )}

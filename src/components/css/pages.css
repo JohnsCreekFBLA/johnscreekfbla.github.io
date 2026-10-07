@@ -92,88 +92,120 @@
     text-align: center;
 }
 
-/* ---- Schedule ---- */
+/* ---- Schedule timeline ---- */
 
-.schedule-list {
+.timeline-section {
+    background: #fff;
+    border-radius: 14px;
+    padding: 1.75rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+}
+
+.timeline-heading {
+    margin: 0 0 1.5rem;
+    color: var(--jc-red);
+    font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+}
+
+/* The spine. Sits behind the dots, which punch through it. */
+.timeline {
+    position: relative;
     list-style: none;
-    margin: 1.25rem 0 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.schedule-item {
-    display: grid;
-    grid-template-columns: 180px 1fr auto;
-    gap: 1rem;
-    align-items: start;
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.schedule-item:last-child {
-    border-bottom: none;
-}
-
-.schedule-when {
-    font-weight: 600;
-    color: var(--jc-red);
-}
-
-.schedule-what h3 {
     margin: 0;
-    font-size: 1.1rem;
-    font-weight: 600;
+    padding: 0 0 0 2rem;
 }
 
-.schedule-what h3 a {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(191, 13, 62, 0.4);
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 0.4rem;
+    bottom: 0.4rem;
+    width: 2px;
+    background: linear-gradient(
+        to bottom,
+        var(--jc-red) 0%,
+        rgba(191, 13, 62, 0.25) 100%
+    );
 }
 
-.schedule-what h3 a:hover {
+.timeline-past::before {
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.tl-node {
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.tl-node:last-child {
+    padding-bottom: 0;
+}
+
+.tl-dot {
+    position: absolute;
+    left: -2rem;
+    top: 0.45rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid var(--jc-red);
+    box-sizing: border-box;
+}
+
+/* Conferences are the big ones, so they get a filled marker. */
+.tl-conference .tl-dot {
+    background: var(--jc-red);
+}
+
+/* A date nobody has confirmed yet should not look settled. */
+.tl-tentative .tl-dot {
+    border-style: dashed;
+    border-color: #b0b0b0;
+}
+
+.timeline-past .tl-dot {
+    border-color: #c4c4c4;
+    background: #fff;
+}
+
+.timeline-past .tl-conference .tl-dot {
+    background: #c4c4c4;
+}
+
+/* Where "now" sits on the spine. */
+.tl-today {
+    padding-bottom: 1.25rem;
+}
+
+.tl-today .tl-dot {
+    width: 16px;
+    height: 16px;
+    background: var(--jc-red);
+    border-color: var(--jc-red);
+    box-shadow: 0 0 0 5px rgba(191, 13, 62, 0.15);
+}
+
+.tl-today-label {
+    margin: 0;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
     color: var(--jc-red);
+    font-weight: 600;
+    padding-top: 0.15rem;
 }
 
-.schedule-where,
-.schedule-note {
-    margin: 0.25rem 0 0;
-    color: var(--jc-muted);
-    font-size: 0.95rem;
-}
-
-.schedule-note {
-    font-style: italic;
-}
-
-.schedule-tag {
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
+.tl-when {
+    margin: 0;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--jc-muted);
-    background: rgba(0, 0, 0, 0.05);
-    padding: 0.25rem 0.6rem;
-    border-radius: 999px;
-    white-space: nowrap;
 }
 
-.schedule-list.past .schedule-when {
-    color: var(--jc-muted);
-}
-
-@media (max-width: 680px) {
-    .schedule-item {
-        grid-template-columns: 1fr;
-        gap: 0.35rem;
-    }
-
-    .schedule-tag {
-        justify-self: start;
-    }
-}
-
-.schedule-tentative {
+.tl-chip {
     display: inline-block;
     margin-left: 0.5rem;
     padding: 0.1rem 0.45rem;
@@ -182,6 +214,64 @@
     color: #777;
     font-size: 0.65rem;
     letter-spacing: 0.08em;
-    text-transform: uppercase;
     vertical-align: middle;
+}
+
+.tl-title {
+    margin: 0.2rem 0 0;
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: var(--jc-ink);
+}
+
+.tl-title a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(191, 13, 62, 0.4);
+}
+
+.tl-title a:hover,
+.tl-title a:focus-visible {
+    color: var(--jc-red);
+}
+
+.tl-where,
+.tl-note {
+    margin: 0.2rem 0 0;
+    color: var(--jc-muted);
+    font-size: 0.95rem;
+}
+
+.tl-note {
+    font-style: italic;
+}
+
+.timeline-past .tl-title {
+    color: #6a6a6a;
+}
+
+.timeline-past .tl-when,
+.timeline-past .tl-where {
+    color: #8a8a8a;
+}
+
+@media (max-width: 600px) {
+    .timeline-section {
+        padding: 1.25rem 1rem;
+    }
+
+    .timeline {
+        padding-left: 1.6rem;
+    }
+
+    .tl-dot {
+        left: -1.6rem;
+        width: 13px;
+        height: 13px;
+        border-width: 2px;
+    }
+
+    .timeline::before {
+        left: 5.5px;
+    }
 }

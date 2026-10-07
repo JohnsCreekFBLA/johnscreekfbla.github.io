@@ -7,6 +7,9 @@
  *
  *   date       YYYY-MM-DD. Use null only if the date genuinely is not set; the
  *              entry then shows under Upcoming with whatever `dateLabel` says.
+ *   sortDate   optional. When the month is known but the day is not, put an
+ *              approximate date here so the timeline orders correctly. It is
+ *              never displayed, so the page still only shows `dateLabel`.
  *   kind       'meeting' | 'conference' | 'service' | 'deadline'
  *   tentative  true adds a "tentative" marker next to the date
  *   link       optional, internal page or external URL
@@ -75,6 +78,7 @@ const schedule = [
   },
   {
     date: null,
+    sortDate: '2027-01-15',
     dateLabel: 'January 2027',
     title: 'Region Leadership Conference',
     kind: 'conference',
@@ -90,6 +94,7 @@ const schedule = [
   },
   {
     date: null,
+    sortDate: '2027-03-15',
     dateLabel: 'March 2027',
     title: 'State Leadership Conference',
     kind: 'conference',
@@ -112,6 +117,7 @@ const schedule = [
   },
   {
     date: null,
+    sortDate: '2027-06-29',
     dateLabel: 'Summer 2027',
     title: 'National Leadership Conference',
     kind: 'conference',
