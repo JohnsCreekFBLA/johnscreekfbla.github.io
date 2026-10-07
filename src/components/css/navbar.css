@@ -12,7 +12,9 @@ body {
   background: #fff;
   color: black;
   position: relative;
-  padding-right: 2rem;
+  /* The bar had no vertical padding at all, so a 44px logo made a 44px bar and
+     everything sat flush against the edges. */
+  padding: 0.85rem 2rem 0.85rem 0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   z-index: 1000;
 }
@@ -117,6 +119,9 @@ body {
   text-decoration: none;
   font-size: 1rem;
   border-radius: 8px;
+  /* Gives the hover state and the dropdown trigger a real target to sit in. */
+  display: inline-block;
+  padding: 0.3rem 0;
 }
 
 .navbar-links li a:hover {
