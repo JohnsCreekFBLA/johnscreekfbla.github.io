@@ -129,6 +129,28 @@ body {
   border-radius: 8px;
 }
 
+/* Group heading inside a dropdown. Not a link, not clickable. */
+.dropdown-content .dropdown-label {
+  display: block;
+  padding: 0.65rem 1rem 0.2rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #999;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* No rule above the first heading in a menu. */
+.dropdown-content .dropdown-label + a {
+  border-top: none;
+}
+
+.dropdown-content a + .dropdown-label {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin-top: 0.3rem;
+}
+
 .coming-soon {
   display: flex;
   flex-direction: column;
@@ -263,5 +285,11 @@ body {
   
   .dropdown-content a:hover {
     background: #e9ecef !important;
+  }
+
+  /* The mobile rules above target anchors; the group headings are spans. */
+  .dropdown-content .dropdown-label {
+    padding: 0.6rem 1rem 0.15rem !important;
+    font-size: 0.65rem !important;
   }
 }
