@@ -19,12 +19,6 @@ body {
   z-index: 1000;
 }
 
-.navbar-links a {
-  text-decoration: none;
-  color: black;
-  font-size: 3rem;
-}
-
 /* Hide dropdown by default */
 .dropdown-content {
   display: none;
@@ -58,7 +52,6 @@ body {
 .dropdown {
   position: relative;
   cursor: pointer;
-  padding-right: 15px;
 }
 
 /* Style dropdown links */
