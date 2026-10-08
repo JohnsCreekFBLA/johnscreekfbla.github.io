@@ -32,10 +32,10 @@ body {
   left: 0;
   right: auto;
   background: #fff;
-  min-width: 200px;
+  min-width: 220px;
   z-index: 1;
   list-style: none;
-  padding-right: 50px;
+  padding: 0.4rem 0;
   margin: 0;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
@@ -64,7 +64,7 @@ body {
 /* Style dropdown links */
 .dropdown-content a {
   color: #333;
-  padding: 12px 15px;
+  padding: 0.6rem 1.25rem;
   display: block;
   text-decoration: none;
   font-size: 0.9rem;
@@ -132,7 +132,7 @@ body {
 /* Group heading inside a dropdown. Not a link, not clickable. */
 .dropdown-content .dropdown-label {
   display: block;
-  padding: 0.65rem 1rem 0.2rem;
+  padding: 0.7rem 1.25rem 0.25rem;
   font-size: 0.68rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -277,7 +277,7 @@ body {
   }
   
   .dropdown-content a {
-    padding: 0.5rem 1rem !important;
+    padding: 0.5rem 1.25rem !important;
     font-size: 0.95rem !important;
     color: #333 !important;
     background: transparent !important;
@@ -289,7 +289,7 @@ body {
 
   /* The mobile rules above target anchors; the group headings are spans. */
   .dropdown-content .dropdown-label {
-    padding: 0.6rem 1rem 0.15rem !important;
+    padding: 0.6rem 1.25rem 0.15rem !important;
     font-size: 0.65rem !important;
   }
 }
