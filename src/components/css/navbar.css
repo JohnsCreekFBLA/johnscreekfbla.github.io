@@ -106,17 +106,20 @@ body {
   border-radius: 8px;
 }
 
-.navbar-links li a {
+/* Direct children only. This used to be `.navbar-links li a`, which also matched
+   every link inside a dropdown and, at higher specificity than
+   `.dropdown-content a`, flattened them to zero horizontal padding and sat them
+   side by side. The child combinator keeps it to the top-level items. */
+.navbar-links > li > a {
   color: black;
   text-decoration: none;
   font-size: 1rem;
   border-radius: 8px;
-  /* Gives the hover state and the dropdown trigger a real target to sit in. */
   display: inline-block;
   padding: 0.3rem 0;
 }
 
-.navbar-links li a:hover {
+.navbar-links > li > a:hover {
   text-decoration: underline;
   border-radius: 8px;
 }
@@ -210,7 +213,10 @@ body {
     width: 100% !important;
   }
   
-  .navbar-links li a {
+  /* Direct children only, same reason as the desktop rule: this also matched
+     dropdown links and beat `.dropdown-content a` on specificity, so they lost
+     their horizontal padding here too. */
+  .navbar-links > li > a {
     font-size: 1.1rem !important;
     padding: 0.75rem 0 !important;
     display: block !important;
@@ -218,8 +224,8 @@ body {
     text-decoration: none !important;
     border-radius: 0 !important;
   }
-  
-  .navbar-links li a:hover {
+
+  .navbar-links > li > a:hover {
     text-decoration: underline !important;
     background: #f5f5f5 !important;
   }
