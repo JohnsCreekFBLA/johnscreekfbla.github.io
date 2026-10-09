@@ -20,6 +20,11 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+        with:
+          # Only the commit being built. The repo carries a few hundred MB of
+          # event photos in its history, and cloning all of it was taking longer
+          # than the build itself. Pages only needs the current files.
+          fetch-depth: 1
       - name: Install, build, and upload your site output
         uses: withastro/action@v4
         # with:
