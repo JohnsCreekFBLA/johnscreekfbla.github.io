@@ -78,12 +78,11 @@ const NavBar = () => {
                     <span className="dropdown-label">This year</span>
                     <a href="/meetings/august" onClick={handleLinkClick}>August Meeting</a>
                     <a href="/meetings/september" onClick={handleLinkClick}>September Meeting</a>
-                    {/*
+                    <span className="dropdown-label">2025-26 archive</span>
                     <a href="/meetings/flc" onClick={handleLinkClick}>FLC Interest Meeting</a>
                     <a href="/meetings/october" onClick={handleLinkClick}>October Meeting</a>
-                    <a href="/meetings/rlc-testing" onClick={handleLinkClick}>RLC Testing Meeting</a>
+                    <a href="/meetings/rlc-testing" onClick={handleLinkClick}>RLC Testing Briefing</a>
                     <a href="/meetings/february" onClick={handleLinkClick}>February Meeting</a>
-                    */}
                 </div>
             </li>
             <li className={`dropdown${activeDropdown === 'forms' ? ' active' : ''}`}>

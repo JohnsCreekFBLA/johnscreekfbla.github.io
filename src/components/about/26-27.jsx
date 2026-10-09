@@ -122,6 +122,50 @@ const Team = () => {
                     </div>
                 </div>
             </div>
+
+            <div className="title-container">
+                <h1 className="info-title-regular">Who to Contact</h1>
+            </div>
+            <div className="team-section">
+                <div className="small-team-container">
+                    <div className="team-info">
+                        <h3 className="team-member-name">Photos, news and social media</h3>
+                        <p className="team-member-bio">Vicky Szczesny, EVP of Marketing. Event photos, announcements, and anything that should go on the website or Instagram.</p>
+                    </div>
+                </div>
+                <div className="small-team-container">
+                    <div className="team-info">
+                        <h3 className="team-member-name">Membership and forms</h3>
+                        <p className="team-member-bio">Zelda Arthur, EVP of Membership. Joining the chapter, the membership form, dues, and the point tracker.</p>
+                    </div>
+                </div>
+                <div className="small-team-container">
+                    <div className="team-info">
+                        <h3 className="team-member-name">Competitions and results</h3>
+                        <p className="team-member-bio">Alex Gentin, EVP of Competitions. Competitive events, what to prepare, conference testing, and chapter results.</p>
+                    </div>
+                </div>
+            </div>
+            <div className="team-section">
+                <div className="small-team-container">
+                    <div className="team-info">
+                        <h3 className="team-member-name">Trips and permission forms</h3>
+                        <p className="team-member-bio">Myra Sitafalwalla, EVP of Operations. Travel logistics and the permission slips for every overnight trip.</p>
+                    </div>
+                </div>
+                <div className="small-team-container">
+                    <div className="team-info">
+                        <h3 className="team-member-name">Payments</h3>
+                        <p className="team-member-bio">Shaanvi Poddar, EVP of Finance. Conference costs and the SchoolCash payment links.</p>
+                    </div>
+                </div>
+                <div className="small-team-container">
+                    <div className="team-info">
+                        <h3 className="team-member-name">Service hours</h3>
+                        <p className="team-member-bio">Moksh Somayajula, EVP of Community Service. Service projects and tracking your hours.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
