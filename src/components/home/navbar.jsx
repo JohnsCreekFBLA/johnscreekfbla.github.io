@@ -92,6 +92,8 @@ const NavBar = () => {
                     <span className="dropdown-label">Join</span>
                     <a href="/forms/membership" onClick={handleLinkClick}>Membership Form</a>
                     <a href="https://fultonschools.schoolcashonline.com/Fee/Details/1565/623/False/True" target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>Early Bird Membership Payment</a>
+                    <span className="dropdown-label">Fundraising</span>
+                    <a href="/fundraiser" onClick={handleLinkClick}>Snap! Raise Fundraiser</a>
                     {/*
                     <a href="/forms/rlc" onClick={handleLinkClick}>RLC Sign Up Form</a>
                     <a href="/forms/slc-advance">SLC Advance from RLC/FLC Form</a>

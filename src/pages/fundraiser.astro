@@ -1,0 +1,119 @@
+---
+import Navbar from '../components/home/navbar.jsx';
+import Footer from '../components/home/footer.jsx';
+import fundraiser from '../data/fundraiser.js';
+import '../components/css/pages.css';
+
+const f = fundraiser;
+---
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Snap! Raise Fundraiser | Johns Creek FBLA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Johns Creek FBLA's Snap! Raise fundraiser: how to join, the incentive tiers, prizes, and key dates." />
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background-color: #f7f7f7; font-family: 'Oswald', sans-serif; }
+  </style>
+</head>
+<body>
+  <Navbar client:load />
+  <main class="page">
+    <header class="page-heading">
+      <h1>Snap! Raise Fundraiser</h1>
+      <p class="page-intro">
+        We are raising {f.goal} for the chapter. Snap! Raise works by email and
+        text: you add contacts, Snap sends the ask, and your supporters donate
+        directly. {f.whereItGoes}
+      </p>
+      {f.active && <a class="page-cta" href={f.joinUrl} target="_blank" rel="noopener noreferrer">Join the fundraiser</a>}
+    </header>
+
+    {f.active && (
+      <section class="panel fr-join">
+        <div class="panel-header">
+          <h2>How to sign up</h2>
+          <p>Four steps, about five minutes.</p>
+        </div>
+        <ol class="fr-steps">
+          {f.signupSteps.map((step) => <li>{step}</li>)}
+        </ol>
+        <div class="fr-code">
+          <span class="fr-code-label">Join code</span>
+          <span class="fr-code-value">{f.joinCode}</span>
+        </div>
+        <p class="panel-body">
+          Prefer a browser? <a href={f.joinUrl} target="_blank" rel="noopener noreferrer">Join with the code here</a>.
+          Snap asks you to sign in first, which is normal: participants need an
+          account so donations are credited to you.
+        </p>
+      </section>
+    )}
+
+    <section class="panel fr-headstart">
+      <div class="panel-header">
+        <h2>Do this before the kickoff</h2>
+      </div>
+      <p class="panel-body">{f.headStart}</p>
+    </section>
+
+    {f.tierGroups.map((group) => (
+      <section class="panel">
+        <div class="panel-header">
+          <h2>{group.title} incentives</h2>
+          <p>{group.blurb}</p>
+        </div>
+        <ul class="fr-tiers">
+          {group.tiers.map((tier) => (
+            <li class="fr-tier">
+              <span class="fr-tier-amount">{tier.amount}</span>
+              <span class="fr-tier-reward">
+                {tier.reward}
+                {tier.who && <span class="fr-tier-who">{tier.who}</span>}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Top fundraiser prizes</h2>
+        <p>The three members who raise the most also take these home.</p>
+      </div>
+      <ul class="fr-prizes">
+        {f.prizes.map((p) => (
+          <li class="fr-prize">
+            <span class="fr-prize-place">{p.place}</span>
+            <span class="fr-prize-name">{p.prize}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="panel-body">{f.prizeNote}</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Dates</h2>
+      </div>
+      <ul class="fr-dates">
+        {f.dates.map((d) => (
+          <li class="fr-date">
+            <span class="fr-date-when">{d.label}</span>
+            <span class="fr-date-what">{d.what}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <p class="page-footnote">
+      Questions about the fundraiser go to an officer or to Commander Schenk.
+      Everything else on the site lives under <a href="/forms">Forms &amp; Payments</a>.
+    </p>
+  </main>
+  <Footer client:load />
+</body>
+</html>

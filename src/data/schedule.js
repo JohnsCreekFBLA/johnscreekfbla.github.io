@@ -52,7 +52,16 @@ const schedule = [
     title: 'October Chapter Meeting',
     kind: 'meeting',
     location: "Commander Schenk's room",
-    tentative: true
+    note: 'Snap! Raise fundraiser kickoff. Enter 20 contacts beforehand for a free donut.',
+    tentative: true,
+    link: '/fundraiser'
+  },
+  {
+    date: '2026-10-28',
+    title: 'Snap! Raise fundraiser opens',
+    kind: 'deadline',
+    note: 'Chapter goal is $10,000. Incentives cover membership dues and conference registration.',
+    link: '/fundraiser'
   },
   {
     date: '2026-11-16',
@@ -61,6 +70,13 @@ const schedule = [
     location: 'The Classic Center, Athens, GA',
     note: 'One day on November 16, or two days November 16 to 17. $75 or $85.',
     link: '/conferences/FLC'
+  },
+  {
+    date: '2026-11-25',
+    title: 'Snap! Raise fundraiser closes',
+    kind: 'deadline',
+    note: 'Results and prize winners announced around December 1.',
+    link: '/fundraiser'
   },
   {
     date: '2026-11-24',

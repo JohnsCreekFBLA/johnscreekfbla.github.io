@@ -402,3 +402,118 @@
         gap: 0.6rem;
     }
 }
+
+/* ---------- Fundraiser page ---------- */
+
+.fr-steps {
+    margin: 1rem 0 0;
+    padding-left: 1.4rem;
+    color: var(--jc-muted);
+    line-height: 1.7;
+}
+
+.fr-steps li {
+    padding-left: 0.2rem;
+}
+
+/* The join code is the one thing somebody will come to this page to copy, so
+   it gets to look like a code and not like body text. */
+.fr-code {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-top: 1.25rem;
+    padding: 0.9rem 1.25rem;
+    background: rgba(191, 13, 62, 0.06);
+    border-left: 4px solid var(--jc-red);
+    border-radius: 8px;
+}
+
+.fr-code-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--jc-muted);
+}
+
+.fr-code-value {
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    letter-spacing: 0.08em;
+    color: var(--jc-red);
+}
+
+.fr-tiers,
+.fr-prizes,
+.fr-dates {
+    list-style: none;
+    margin: 1.1rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.fr-tier,
+.fr-prize,
+.fr-date {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.7rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.fr-tier:first-child,
+.fr-prize:first-child,
+.fr-date:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+/* Fixed column so the amounts line up and the page scans as a ladder. */
+.fr-tier-amount,
+.fr-prize-place,
+.fr-date-when {
+    flex: 0 0 7.5rem;
+    color: var(--jc-red);
+    letter-spacing: 0.03em;
+}
+
+.fr-tier-amount {
+    font-size: 1.15rem;
+}
+
+.fr-tier-reward,
+.fr-prize-name,
+.fr-date-what {
+    color: var(--jc-ink);
+    line-height: 1.5;
+}
+
+.fr-tier-who {
+    display: block;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    color: var(--jc-muted);
+}
+
+@media (max-width: 560px) {
+    .fr-tier,
+    .fr-prize,
+    .fr-date {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .fr-tier-amount,
+    .fr-prize-place,
+    .fr-date-when {
+        flex: 0 0 auto;
+    }
+}
+
+/* A deadline is a date you act on, not an event you attend, so it reads as a
+   hollow gold marker rather than another chapter-red dot. */
+.tl-deadline .tl-dot {
+    border-color: #c79200;
+}

@@ -12,6 +12,13 @@
 
 const news = [
   {
+    date: '2026-10-19',
+    title: 'Snap! Raise fundraiser kicks off October 27',
+    body: 'We are raising $10,000 for the chapter, and the incentives are worth reading: $100 covers membership dues for non-members, $500 covers RLC and SLC registration, $3,000 covers all of that plus Nationals. Top three fundraisers get AirPods, a LEGO set, or a JBL speaker. Enter 20 contacts before the October 27 meeting and you get a free donut.',
+    link: '/fundraiser',
+    linkText: 'How to join'
+  },
+  {
     date: '2026-10-09',
     title: 'Fall Leadership Conference is November 16-17',
     body: 'FLC is an overnight trip to the Classic Center in Athens. Two days of general sessions, leadership workshops, the Battle of the Chapters and the MONOPOLY tournament. Cost is $220 and registration closed on September 29. If you are registered, your payment goes through Fulton SchoolCash Online.',

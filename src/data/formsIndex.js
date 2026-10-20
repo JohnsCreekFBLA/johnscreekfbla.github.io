@@ -38,6 +38,25 @@ const formGroups = [
     ]
   },
   {
+    id: 'fundraising',
+    title: 'Fundraising',
+    blurb:
+      'Our Snap! Raise campaign runs October 28 to November 25. Raising money here covers your own membership dues and conference registration.',
+    forms: [
+      {
+        title: 'Snap! Raise Fundraiser',
+        href: '/fundraiser',
+        note: 'Join code, incentive tiers, prizes and dates.'
+      },
+      {
+        title: 'Join Snap! Raise with the code',
+        href: 'https://raise.snap.app/join_code/894592939',
+        note: 'Join code 894-592-939. Sign in to Snap first.',
+        external: true
+      }
+    ]
+  },
+  {
     id: 'permission',
     title: 'Permission Forms',
     blurb:
