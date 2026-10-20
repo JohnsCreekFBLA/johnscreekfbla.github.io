@@ -51,6 +51,11 @@ const Footer = () => {
             <hr></hr>
             <div className="footer-extra">
                 <p className="footer-text">© {year} Johns Creek FBLA. All rights reserved.</p>
+                <p className="footer-text footer-legal">
+                    <a href="/privacy-policy" className="footer-link-inline">Privacy Policy</a>
+                    <span aria-hidden="true"> · </span>
+                    <a href="/terms-of-service" className="footer-link-inline">Terms of Service</a>
+                </p>
             </div>
         </footer>
     );

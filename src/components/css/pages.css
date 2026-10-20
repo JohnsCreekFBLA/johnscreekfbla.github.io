@@ -681,3 +681,49 @@
 .fr-parents {
     scroll-margin-top: 1.5rem;
 }
+
+/* ---------- Legal pages (privacy policy, terms) ----------
+
+   Narrower than the content pages. These are read in sentences, not scanned,
+   and a 1100px line of body text is tiring to follow back to the left edge. */
+
+.legal {
+    max-width: 820px;
+}
+
+.legal .panel {
+    padding: 1.5rem 1.75rem;
+}
+
+.legal .panel-header h2 {
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+}
+
+.legal .panel-body {
+    color: #3d3d3d;
+}
+
+.legal-list {
+    margin: 1rem 0 0;
+    padding-left: 1.3rem;
+    color: #3d3d3d;
+    line-height: 1.65;
+}
+
+.legal-list li {
+    margin-bottom: 0.45rem;
+}
+
+.legal-list strong {
+    color: var(--jc-ink);
+    font-weight: 600;
+}
+
+/* Cookie names read as identifiers, so set them as such. */
+.legal code {
+    padding: 0.08em 0.4em;
+    background: rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.88em;
+}

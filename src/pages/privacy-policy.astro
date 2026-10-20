@@ -1,0 +1,234 @@
+---
+/**
+ * Privacy policy.
+ *
+ * WRITTEN FROM AN AUDIT OF THE SITE, NOT FROM A TEMPLATE. Before changing it,
+ * check the change is still true of the actual site. As of October 2026:
+ *   - no analytics, advertising, first-party cookies, localStorage or
+ *     database (grep for gtag / analytics / document.cookie / localStorage:
+ *     all absent, and confirmed by loading every page in a real browser)
+ *   - BUT embedded Google content sets THIRD-PARTY cookies: /forms/membership
+ *     leaves S + COMPASS (docs.google.com) and NID (google.com), /calendar
+ *     leaves NID. Measured with a fresh cookie jar per page. Re-measure before
+ *     editing the Cookies section; do not take this on trust.
+ *   - Google Fonts on all 25 pages
+ *   - Google Forms embedded on 3 pages, Microsoft Forms on 5
+ *   - Google Calendar embedded on /calendar
+ *   - meeting slide PDFs are served from this site, not a third party
+ *
+ * If somebody adds analytics or a new embed, this page has to change with it.
+ */
+import Navbar from '../components/home/navbar.jsx';
+import Footer from '../components/home/footer.jsx';
+import '../components/css/pages.css';
+
+const updated = 'October 19, 2026';
+const email = 'jchsfbla@gmail.com';
+---
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Privacy Policy | Johns Creek FBLA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="What the Johns Creek FBLA website does and does not collect about visitors." />
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background-color: #f7f7f7; font-family: 'Oswald', sans-serif; }
+  </style>
+</head>
+<body>
+  <Navbar client:load />
+  <main class="page legal">
+    <header class="page-heading">
+      <h1>Privacy Policy</h1>
+      <p class="page-intro">
+        Last updated {updated}. This describes what the Johns Creek FBLA
+        website does with information about the people who visit it.
+      </p>
+    </header>
+
+    <section class="panel">
+      <div class="panel-header"><h2>The short version</h2></div>
+      <p class="panel-body">
+        We do not collect anything about you. There is no account to make, no
+        analytics, and no advertising. This site sets no cookies of its own on
+        any page. Two pages embed something from Google, and on those two
+        Google sets cookies of its own: the detail is below, with the page
+        names and the cookie names.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header"><h2>Who runs this site</h2></div>
+      <p class="panel-body">
+        Johns Creek FBLA, the student chapter at Johns Creek High School in
+        Johns Creek, Georgia. Chapter officers maintain it. It is a student-run
+        site, not an official publication of Fulton County Schools or of FBLA.
+        Questions go to <a href={`mailto:${email}`}>{email}</a>.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header"><h2>What we collect</h2></div>
+      <p class="panel-body">
+        Nothing. Every page here is a static file. There is no login, no
+        database, no analytics or advertising script, and no cookie set by this
+        site. We have no way to tell who visited, what they read, or how often.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header"><h2>What our host records</h2></div>
+      <p class="panel-body">
+        The site is hosted on GitHub Pages. GitHub's documentation states:
+        &ldquo;When a GitHub Pages site is visited, the visitor's IP address is
+        logged and stored for security purposes, regardless of whether the
+        visitor has signed into GitHub or not.&rdquo; Those logs belong to
+        GitHub. We never see them and cannot request them.
+      </p>
+      <p class="panel-body">
+        <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages" target="_blank" rel="noopener noreferrer">GitHub Pages documentation</a>
+        &middot;
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub privacy statement</a>
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Content loaded from other companies</h2>
+        <p>Some of what you see on a page is fetched from somebody else's server.</p>
+      </div>
+      <ul class="legal-list">
+        <li><strong>Google Fonts</strong>, on every page, for the typeface.</li>
+        <li><strong>Google Forms</strong>, embedded on our membership and sign-up pages.</li>
+        <li><strong>Microsoft Forms</strong>, embedded on several conference pages.</li>
+        <li><strong>Google Calendar</strong>, embedded on the calendar page.</li>
+      </ul>
+      <p class="panel-body">
+        Whenever your browser loads something from another company's server,
+        that request tells that server your IP address and basic details about
+        your browser. That is how the web works, and it happens whether or not
+        you interact with what loaded. What those companies do with it is
+        covered by their policies rather than this one:
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google</a>
+        and
+        <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft</a>.
+      </p>
+      <p class="panel-body">
+        The meeting slide PDFs are the exception. Those are served from this
+        site, so opening one involves nobody else.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Cookies</h2>
+        <p>Checked by loading each page in a browser with an empty cookie jar.</p>
+      </div>
+      <p class="panel-body">
+        This site sets no cookies and uses no browser storage anywhere. Most
+        pages finish loading with none at all.
+      </p>
+      <p class="panel-body">
+        Two pages are different, because of what they embed:
+      </p>
+      <ul class="legal-list">
+        <li>
+          <strong>The membership form page</strong> embeds a Google Form, and
+          loading it leaves three Google cookies in your browser, named
+          <code>S</code> and <code>COMPASS</code> on docs.google.com, and
+          <code>NID</code> on google.com.
+        </li>
+        <li>
+          <strong>The calendar page</strong> embeds Google Calendar and leaves
+          one, <code>NID</code>.
+        </li>
+      </ul>
+      <p class="panel-body">
+        Those are Google's cookies, not ours. We did not ask for them, we cannot
+        read them, and they arrive whether or not you type anything into the
+        form. Google explains what they are for in its
+        <a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener noreferrer">cookie documentation</a>.
+        If you would rather not have them, you can read the same information
+        without the embed: the calendar and every form are also linked
+        directly, and your browser's settings can block third-party cookies.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header"><h2>If you fill out a form</h2></div>
+      <p class="panel-body">
+        Opening the page loads the form from Google or Microsoft, as described
+        above. Your answers are a separate thing: nothing is sent until you type
+        them in and press submit. When you do:
+      </p>
+      <ul class="legal-list">
+        <li>Your answers go to Google or Microsoft, whichever hosts that form.</li>
+        <li>Chapter officers and our faculty advisor can see the responses.</li>
+        <li>We use them to run the chapter: membership, event sign-ups, competition registration, and contacting you about those.</li>
+        <li>We do not sell responses and we do not give them to advertisers.</li>
+      </ul>
+      <p class="panel-body">
+        If you want a response deleted, email <a href={`mailto:${email}`}>{email}</a>,
+        say which form it was, and we will remove it.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header"><h2>Payments</h2></div>
+      <p class="panel-body">
+        No payment is ever taken on this website. Payment links send you to
+        Fulton County Schools' SchoolCash Online, which is the district's system
+        and runs under the district's terms. We never see a card number.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header"><h2>Photos of members</h2></div>
+      <p class="panel-body">
+        We publish photos of chapter members at meetings, conferences and
+        events. If you are in one, or you are the parent or guardian of a
+        student in one, and you want it taken down, email
+        <a href={`mailto:${email}`}>{email}</a>. We will remove it. You do not
+        have to explain why.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header"><h2>Links to other sites</h2></div>
+      <p class="panel-body">
+        We link to Georgia FBLA, FBLA, Instagram, Linktree, Snap! Raise,
+        SchoolCash Online and various Google documents. Once you follow a link
+        you are on their site, under their rules, and this policy stops
+        applying.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header"><h2>Children</h2></div>
+      <p class="panel-body">
+        This site is meant for high school students, their families, and our
+        community. Since we collect nothing directly from any visitor, we
+        collect nothing from children either.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header"><h2>Changes to this page</h2></div>
+      <p class="panel-body">
+        If the site changes in a way that makes something here untrue, we update
+        this page and the date at the top. Every edit this site has ever had,
+        this page included, is public in our
+        <a href="https://github.com/JohnsCreekFBLA/johnscreekfbla.github.io" target="_blank" rel="noopener noreferrer">GitHub repository</a>,
+        so you can check what changed and when.
+      </p>
+    </section>
+
+    <p class="page-footnote">
+      Questions or requests: <a href={`mailto:${email}`}>{email}</a>
+    </p>
+  </main>
+  <Footer client:load />
+</body>
+</html>

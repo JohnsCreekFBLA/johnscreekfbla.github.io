@@ -1,0 +1,138 @@
+---
+/**
+ * Terms of service.
+ *
+ * Deliberately short, because this site does very little: it has no accounts,
+ * sells nothing, and takes no payments. Clauses about user accounts,
+ * subscriptions, refunds or arbitration would be copied from a template for a
+ * different kind of site and would not describe anything real here.
+ *
+ * If the site ever does take payments or create accounts, this page needs
+ * rewriting rather than extending.
+ */
+import Navbar from '../components/home/navbar.jsx';
+import Footer from '../components/home/footer.jsx';
+import '../components/css/pages.css';
+
+const updated = 'October 19, 2026';
+const email = 'jchsfbla@gmail.com';
+---
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Terms of Service | Johns Creek FBLA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Terms for using the Johns Creek FBLA chapter website." />
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background-color: #f7f7f7; font-family: 'Oswald', sans-serif; }
+  </style>
+</head>
+<body>
+  <Navbar client:load />
+  <main class="page legal">
+    <header class="page-heading">
+      <h1>Terms of Service</h1>
+      <p class="page-intro">
+        Last updated {updated}. Short, because this site does not do much: there
+        is nothing to sign up for and nothing for sale.
+      </p>
+    </header>
+
+    <section class="panel">
+      <div class="panel-header"><h2>What this site is</h2></div>
+      <p class="panel-body">
+        An information site for Johns Creek FBLA, the student chapter at Johns
+        Creek High School, maintained by chapter officers. It is student-run. It
+        is not an official publication of Fulton County Schools or of FBLA, and
+        nothing posted here changes school, district, or FBLA policy.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header"><h2>Accuracy</h2></div>
+      <p class="panel-body">
+        We keep dates, prices and deadlines as current as we can, and they do
+        change, sometimes with little notice. Where this site disagrees with the
+        chapter advisor, Georgia FBLA, or Fulton County Schools, they are right
+        and we are out of date. Before you pay for a trip or travel to an event,
+        confirm it with an officer or with the advisor.
+      </p>
+      <p class="panel-body">
+        Spotted something wrong? Tell us at <a href={`mailto:${email}`}>{email}</a> and
+        we will fix it.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header"><h2>No accounts, nothing for sale</h2></div>
+      <p class="panel-body">
+        There is no account to create here and nothing is sold on this site.
+        Forms are hosted by Google or Microsoft. Payments happen on Fulton
+        County Schools' SchoolCash Online. Those services carry their own terms,
+        and using them means agreeing to theirs as well as to this page.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header"><h2>Using our words and photos</h2></div>
+      <p class="panel-body">
+        Text and photos here were made by chapter members for the chapter. Using
+        them for school or FBLA purposes is fine, and a credit is appreciated.
+        Two limits: do not use photos of students commercially, and do not use
+        them in a way the person in the photo would object to. If you are
+        unsure, ask at <a href={`mailto:${email}`}>{email}</a>.
+      </p>
+      <p class="panel-body">
+        The FBLA name and emblem belong to FBLA. We use them as a member
+        chapter, which does not give anyone else permission through us.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header"><h2>Using the site</h2></div>
+      <p class="panel-body">
+        Read it, share it, link to it. Do not try to break it, overload it, or
+        deface it, and do not use it to harass anyone.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header"><h2>Links we do not control</h2></div>
+      <p class="panel-body">
+        We link to Georgia FBLA, FBLA, Instagram, Linktree, Snap! Raise,
+        SchoolCash Online and Google documents. We do not run those sites and
+        cannot vouch for them, and a link is not an endorsement.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header"><h2>What we can and cannot promise</h2></div>
+      <p class="panel-body">
+        Students build and run this site in their own time, and it costs nothing
+        to use. We cannot promise it will always be online, always load, or
+        always be correct, and we are not responsible for what happens if you
+        rely on something here that turns out to be out of date. Anything that
+        matters, a payment deadline or a departure time, is worth confirming
+        with an officer or the advisor.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header"><h2>Changes to this page</h2></div>
+      <p class="panel-body">
+        We post changes here and update the date at the top. The full history is
+        public in our
+        <a href="https://github.com/JohnsCreekFBLA/johnscreekfbla.github.io" target="_blank" rel="noopener noreferrer">GitHub repository</a>.
+      </p>
+    </section>
+
+    <p class="page-footnote">
+      Questions: <a href={`mailto:${email}`}>{email}</a>
+      &middot; <a href="/privacy-policy">Privacy Policy</a>
+    </p>
+  </main>
+  <Footer client:load />
+</body>
+</html>

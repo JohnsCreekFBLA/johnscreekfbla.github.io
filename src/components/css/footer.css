@@ -141,3 +141,8 @@ body {
 .footer-link-inline:focus-visible {
     color: #ddd;
 }
+
+.footer-legal {
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+}
