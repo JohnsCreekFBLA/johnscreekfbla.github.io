@@ -1,13 +1,18 @@
 /**
  * Snap! Raise fundraiser, fall 2026.
  *
- * Every number here comes from the chapter announcement email sent
- * October 19, 2026. If a tier, prize, or date changes, change it here and the
- * /fundraiser page follows.
+ * SOURCE OF TRUTH: the chapter announcement email sent October 19, 2026 from
+ * jchsfbla@gmail.com. Every amount, date, prize and tier below is taken from
+ * that email. If you change a number here, change it because the chapter
+ * changed it, not because it reads better.
+ *
+ * Anything NOT in that email is marked with a comment saying so. Keep that
+ * habit: a parent reading this page should not be able to find a claim the
+ * chapter never made.
  *
  * WHEN THE FUNDRAISER ENDS
- *   Set `active: false`. The page then reads in the past tense and the join
- *   buttons disappear instead of pointing at a closed campaign.
+ *   Set `active: false`. The join instructions and the home page banner come
+ *   down on their own.
  */
 
 const fundraiser = {
@@ -16,51 +21,63 @@ const fundraiser = {
   goal: '$10,000',
   joinCode: '894-592-939',
 
-  // Shown on the home page banner. Spelled out rather than derived from the
-  // dates list below, because that list is prose and will get reworded.
+  // Home page banner. Spelled out rather than derived from `dates` below,
+  // because that list is prose and will get reworded.
   window: 'October 28 to November 25',
 
-  // Snap's browser route for joining with a code. It lands on a Snap login
-  // first, which is expected: you need an account to be a participant. The
-  // code is pre-filled after sign-in.
+  /**
+   * Snap documents a browser route for joining with a code
+   * (raise.snap.app/join_code/<code>). The route is real: it redirects to a
+   * Snap sign-in. What nobody has confirmed is that THIS code attaches to the
+   * Johns Creek FBLA campaign through that route, because checking needs a
+   * Snap account.
+   *
+   * So it stays off the page. `joinUrlVerified: false` hides it everywhere.
+   * Sign in once, confirm it lands on our campaign, flip this to true.
+   *
+   * The email's own instructions are the app, and those are what we show.
+   */
   joinUrl: 'https://raise.snap.app/join_code/894592939',
+  joinUrlVerified: false,
 
   dates: [
     { label: 'October 27', what: 'Kickoff at the October chapter meeting' },
-    { label: 'October 28', what: 'Fundraiser opens' },
-    { label: 'November 25', what: 'Fundraiser closes' },
+    { label: 'October 28', what: 'Fundraiser begins' },
+    { label: 'November 25', what: 'Fundraiser ends' },
     { label: 'Around December 1', what: 'Final results and prize winners announced' }
   ],
 
-  // The one thing to do before the kickoff meeting.
-  headStart: 'Enter 20 contacts (emails or phone numbers) into Snap! Raise before the October 27 meeting and you get a free donut. You can keep adding contacts for the whole campaign, so start now and ask your parents to help pull together relatives, family friends and neighbors.',
+  headStart: 'Enter 20 contacts (emails or phone numbers) into Snap! Raise by the October 27 meeting and get a free donut. You can start adding contacts right now and keep going throughout the fundraiser. Ask your parents to help gather contacts from relatives, family friends, neighbors, and others who may be willing to donate.',
 
   signupSteps: [
     'Download the Johns Creek Gladiators App.',
     'Open the Snap! Raise fundraising section and create an account.',
     'Enter join code 894-592-939.',
-    'Complete your profile, then start adding contacts.'
+    'Complete your profile and start adding contacts.'
   ],
 
-  tierGroups: [
-    {
-      title: 'Membership',
-      blurb: 'Raise enough and your dues are covered.',
-      tiers: [
-        { amount: '$100', who: 'non-members', reward: 'Your FBLA membership fees are covered.' },
-        { amount: '$200', who: 'current members', reward: "Sponsor someone else's FBLA membership." }
-      ]
-    },
-    {
-      title: 'Conferences',
-      blurb: 'If you are planning on SLC or Nationals, this is where the real savings are.',
-      tiers: [
-        { amount: '$250', reward: 'RLC registration covered.' },
-        { amount: '$500', reward: 'RLC and SLC registration covered.' },
-        { amount: '$1,000', reward: 'RLC and SLC registration, plus SLC hotel and transportation.' },
-        { amount: '$3,000', reward: 'All of the above, plus NLC registration.' }
-      ]
-    }
+  /**
+   * The four things a conference tier can cover. The order here is the order
+   * they unlock in, and the page renders them as a row of chips per tier so
+   * you can see coverage accumulate as the amounts climb.
+   */
+  coverage: [
+    { key: 'rlc', label: 'RLC registration' },
+    { key: 'slc', label: 'SLC registration' },
+    { key: 'hotel', label: 'SLC hotel + transportation' },
+    { key: 'nlc', label: 'NLC registration' }
+  ],
+
+  membershipTiers: [
+    { amount: '$100', who: 'Non-members', reward: 'Your FBLA membership fees are covered.' },
+    { amount: '$200', who: 'Current members', reward: "Sponsor someone else's FBLA membership." }
+  ],
+
+  conferenceTiers: [
+    { amount: '$250', covers: ['rlc'] },
+    { amount: '$500', covers: ['rlc', 'slc'] },
+    { amount: '$1,000', covers: ['rlc', 'slc', 'hotel'] },
+    { amount: '$3,000', covers: ['rlc', 'slc', 'hotel', 'nlc'], top: true }
   ],
 
   prizes: [
@@ -69,43 +86,48 @@ const fundraiser = {
     { place: '3rd', prize: 'JBL speaker' }
   ],
 
-  prizeNote: 'Snap! Raise runs its own separate merchandise rewards based on how many donations you bring in, on top of the chapter prizes above.',
+  prizeNote: 'Snap! Raise also offers separate merchandise rewards based on the number of donations received.',
 
-  whereItGoes: 'Money raised goes to the chapter, competitions, and conference expenses: the registrations, hotels and travel that members would otherwise pay out of pocket.',
+  // Email: "Funds raised will support our chapter, competitions, and
+  // conference expenses." Kept to that wording rather than guessing at line
+  // items the chapter did not list.
+  whereItGoes: 'Funds raised support the chapter, competitions, and conference expenses.',
 
   /**
-   * Written for parents, not members. A parent landing here has four questions
-   * and they are always the same four: what is this, what does it cost me,
-   * where does the money go, and what happens to the phone numbers my kid
-   * just typed in.
+   * Written for parents rather than members.
    *
-   * The privacy answer quotes Snap's own policy and links to it rather than
-   * making a promise on the chapter's behalf. Do not reword it into a
-   * reassurance the chapter cannot stand behind.
+   * Two rules for editing this section:
+   *   1. Every factual claim traces to the announcement email or to a source
+   *      we link. Where an answer is the chapter's own wording rather than a
+   *      quote, it stays general enough to be true.
+   *   2. The privacy answer quotes Snap's policy and links to it. Do not
+   *      rewrite it into a reassurance the chapter would be making on Snap's
+   *      behalf.
    */
   parents: {
-    intro: 'Snap! Raise is the platform our chapter uses to fundraise. Your student adds contacts, Snap sends the ask by email and text, and supporters donate online directly to the chapter. Here is what that means for you.',
+    intro: 'Snap! Raise is the platform our chapter is using to fundraise. Members reach out to family, friends and other supporters by email and text, and supporters donate online. Here is what that means for you.',
     privacyUrl: 'https://www.snapraise.com/disclosures/raise-privacy-policy/',
+    contactEmail: 'jchsfbla@gmail.com',
     faqs: [
       {
         q: 'Does this cost me anything?',
-        a: 'No. You are not required to donate and neither is anyone you know. The actual ask is ten minutes helping your student think of relatives, family friends and neighbors who might want to support them.'
+        a: 'No. Donating is voluntary, for you and for everyone your student contacts. The thing that actually helps is sitting down with them to gather contacts: relatives, family friends, neighbors, and others who may be willing to donate.'
       },
       {
         q: 'Where does the money go?',
-        a: 'To the chapter: competition materials and conference costs. Registration, hotels and travel for Region, State and Nationals are the big ones, and those are costs families normally pay out of pocket.'
+        a: 'The chapter announcement says funds raised support our chapter, competitions, and conference expenses.'
       },
       {
         q: 'Can this reduce what I pay?',
-        a: 'Directly, yes, and this is the part worth reading twice. A student who raises $100 has their membership dues covered. $500 covers Region and State registration. $1,000 adds the State hotel and transportation. $3,000 covers all of that plus Nationals registration.'
+        a: 'Yes, and this is the part worth reading twice. A student who raises $100 and is not yet a member has their membership fees covered. $250 covers RLC registration, $500 covers RLC and SLC registration, $1,000 adds SLC hotel and transportation, and $3,000 adds NLC registration on top of all of it.'
       },
       {
         q: 'What happens to the contacts my student enters?',
-        a: 'Snap uses them to send the fundraising message. Snap’s privacy policy states that it does not sell or otherwise transfer personally identifiable information to outside parties, and that user information will not be sold or shared with any third-party website. We are linking their policy below rather than paraphrasing it, so you can read the language yourself.'
+        a: 'Snap uses them to send the fundraising message by email and text. On selling data, Snap’s own privacy policy says it does not sell or otherwise transfer personally identifiable information to outside parties, and that user information will not be sold or shared with any third-party website. We link their policy below instead of paraphrasing it, so you can read the language yourself.'
       },
       {
         q: 'Who do I ask about this?',
-        a: 'Any chapter officer, or Commander Schenk at Johns Creek High School. The officer team is listed on the site.'
+        a: 'Email the chapter at jchsfbla@gmail.com, or ask any officer. The officer team is listed on the site.'
       }
     ]
   }

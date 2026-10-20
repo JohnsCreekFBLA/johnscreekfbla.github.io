@@ -12,15 +12,18 @@ const Footer = () => {
                 <div className="footer-header">
                     <div className="footer-title">Johns Creek FBLA</div>
                         <p className="footer-text">5575 State Bridge Rd, Johns Creek, GA 30022</p>
-                        <p className="footer-text">Email: jchsfbla@gmail.com</p>
+                        <p className="footer-text">
+                            Email: <a href="mailto:jchsfbla@gmail.com" className="footer-link footer-link-inline">jchsfbla@gmail.com</a>
+                        </p>
                         
                 </div>
                 <div className="footer-explore">
                     <div className="footer-links">
                         <div className="footer-title">Explore</div>
-                        <a href="/privacy-policy" className="footer-link">Privacy Policy</a>
-                        <a href="/terms-of-service" className="footer-link">Terms of Service</a>
-                        <a href="/contact" className="footer-link">Contact Us</a>
+                        <a href="/schedule" className="footer-link">Schedule</a>
+                        <a href="/news" className="footer-link">News</a>
+                        <a href="/gallery" className="footer-link">Photo Gallery</a>
+                        <a href="mailto:jchsfbla@gmail.com" className="footer-link">Contact Us</a>
                     </div>
                 </div>
                 <div className="footer-socials">
@@ -37,10 +40,11 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="footer-knowledge">
-                    <div className="footer-title">Knowledge</div>
+                    <div className="footer-title">Members</div>
                     <div className="footer-links">
-                        <a href="/resources" className="footer-link">Resources</a>
-                        <a href="/faq" className="footer-link">FAQ</a>
+                        <a href="/forms" className="footer-link">Forms &amp; Payments</a>
+                        <a href="/officer" className="footer-link">Officer Team</a>
+                        <a href="/forms#resources" className="footer-link">Resources</a>
                     </div>
                 </div>
             </div>

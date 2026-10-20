@@ -442,7 +442,6 @@
     color: var(--jc-red);
 }
 
-.fr-tiers,
 .fr-prizes,
 .fr-dates {
     list-style: none;
@@ -453,7 +452,6 @@
     gap: 0.6rem;
 }
 
-.fr-tier,
 .fr-prize,
 .fr-date {
     display: flex;
@@ -463,15 +461,12 @@
     border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.fr-tier:first-child,
 .fr-prize:first-child,
 .fr-date:first-child {
     border-top: none;
     padding-top: 0;
 }
 
-/* Fixed column so the amounts line up and the page scans as a ladder. */
-.fr-tier-amount,
 .fr-prize-place,
 .fr-date-when {
     flex: 0 0 7.5rem;
@@ -479,33 +474,147 @@
     letter-spacing: 0.03em;
 }
 
-.fr-tier-amount {
-    font-size: 1.15rem;
-}
-
-.fr-tier-reward,
 .fr-prize-name,
 .fr-date-what {
     color: var(--jc-ink);
     line-height: 1.5;
 }
 
-.fr-tier-who {
-    display: block;
-    font-size: 0.82rem;
-    letter-spacing: 0.04em;
+/* ---------- Conference ladder ----------
+
+   Each rung is an amount plus the same four coverage chips, lit or dimmed.
+   Keeping all four chips on every rung is the whole point: you read down the
+   column and watch coverage fill in, instead of comparing four sentences that
+   each repeat the one before. */
+
+.fr-ladder {
+    list-style: none;
+    margin: 1.2rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.fr-rung {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0.9rem 1rem;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.025);
+}
+
+/* The level that covers everything should look like the top of the ladder. */
+.fr-rung-top {
+    background: rgba(191, 13, 62, 0.07);
+    box-shadow: inset 0 0 0 1px rgba(191, 13, 62, 0.25);
+}
+
+.fr-rung-amount {
+    flex: 0 0 5.5rem;
+    font-size: 1.35rem;
+    color: var(--jc-red);
+    letter-spacing: 0.02em;
+}
+
+.fr-chips {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.fr-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+}
+
+.fr-chip.on {
+    background: var(--jc-red);
+    color: #fff;
+}
+
+.fr-chip.off {
+    background: transparent;
+    color: #9a9a9a;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+.fr-chip-mark {
+    font-size: 0.8rem;
+}
+
+.fr-ladder-note {
+    margin-top: 1rem;
+    text-align: left;
+}
+
+/* ---------- Membership tiers ---------- */
+
+.fr-memb {
+    list-style: none;
+    margin: 1.2rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.fr-memb-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1.1rem 1.25rem;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.025);
+}
+
+.fr-memb-amount {
+    font-size: 1.5rem;
+    color: var(--jc-red);
+}
+
+.fr-memb-who {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #888;
+}
+
+.fr-memb-reward {
+    margin-top: 0.3rem;
     color: var(--jc-muted);
+    line-height: 1.5;
+}
+
+@media (max-width: 620px) {
+    .fr-rung {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+    }
+
+    .fr-rung-amount {
+        flex: 0 0 auto;
+    }
 }
 
 @media (max-width: 560px) {
-    .fr-tier,
     .fr-prize,
     .fr-date {
         flex-direction: column;
         gap: 0.2rem;
     }
 
-    .fr-tier-amount,
     .fr-prize-place,
     .fr-date-when {
         flex: 0 0 auto;

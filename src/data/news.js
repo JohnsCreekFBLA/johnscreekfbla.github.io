@@ -14,7 +14,7 @@ const news = [
   {
     date: '2026-10-19',
     title: 'Snap! Raise fundraiser kicks off October 27',
-    body: 'We are raising $10,000 for the chapter, and the incentives are worth reading: $100 covers membership dues for non-members, $500 covers RLC and SLC registration, $3,000 covers all of that plus Nationals. Top three fundraisers get AirPods, a LEGO set, or a JBL speaker. Enter 20 contacts before the October 27 meeting and you get a free donut.',
+    body: 'We are raising $10,000 for the chapter, and the incentives are worth reading. Raise $100 as a non-member and your membership fees are covered. $250 covers RLC registration, $500 covers RLC and SLC, $1,000 adds the SLC hotel and transportation, and $3,000 adds NLC registration. The top three fundraisers get AirPods 5, a LEGO set, or a JBL speaker. Enter 20 contacts by the October 27 meeting and get a free donut.',
     link: '/fundraiser',
     linkText: 'How to join'
   },

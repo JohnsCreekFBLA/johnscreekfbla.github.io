@@ -127,3 +127,17 @@ body {
         padding: 10px 15px;
     }
 }
+/* The email in the address block sits outside .footer-links, so it needs its
+   own colour and hover: a link, not a label. */
+.footer-link-inline {
+    display: inline;
+    padding: 0;
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.footer-link-inline:hover,
+.footer-link-inline:focus-visible {
+    color: #ddd;
+}

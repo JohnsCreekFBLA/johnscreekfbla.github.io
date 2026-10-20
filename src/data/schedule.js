@@ -53,7 +53,6 @@ const schedule = [
     kind: 'meeting',
     location: "Commander Schenk's room",
     note: 'Snap! Raise fundraiser kickoff. Enter 20 contacts beforehand for a free donut.',
-    tentative: true,
     link: '/fundraiser'
   },
   {

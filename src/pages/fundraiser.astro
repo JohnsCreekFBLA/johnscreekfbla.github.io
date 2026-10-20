@@ -5,6 +5,7 @@ import fundraiser from '../data/fundraiser.js';
 import '../components/css/pages.css';
 
 const f = fundraiser;
+const showJoinUrl = f.active && f.joinUrlVerified;
 ---
 
 <html lang="en">
@@ -12,7 +13,7 @@ const f = fundraiser;
   <meta charset="utf-8" />
   <title>Snap! Raise Fundraiser | Johns Creek FBLA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Johns Creek FBLA's Snap! Raise fundraiser: how to join, the incentive tiers, prizes, and key dates." />
+  <meta name="description" content="Johns Creek FBLA's Snap! Raise fundraiser: how to join, what each tier covers, prizes, and key dates." />
   <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
   <style>
     html, body { margin: 0; padding: 0; background-color: #f7f7f7; font-family: 'Oswald', sans-serif; }
@@ -24,21 +25,20 @@ const f = fundraiser;
     <header class="page-heading">
       <h1>Snap! Raise Fundraiser</h1>
       <p class="page-intro">
-        We are raising {f.goal} for the chapter. Snap! Raise works by email and
-        text: you add contacts, Snap sends the ask, and your supporters donate
-        directly. {f.whereItGoes}
+        We are raising {f.goal} for the chapter. Members reach out to family,
+        friends and other supporters by email and text, and supporters donate
+        online. {f.whereItGoes}
       </p>
       <div class="fr-cta-row">
-        {f.active && <a class="page-cta" href={f.joinUrl} target="_blank" rel="noopener noreferrer">Join the fundraiser</a>}
+        {f.active && <a class="page-cta" href="#signup">How to sign up</a>}
         <a class="page-cta page-cta-quiet" href="#parents">Parents: how this works</a>
       </div>
     </header>
 
     {f.active && (
-      <section class="panel fr-join">
+      <section class="panel fr-signup" id="signup">
         <div class="panel-header">
           <h2>How to sign up</h2>
-          <p>Four steps, about five minutes.</p>
         </div>
         <ol class="fr-steps">
           {f.signupSteps.map((step) => <li>{step}</li>)}
@@ -47,45 +47,67 @@ const f = fundraiser;
           <span class="fr-code-label">Join code</span>
           <span class="fr-code-value">{f.joinCode}</span>
         </div>
-        <p class="panel-body">
-          Prefer a browser? <a href={f.joinUrl} target="_blank" rel="noopener noreferrer">Join with the code here</a>.
-          Snap asks you to sign in first, which is normal: participants need an
-          account so donations are credited to you.
-        </p>
+        {showJoinUrl && (
+          <p class="panel-body">
+            Prefer a browser? <a href={f.joinUrl} target="_blank" rel="noopener noreferrer">Join with the code here</a>.
+          </p>
+        )}
       </section>
     )}
 
-    <section class="panel fr-headstart">
+    <section class="panel">
       <div class="panel-header">
         <h2>Do this before the kickoff</h2>
       </div>
       <p class="panel-body">{f.headStart}</p>
     </section>
 
-    {f.tierGroups.map((group) => (
-      <section class="panel">
-        <div class="panel-header">
-          <h2>{group.title} incentives</h2>
-          <p>{group.blurb}</p>
-        </div>
-        <ul class="fr-tiers">
-          {group.tiers.map((tier) => (
-            <li class="fr-tier">
-              <span class="fr-tier-amount">{tier.amount}</span>
-              <span class="fr-tier-reward">
-                {tier.reward}
-                {tier.who && <span class="fr-tier-who">{tier.who}</span>}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </section>
-    ))}
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Conference incentives</h2>
+        <p>What each level covers. Everything below a level is included in it.</p>
+      </div>
+
+      <ol class="fr-ladder">
+        {f.conferenceTiers.map((tier) => (
+          <li class={tier.top ? 'fr-rung fr-rung-top' : 'fr-rung'}>
+            <span class="fr-rung-amount">{tier.amount}</span>
+            <ul class="fr-chips">
+              {f.coverage.map((item) => (
+                <li class={tier.covers.includes(item.key) ? 'fr-chip on' : 'fr-chip off'}>
+                  <span class="fr-chip-mark" aria-hidden="true">{tier.covers.includes(item.key) ? '✓' : '·'}</span>
+                  {item.label}
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ol>
+      <p class="page-footnote fr-ladder-note">
+        RLC is the Region Leadership Conference, SLC is State, NLC is Nationals.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Membership incentives</h2>
+        <p>These two depend on whether you have joined the chapter yet.</p>
+      </div>
+      <ul class="fr-memb">
+        {f.membershipTiers.map((tier) => (
+          <li class="fr-memb-card">
+            <span class="fr-memb-amount">{tier.amount}</span>
+            <span class="fr-memb-who">{tier.who}</span>
+            <span class="fr-memb-reward">{tier.reward}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
 
     <section class="panel">
       <div class="panel-header">
         <h2>Top fundraiser prizes</h2>
-        <p>The three members who raise the most also take these home.</p>
+        <p>The three members who raise the most money also receive these.</p>
       </div>
       <ul class="fr-prizes">
         {f.prizes.map((p) => (
@@ -127,13 +149,14 @@ const f = fundraiser;
       </dl>
       <p class="panel-body">
         <a href={f.parents.privacyUrl} target="_blank" rel="noopener noreferrer">Read Snap! Raise's privacy policy</a>
-        &middot; <a href="/officer">Officer team and contacts</a>
+        &middot; <a href={`mailto:${f.parents.contactEmail}`}>Email the chapter</a>
+        &middot; <a href="/officer">Officer team</a>
       </p>
     </section>
 
     <p class="page-footnote">
-      Questions about the fundraiser go to an officer or to Commander Schenk.
-      Everything else on the site lives under <a href="/forms">Forms &amp; Payments</a>.
+      Every figure on this page comes from the chapter announcement sent
+      October 19, 2026. Questions go to <a href={`mailto:${f.parents.contactEmail}`}>{f.parents.contactEmail}</a>.
     </p>
   </main>
   <Footer client:load />

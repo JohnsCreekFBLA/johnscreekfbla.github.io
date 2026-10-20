@@ -41,7 +41,7 @@ const formGroups = [
     id: 'fundraising',
     title: 'Fundraising',
     blurb:
-      'Our Snap! Raise campaign runs October 28 to November 25. Raising money here covers your own membership dues and conference registration.',
+      'Our Snap! Raise campaign runs October 28 to November 25. Hit a fundraising level and the chapter covers your membership fees or your conference registration.',
     forms: [
       {
         title: 'Snap! Raise Fundraiser',
@@ -49,10 +49,9 @@ const formGroups = [
         note: 'Join code, incentive tiers, prizes and dates.'
       },
       {
-        title: 'Join Snap! Raise with the code',
-        href: 'https://raise.snap.app/join_code/894592939',
-        note: 'Join code 894-592-939. Sign in to Snap first.',
-        external: true
+        title: 'Snap! Raise join code',
+        href: '/fundraiser#signup',
+        note: 'Join code 894-592-939, entered in the Johns Creek Gladiators App.'
       }
     ]
   },
