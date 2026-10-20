@@ -1,0 +1,65 @@
+.fr-banner {
+    background: #bf0d3e;
+    color: #fff;
+    padding: 0.8rem 1rem;
+}
+
+.fr-banner-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem 1.5rem;
+}
+
+.fr-banner-text {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.7rem;
+    line-height: 1.4;
+}
+
+.fr-banner-tag {
+    padding: 0.15rem 0.6rem;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 999px;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.fr-banner-main {
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+}
+
+.fr-banner-links {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.fr-banner-links a {
+    color: #fff;
+    font-size: 0.92rem;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    white-space: nowrap;
+}
+
+.fr-banner-links a:hover,
+.fr-banner-links a:focus-visible {
+    border-bottom-color: #fff;
+}
+
+@media (max-width: 620px) {
+    .fr-banner-main {
+        font-size: 0.95rem;
+    }
+}

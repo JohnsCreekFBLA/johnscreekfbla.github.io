@@ -517,3 +517,58 @@
 .tl-deadline .tl-dot {
     border-color: #c79200;
 }
+
+/* Two routes out of the fundraiser header: members join, parents read. */
+.fr-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+/* Secondary action. Same shape as .page-cta so the pair reads as a set, but
+   outlined so it never competes with the primary button. */
+.page-cta-quiet {
+    background: transparent;
+    color: var(--jc-red);
+    border: 1px solid rgba(191, 13, 62, 0.45);
+}
+
+.page-cta-quiet:hover,
+.page-cta-quiet:focus-visible {
+    background: rgba(191, 13, 62, 0.08);
+    color: var(--jc-red);
+}
+
+.fr-faq {
+    margin: 1.2rem 0 0;
+}
+
+.fr-faq-item {
+    padding: 0.9rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.fr-faq-item:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.fr-faq dt {
+    color: var(--jc-red);
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+}
+
+.fr-faq dd {
+    margin: 0.3rem 0 0;
+    color: var(--jc-muted);
+    line-height: 1.6;
+    max-width: 72ch;
+}
+
+/* Anchored from the home banner, so give it somewhere to land that is not
+   flush against the top of the viewport. */
+.fr-parents {
+    scroll-margin-top: 1.5rem;
+}

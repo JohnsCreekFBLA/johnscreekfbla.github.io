@@ -1,0 +1,33 @@
+---
+/**
+ * Home page banner for the live fundraiser.
+ *
+ * Why a banner and not a nav item: the campaign runs five weeks. The navbar is
+ * already seven items wide and Dennis flagged it as cluttered, and a parent
+ * arriving at the site lands here, not in a dropdown. Setting
+ * `active: false` in src/data/fundraiser.js removes this on its own.
+ *
+ * Pure Astro, so it ships no JavaScript.
+ */
+import fundraiser from '../../data/fundraiser.js';
+import './fundraiserBanner.css';
+
+const f = fundraiser;
+---
+
+{f.active && (
+  <aside class="fr-banner">
+    <div class="fr-banner-inner">
+      <p class="fr-banner-text">
+        <span class="fr-banner-tag">Fundraiser</span>
+        <span class="fr-banner-main">
+          {f.name} runs {f.window}. Chapter goal {f.goal}.
+        </span>
+      </p>
+      <p class="fr-banner-links">
+        <a href="/fundraiser">How to join</a>
+        <a href="/fundraiser#parents">Parents: how it works</a>
+      </p>
+    </div>
+  </aside>
+)}

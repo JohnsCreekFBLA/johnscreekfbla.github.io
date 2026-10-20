@@ -5,6 +5,7 @@ import Hero from '../components/home/hero.jsx';
 import Navbar from '../components/home/navbar.jsx';
 import WWWD from '../components/home/whatWeDo.jsx';
 import UpdatesBand from '../components/home/UpdatesBand.astro';
+import FundraiserBanner from '../components/home/FundraiserBanner.astro';
 ---
 
 <html lang="en">
@@ -32,6 +33,7 @@ import UpdatesBand from '../components/home/UpdatesBand.astro';
 </head>
 <body>
   <Navbar client:load/>
+  <FundraiserBanner />
   <Hero client:load/>
   <WWWD client:load/>
   <UpdatesBand />

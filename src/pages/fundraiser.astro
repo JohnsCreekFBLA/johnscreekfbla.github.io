@@ -28,7 +28,10 @@ const f = fundraiser;
         text: you add contacts, Snap sends the ask, and your supporters donate
         directly. {f.whereItGoes}
       </p>
-      {f.active && <a class="page-cta" href={f.joinUrl} target="_blank" rel="noopener noreferrer">Join the fundraiser</a>}
+      <div class="fr-cta-row">
+        {f.active && <a class="page-cta" href={f.joinUrl} target="_blank" rel="noopener noreferrer">Join the fundraiser</a>}
+        <a class="page-cta page-cta-quiet" href="#parents">Parents: how this works</a>
+      </div>
     </header>
 
     {f.active && (
@@ -107,6 +110,25 @@ const f = fundraiser;
           </li>
         ))}
       </ul>
+    </section>
+
+    <section class="panel fr-parents" id="parents">
+      <div class="panel-header">
+        <h2>For parents</h2>
+        <p>{f.parents.intro}</p>
+      </div>
+      <dl class="fr-faq">
+        {f.parents.faqs.map((item) => (
+          <div class="fr-faq-item">
+            <dt>{item.q}</dt>
+            <dd>{item.a}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="panel-body">
+        <a href={f.parents.privacyUrl} target="_blank" rel="noopener noreferrer">Read Snap! Raise's privacy policy</a>
+        &middot; <a href="/officer">Officer team and contacts</a>
+      </p>
     </section>
 
     <p class="page-footnote">
