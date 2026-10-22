@@ -52,3 +52,17 @@ iframe {
         height: 420px;
     }
 }
+/* Note under an embed, currently the officer calendar pointer. */
+.form-note {
+    max-width: 640px;
+    margin: 1rem auto 0;
+    padding: 0 1rem;
+    color: #555;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.form-note a {
+    color: #bf0d3e;
+}

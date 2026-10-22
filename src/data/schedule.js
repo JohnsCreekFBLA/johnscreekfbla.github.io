@@ -17,12 +17,22 @@
  * The site splits this into Upcoming and Past automatically by comparing the
  * date at build time. Nothing to toggle by hand.
  *
- * Chapter meetings run about once a month, usually the last Tuesday, in
- * Commander Schenk's room. The exact date is often not locked until about a week
+ * Chapter meetings run about once a month on a Tuesday in Commander Schenk's
+ * room. Not always the last one: the calendar has November on the 10th and
+ * December on the 8th. The exact date is often not locked until about a week
  * ahead, so the monthly entries below are marked tentative. When one firms up,
  * correct the date and remove the `tentative` flag.
  *
  * Conference dates come from georgiafbla.org/calendar.
+ *
+ * The chapter's own Google Calendar, the one embedded at /calendar, is the
+ * other source and it is better maintained than this file was. Its public
+ * feed is readable without a login:
+ *   calendar.google.com/calendar/ical/
+ *     fba7q5aluemop4g7pnvmjcs67s%40group.calendar.google.com/public/basic.ics
+ * Check it before trusting a `tentative` date here. In October 2026 it was
+ * carrying the whole RLC deadline chain and two chapter meetings this file
+ * did not have.
  */
 
 const schedule = [
@@ -63,6 +73,47 @@ const schedule = [
     link: '/fundraiser'
   },
   {
+    date: '2026-10-29',
+    title: 'Trunk or Treat',
+    kind: 'service'
+  },
+  {
+    date: '2026-11-04',
+    title: 'RLC registration deadline',
+    kind: 'deadline'
+  },
+  {
+    date: '2026-11-05',
+    title: 'FLC afterschool workshop',
+    kind: 'meeting'
+  },
+  {
+    date: '2026-11-06',
+    title: 'RLC payment deadline',
+    kind: 'deadline'
+  },
+  {
+    date: '2026-11-06',
+    title: 'Lifesmarts Challenge ends',
+    kind: 'deadline'
+  },
+  {
+    date: '2026-11-06',
+    title: 'Virtual Business Challenge ends',
+    kind: 'deadline'
+  },
+  {
+    date: '2026-11-09',
+    title: 'RLC runoffs',
+    kind: 'deadline',
+    link: '/events/runoffs'
+  },
+  {
+    date: '2026-11-12',
+    title: 'FLC afterschool workshop',
+    kind: 'meeting'
+  },
+  {
     date: '2026-11-16',
     title: 'Fall Leadership Conference',
     kind: 'conference',
@@ -78,11 +129,32 @@ const schedule = [
     link: '/fundraiser'
   },
   {
-    date: '2026-11-24',
+    date: '2026-11-10',
     title: 'November Chapter Meeting',
     kind: 'meeting',
     location: "Commander Schenk's room",
-    tentative: true
+    note: 'Doubles as the FLC meeting, one week before the trip.'
+  },
+  {
+    date: '2026-12-08',
+    title: 'December Chapter Meeting',
+    kind: 'meeting',
+    location: "Commander Schenk's room"
+  },
+  {
+    date: '2026-11-18',
+    title: 'RLC prejudged materials due',
+    kind: 'deadline'
+  },
+  {
+    date: '2026-12-04',
+    title: 'RLC testing',
+    kind: 'deadline'
+  },
+  {
+    date: '2026-12-13',
+    title: 'Stock Market Game ends',
+    kind: 'deadline'
   },
   {
     date: '2027-01-26',
