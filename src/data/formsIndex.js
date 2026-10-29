@@ -32,7 +32,13 @@ const formGroups = [
       {
         title: 'Fall Leadership Conference Payment',
         href: 'https://fultonschools.schoolcashonline.com/Fee/Details/7078/623/False/True',
-        note: '$220. Registration itself closed September 29.',
+        note: '$220. Registration closed September 29.',
+        closed: true,
+        external: true
+      },
+      {
+        title: 'Regional Leadership Conference Payment',
+        href: 'https://fultonschools.schoolcashonline.com/Fee/Details/9908/623/False/True',
         external: true
       }
     ]
@@ -64,8 +70,13 @@ const formGroups = [
       // TODO(Myra Sitafalwalla): add links or PDFs as they are finalised.
       // Fall Rally was October 5 and is not listed; a permission form for an
       // event that already happened is clutter. Add trips back as they approach.
-      { title: 'Fall Leadership Conference', href: null, note: 'Overnight trip to Athens, November 16-17.' },
-      { title: 'Region Leadership Conference', href: null, note: 'January 2027.' },
+      { title: 'Fall Leadership Conference', href: null, note: 'Overnight trip to Athens, November 16-17.', closed: true },
+      {
+        title: 'Regional Leadership Conference',
+        href: 'https://docs.google.com/forms/d/e/1FAIpQLSdT07XJb4LxA1ovmJCzgo6glDxkOwhSehzIMLMcvs7m5YUTIQ/viewform',
+        note: 'January 2027.',
+        external: true
+      },
       { title: 'State Leadership Conference', href: null, note: 'Overnight trip, March 2027.' }
     ]
   },
