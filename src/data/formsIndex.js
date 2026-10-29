@@ -32,13 +32,14 @@ const formGroups = [
       {
         title: 'Fall Leadership Conference Payment',
         href: 'https://fultonschools.schoolcashonline.com/Fee/Details/7078/623/False/True',
-        note: '$220. Registration closed September 29.',
+        note: '$220',
         closed: true,
         external: true
       },
       {
         title: 'Regional Leadership Conference Payment',
         href: 'https://fultonschools.schoolcashonline.com/Fee/Details/9908/623/False/True',
+        note: '$36.50',
         external: true
       }
     ]
