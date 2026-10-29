@@ -35,12 +35,12 @@ import '../../components/css/pages.css';
         </div>
         <ul class="form-list">
           {group.forms.map((form) => (
-            <li class={form.href ? 'form-row' : 'form-row pending'}>
+            <li class={form.href && !form.closed ? 'form-row' : 'form-row pending'}>
               <div class="form-row-main">
                 <span class="form-row-title">{form.title}</span>
                 {form.note && <span class="form-row-note">{form.note}</span>}
               </div>
-              {form.href ? (
+              {form.href && !form.closed ? (
                 <a
                   class="form-row-link"
                   href={form.href}
@@ -50,7 +50,7 @@ import '../../components/css/pages.css';
                   Open
                 </a>
               ) : (
-                <span class="form-row-pending">Coming soon</span>
+                <span class="form-row-pending">{form.closed ? 'Closed' : 'Coming soon'}</span>
               )}
             </li>
           ))}
