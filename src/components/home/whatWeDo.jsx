@@ -4,9 +4,19 @@ import '../css/whatWeDoStyle.css';
 
 const WhatWeDo = () => {
     const slides = [
-        <img src="/images/SLC2025.JPG" alt="Chapter members wearing their medals at the 2025 State Leadership Conference" className="slides slc-2025-slide" />,
-        <img src="/images/home-page-education.jpg" alt="Students collaborating on a computer in a classroom" className="slides" />,
-        <img src="/images/wwd/comp1.JPG" alt="A member competing at the State Leadership Conference" className="slides" />
+        {
+            src: "/images/SLC2025.JPG",
+            alt: "Chapter members wearing their medals at the 2025 State Leadership Conference",
+            className: "slc-2025-slide"
+        },
+        {
+            src: "/images/home-page-education.jpg",
+            alt: "Students collaborating on a computer in a classroom"
+        },
+        {
+            src: "/images/wwd/comp1.JPG",
+            alt: "A member competing at the State Leadership Conference"
+        }
     ];
 
     const slideTexts = [
@@ -40,7 +50,17 @@ const WhatWeDo = () => {
                 <p className="description" >FBLA is the largest student business organization in the world. We prepare students for careers in business through leadership development, community service, and competitive events.</p>
             </div>
             <button className="prev" aria-label="Previous slide" onClick={() => handleClick(-1)} ><RxCaretLeft size="28"/></button>
-                {slides[activeIndex]}
+                <div className="slide-stage">
+                    {slides.map((slide, index) => (
+                        <img
+                            key={slide.src}
+                            src={slide.src}
+                            alt={slide.alt}
+                            className={`slides ${slide.className || ""} ${index === activeIndex ? "is-active" : ""}`}
+                            aria-hidden={index !== activeIndex}
+                        />
+                    ))}
+                </div>
                 <div className="text">{slideTexts[activeIndex]}</div>
             <button className="next" aria-label="Next slide" onClick={() => handleClick(1)}><RxCaretRight size="28"/></button>
         </div>
