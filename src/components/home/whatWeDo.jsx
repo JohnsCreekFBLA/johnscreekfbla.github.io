@@ -4,14 +4,14 @@ import '../css/whatWeDoStyle.css';
 
 const WhatWeDo = () => {
     const slides = [
-        <img src="/images/home-slc-2025.jpg" alt="Chapter members together at the 2025 State Leadership Conference" className="slides" />,
-        <img src="/images/home-awards-2025.jpg" alt="Members holding first and fourth place plaques won at the State Leadership Conference" className="slides" />,
+        <img src="/images/SLC2025.JPG" alt="Chapter members wearing their medals at the 2025 State Leadership Conference" className="slides slc-2025-slide" />,
+        <img src="/images/home-page-education.jpg" alt="Students collaborating on a computer in a classroom" className="slides" />,
         <img src="/images/wwd/comp1.JPG" alt="A member competing at the State Leadership Conference" className="slides" />
     ];
 
     const slideTexts = [
         "Conferences: Members travel to region, state, and national conferences each year.",
-        "Recognition: Our members bring home awards, including first place finishes at state.",
+        "Education: Members use what they learn to help others and make an impact.",
         "Competitions: Members compete in a wide range of business events."
     ];
 
