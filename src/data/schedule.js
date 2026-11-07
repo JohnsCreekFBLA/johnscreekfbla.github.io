@@ -133,7 +133,8 @@ const schedule = [
     title: 'November Chapter Meeting',
     kind: 'meeting',
     location: "Commander Schenk's room",
-    note: 'Doubles as the FLC meeting, one week before the trip.'
+    note: 'Doubles as the FLC meeting. Last meeting before the trip on November 16.',
+    link: '/conferences/FLC'
   },
   {
     date: '2026-12-08',
@@ -152,16 +153,26 @@ const schedule = [
     kind: 'deadline'
   },
   {
+    date: '2026-12-11',
+    title: 'SLC membership deadline',
+    kind: 'deadline',
+    note: 'You have to be a paid member by this date to compete at State.'
+  },
+  {
     date: '2026-12-13',
     title: 'Stock Market Game ends',
+    kind: 'deadline'
+  },
+  {
+    date: '2027-01-25',
+    title: 'Spring Lifesmarts Challenge begins',
     kind: 'deadline'
   },
   {
     date: '2027-01-26',
     title: 'January Chapter Meeting',
     kind: 'meeting',
-    location: "Commander Schenk's room",
-    tentative: true
+    location: "Commander Schenk's room"
   },
   {
     date: null,
@@ -171,6 +182,21 @@ const schedule = [
     kind: 'conference',
     location: 'TBA',
     note: 'Georgia FBLA has not posted the 2027 date yet.'
+  },
+  {
+    date: '2027-01-29',
+    title: 'BAA and CSA chapter deadline',
+    kind: 'deadline'
+  },
+  {
+    date: '2027-02-01',
+    title: 'Spring Stock Market Game begins',
+    kind: 'deadline'
+  },
+  {
+    date: '2027-02-01',
+    title: 'Spring Virtual Business Challenge begins',
+    kind: 'deadline'
   },
   {
     date: '2027-02-23',
