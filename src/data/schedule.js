@@ -134,7 +134,7 @@ const schedule = [
     kind: 'meeting',
     location: "Commander Schenk's room",
     note: 'Doubles as the FLC meeting. Last meeting before the trip on November 16.',
-    link: '/conferences/FLC'
+    link: '/meetings/november'
   },
   {
     date: '2026-12-08',

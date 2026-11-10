@@ -79,6 +79,7 @@ const NavBar = () => {
                     <a href="/meetings/august" onClick={handleLinkClick}>August Meeting</a>
                     <a href="/meetings/september" onClick={handleLinkClick}>September Meeting</a>
                     <a href="/meetings/october" onClick={handleLinkClick}>October Meeting</a>
+                    <a href="/meetings/november" onClick={handleLinkClick}>November Meeting</a>
                     <span className="dropdown-label">2025-26 archive</span>
                     <a href="/meetings/flc" onClick={handleLinkClick}>FLC Interest Meeting</a>
                     <a href="/meetings/rlc-testing" onClick={handleLinkClick}>RLC Testing Briefing</a>
