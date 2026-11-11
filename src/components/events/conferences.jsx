@@ -30,6 +30,8 @@ const Conferences = ({ conferences }) => {
             price: "$220",
             registration: "https://docs.google.com/forms/d/e/1FAIpQLSdGzkm367Ga3z9T-Gay8XJVmw9X5xmGFWiGi1anKW4YoMWhWw/viewform",
             payment: "https://fultonschools.schoolcashonline.com/Fee/Details/7078/623/False/True",
+            permission: "/forms/FLC_Permission_Packet_26.pdf",
+            permissionLabel: "Itinerary and Parent Permission Packet",
             closed: "Closed"
         },
         region: {
@@ -107,6 +109,11 @@ const Conferences = ({ conferences }) => {
                 )}
                 {selected.payment && (
                     <a href={selected.payment} target="_blank" rel="noopener noreferrer">Payment</a>
+                )}
+                {selected.permission && (
+                    <a href={selected.permission} target="_blank" rel="noopener noreferrer">
+                        {selected.permissionLabel ?? "Permission Form"}<br />
+                    </a>
                 )}
                 {selected.closed && (
                     <p><strong>Registration:</strong> {selected.closed}</p>

@@ -12,6 +12,13 @@
 
 const news = [
   {
+    date: '2026-11-11',
+    title: 'FLC permission packet is posted',
+    body: 'If you are going to the Fall Leadership Conference on November 16 and 17, the travel itinerary, agenda and parent permission form are now on the site. Print it, have a parent sign it, and turn it in to room 302. Luggage drops off outside room 187 the morning we leave.',
+    link: '/forms/FLC_Permission_Packet_26.pdf',
+    linkText: 'Open the packet'
+  },
+  {
     date: '2026-11-06',
     title: 'Chapter meeting Tuesday, November 10',
     body: 'This one doubles as the FLC meeting and it is the last one before we leave, so if you are going to the Fall Leadership Conference on November 16 and 17 you want to be there. Commander Schenk’s room, as usual.',

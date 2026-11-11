@@ -71,7 +71,12 @@ const formGroups = [
       // TODO(Myra Sitafalwalla): add links or PDFs as they are finalised.
       // Fall Rally was October 5 and is not listed; a permission form for an
       // event that already happened is clutter. Add trips back as they approach.
-      { title: 'Fall Leadership Conference', href: null, note: 'Overnight trip to Athens, November 16-17.', closed: true },
+      {
+        title: 'Fall Leadership Conference',
+        href: '/forms/FLC_Permission_Packet_26.pdf',
+        note: 'Travel itinerary, agenda and parent permission form for the November 16-17 trip to Athens. Print it, have a parent sign it, and turn it in to room 302.',
+        external: true
+      },
       {
         title: 'Regional Leadership Conference',
         href: 'https://docs.google.com/forms/d/e/1FAIpQLSdT07XJb4LxA1ovmJCzgo6glDxkOwhSehzIMLMcvs7m5YUTIQ/viewform',
